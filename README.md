@@ -1,132 +1,129 @@
-# 🌌 Media Chronicle — Official Product Homepage
+# 🛡️ Media Chronicle: Private Family Photo Indexer
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![Platform: Windows Desktop](https://img.shields.io/badge/Target-Windows%20Desktop-0078D6.svg?logo=windows&logoColor=white)](https://github.com/akshatdhaundiyal/media_chronicle)
-[![Flutter Version](https://img.shields.io/badge/Flutter-3.x-02569B.svg?logo=flutter&logoColor=white)](https://flutter.dev)
-[![Python ML Pipeline](https://img.shields.io/badge/Pipeline-Ultralytics%20YOLOv8-FF6F00.svg?logo=python&logoColor=white)](https://github.com/akshatdhaundiyal/media_chronicle)
-[![State Management](https://img.shields.io/badge/State-Riverpod%202.x-0553B1.svg)](https://riverpod.dev)
+[![Platform: Windows Desktop](https://img.shields.io/badge/Platform-Native%20Windows%20x64-0078D6.svg?logo=windows&logoColor=white)](https://github.com/akshatdhaundiyal/media_chronicle)
+[![Privacy: 100% Offline](https://img.shields.io/badge/Privacy-100%25%20Offline%20%26%20Private-10B981.svg)](https://github.com/akshatdhaundiyal/media_chronicle)
+[![Pricing: $79 One-Time](https://img.shields.io/badge/Price-%2479%20One--Time%20Lifetime-00F0FF.svg)](https://github.com/akshatdhaundiyal/media_chronicle)
+[![GitHub WIP](https://img.shields.io/badge/GitHub-akshatdhaundiyal%2Fmedia__chronicle-white.svg?logo=github)](https://github.com/akshatdhaundiyal/media_chronicle)
 
-The official presentation homepage and interactive feature laboratory for **[Media Chronicle](https://github.com/akshatdhaundiyal/media_chronicle)** — a native Windows Desktop application for personal multimedia timeline management, chronological memoirs, and edge-intelligence face recognition.
+**Media Chronicle is a native Windows app that indexes family photo libraries from external drives—100% offline and private. No cloud uploads, no subscriptions.**
 
----
-
-## 📖 About the Product
-
-**Media Chronicle** combines on-device computer vision and generative AI to give users complete sovereignty over their photos and memories:
-
-* **100% On-Device Data Sovereignty**: All original media, metadata, and face embeddings are indexed and persisted locally via direct PostgreSQL socket synchronization. Zero mandatory third-party cloud uploads.
-* **On-Device YOLO Face Detection**: Real-time biometric bounding box overlays highlighting verified family members and unidentified candidates.
-* **Pure Dart Neural Classifier (`SingleLayerPerceptron`)**: Runs authentic Stochastic Gradient Descent (SGD) backpropagation on CPU/GPU to learn new identities locally without cloud API calls.
-* **Chronological Age Variant Timeline**: Tracks faces across human development (childhood &rarr; teenage &rarr; young adult &rarr; mature adult). Low-similarity deviations ($>25.0$ cosine distance) trigger an age-variant resolver to maintain longitudinal identity accuracy.
-* **2D Vector Embeddings Latent Map**: Visualizes 128-dimensional face embedding clusters and traces chronological progression trajectories through latent space.
-* **1.2s Fast-Load Offline Bypass**: Millisecond socket health probes bypass absent Ollama VLM daemons, replacing 90-second connection timeouts with instant on-device heuristic fallbacks.
-* **Modular Python YOLOv8 Pipeline**: Standalone ML engineering toolkit powered by Astral `uv`, providing CLI scripts for dataset scaffolding, fine-tuning, Albumentations transforms, and ONNX export.
-* **Riverpod Clean Architecture**: Multi-layered presentation, domain, and data architecture with $O(1)$ selector rebuilds and 100% passing test coverage.
+Official homepage & interactive showcase: **[akshatdhaundiyal.github.io/media_chronicle_homepage](https://akshatdhaundiyal.github.io/media_chronicle_homepage/)**  
+WIP Product Repository: **[github.com/akshatdhaundiyal/media_chronicle](https://github.com/akshatdhaundiyal/media_chronicle)**
 
 ---
 
-## ✨ Homepage Key Features
+## ⚡ 8-Week MVP Scope & Credibility
 
-The homepage is built with **HTML5, Vanilla CSS, and modern JavaScript**, adhering to the **Twilight Ambient Design System**:
+> **Our focused engineering timeline delivers a standalone Windows executable with in-place drive scanning (no file copying), fast preview streaming, metadata search, local face detection/grouping, and JSON/CSV export. Multimodal vector search, Ollama VLM integration, and narrative timelines are deferred to v2.**
 
-| Feature Section | Description |
-|---|---|
-| **Hero Showcase** | Ambient gradient background, floating luminous glow orbs, metric highlights, and a high-resolution interactive desktop preview with clickable feature hotspots. |
-| **Problem vs Solution** | Side-by-side comparison illustrating the pitfalls of cloud photo platforms vs the privacy and autonomy of Media Chronicle. |
-| **Interactive Lab: SGD Retrainer** | Live interactive on-device retraining simulation. Adjust learning rate ($\eta$) and epochs, watch real-time epoch logs stream in a code terminal, and view a live HTML5 Canvas loss convergence curve. |
-| **Interactive Lab: Age Progression** | Chronological timeline inspector demonstrating how facial embeddings shift between ages 7, 16, 24, and 35, showcasing the biometric variant resolver. |
-| **Interactive Lab: 2D Embeddings Map** | Custom canvas scatter plot mapping cluster halos, cosine distances, and age progression arcs with hoverable nodes. |
-| **Interactive Lab: Offline Bypass** | Interactive toggle simulating an unreachable Ollama vision daemon, demonstrating the ~1.2s instant import benchmark vs a hung cloud queue. |
-| **Pillar Deep-Dives** | In-depth technical cards detailing the design system, stories compiler, YOLO hub, Python ML tooling, fast-load bypass, and PostgreSQL sync. |
-| **Riverpod Architecture Matrix** | Visual 3-tier layer diagram outlining presentation, domain/state, and infrastructure layers. |
-| **Milestone Evolution** | Comprehensive roadmap tracing milestones M1 through M16, from initial scaffolding to clean Riverpod notifiers. |
-| **Quickstart Guide** | Copyable setup terminal snippets for Flutter Windows Desktop compilation, Python YOLO CLI tools, and PostgreSQL. |
+### The 6 Core Deliverables of the 8-Week MVP
+
+| # | Deliverable | Engineering Specification | MVP Status |
+|---|---|---|:---:|
+| **1** | **Standalone Windows Executable** | Self-contained Windows x64 `.exe` installer and portable release. Zero cloud dependencies, zero external runtime setup. Installs and runs 100% offline. | **v1 Active** |
+| **2** | **In-Place Drive Scanning** | Scans external HDDs, SSDs, SD cards, and NAS drives in-place. Reads directly from storage without duplicating files or consuming internal disk space. | **v1 Active** |
+| **3** | **Fast Preview Streaming** | Lightweight sub-millisecond thumbnail generator and caching engine. Instant smooth scrolling across libraries containing 100,000+ photos. | **v1 Active** |
+| **4** | **Instant Metadata Search** | High-performance indexing of EXIF, capture dates, camera models, GPS coordinates, and folder structures with sub-50ms query response. | **v1 Active** |
+| **5** | **Local Face Detection & Grouping** | Real-time on-device biometric face detection with clustering. Automatically groups recurring family members locally without external APIs. | **v1 Active** |
+| **6** | **Portable JSON / CSV Export** | Complete data sovereignty. Export entire media catalogues, tags, face clusters, and timestamps to universal JSON and CSV formats at any time. | **v1 Active** |
 
 ---
 
-## 📂 Project Structure
+## 💰 Why Pay $79?
+
+> **iCloud and Google Photos cost $120–$240 annually while indexing personal memories on corporate servers. Media Chronicle costs a one-time $79, replacing perpetual cloud fees with permanent software ownership and airtight privacy.**
+
+### Lifetime Value vs. Cloud Subscriptions
+
+| Feature / Metric | Cloud Subscriptions (Google / iCloud) | Media Chronicle Lifetime License |
+|---|---|---|
+| **Pricing Model** | $120 to $240 / year (Every year, forever) | **$79 One-Time (Lifetime ownership)** |
+| **3-Year Total Cost** | **$360 – $720+** | **$79 total** |
+| **5-Year Total Cost** | **$600 – $1,200+** | **$79 total** |
+| **Break-Even Horizon** | *Never* (Costs escalate every year) | **4 to 8 Months** |
+| **Data Privacy** | Scanned on corporate servers for AI training & ad profiling | **100% Offline & Private** on your local PC |
+| **External Drive Support** | Forces upload or sync to proprietary cloud storage | **Direct In-Place Scan** of external HDDs/SSDs |
+| **Offline Reliability** | Requires active internet connection; slow uploads | **Works completely air-gapped** with zero network calls |
+| **Data Sovereignty** | Proprietary cloud lock-in with complex exports | **Full portable JSON/CSV export** at any time |
+
+---
+
+## 🗺️ Product Roadmap
+
+### 🎯 v1: The 8-Week Core MVP (Current Focus)
+* [x] **Standalone Windows Executable**: Bundled native distribution with offline runtime.
+* [x] **In-Place External Drive Scanner**: Multi-threaded read pipeline for external drives without file copying.
+* [x] **Optimized Thumbnail Cache**: Fast preview streaming with LRU cache memory bounds.
+* [x] **Local EXIF & Metadata Engine**: Instant search across timestamps, ISO, lenses, and folder hierarchies.
+* [x] **On-Device Face Detection & Grouping**: Fast biometric face detection and clustering.
+* [x] **JSON / CSV Export Pipeline**: One-click data export to open standards.
+
+### 🚀 v2: Advanced Intelligence Roadmap (Deferred Features)
+* [ ] **Multimodal Vector Search (CLIP)**: Natural language text-to-photo semantic search executed locally (*"birthday cake on wooden table"*).
+* [ ] **Local Ollama VLM Integration**: On-device Vision Language Models for automated captioning, scene reasoning, and context tags.
+* [ ] **Narrative Timelines & Story Compiler**: Longitudinal memory memoirs grouping milestone life chapters across decades.
+* [ ] **Pure Dart SGD Neural Identity Retrainer**: On-device Stochastic Gradient Descent to train custom face embeddings as relatives age.
+* [ ] **Cloudless P2P Local Network Sync**: Direct peer-to-peer sync between home Windows PCs and local NAS units.
+
+---
+
+## 📂 Homepage Architecture
+
+The homepage is organized with a modular structure:
 
 ```
 media_chronicle_homepage/
 ├── .github/
 │   └── workflows/
-│       └── deploy.yml               # Automated GitHub Pages CI/CD deployment
+│       └── deploy.yml               # Automated GitHub Pages CI/CD workflow
 ├── assets/
 │   ├── css/
-│   │   ├── variables.css            # Design tokens, color palette, transitions
-│   │   ├── base.css                 # Reset, ambient glows, navbar, buttons
-│   │   ├── hero.css                 # Hero showcase, stats ribbon, window preview
-│   │   ├── lab.css                  # Interactive lab, terminal, age timeline, canvas
-│   │   ├── sections.css             # Features grid, story banner, architecture, milestones
-│   │   ├── responsive.css           # Breakpoints & media queries
+│   │   ├── variables.css            # Twilight design tokens, color palette, typography
+│   │   ├── base.css                 # Reset, ambient lighting glows, navbar, buttons
+│   │   ├── hero.css                 # Hero showcase, $79 stats ribbon, desktop window preview
+│   │   ├── lab.css                  # Interactive lab: SGD terminal, age timeline, 2D latent map
+│   │   ├── sections.css             # 8-Week MVP grid, $79 pricing table, roadmap, story banner
+│   │   ├── responsive.css           # Mobile & tablet breakpoints
 │   │   └── styles.css               # Master aggregator stylesheet
 │   ├── js/
 │   │   ├── modules/
-│   │   │   ├── navigation.js        # Navbar, mobile drawer, tab switching, hotspots
-│   │   │   ├── sgd-simulator.js     # SingleLayerPerceptron SGD training & loss curve
-│   │   │   ├── face-timeline.js     # YOLO face age progression & variant resolver
-│   │   │   ├── embeddings-map.js    # 2D latent vector scatter plot & clusters
-│   │   │   └── offline-simulator.js # VLM socket probe & fast-load benchmark
-│   │   └── main.js                  # Modular entry point
+│   │   │   ├── navigation.js        # Navbar drawer, smooth scroll, tab switcher, UI hotspots
+│   │   │   ├── sgd-simulator.js     # SingleLayerPerceptron SGD training simulation & loss canvas
+│   │   │   ├── face-timeline.js     # Chronological age progression & variant resolver demo
+│   │   │   ├── embeddings-map.js    # 2D latent embedding scatter plot & cluster halos
+│   │   │   └── offline-simulator.js # VLM socket probe & fast-load offline benchmark
+│   │   └── main.js                  # ES Module coordinator
 │   └── images/
 │       ├── hero_showcase.jpg        # High-resolution Media Chronicle desktop UI preview
 │       ├── face_age_progression.jpg # Biometric age timeline documentary portraits
 │       └── story_memories.jpg       # Atmospheric memory story narrative collage
-├── .gitignore                       # Git ignore rules for web, OS, Python & editor files
+├── .gitignore                       # Git ignore rules
 ├── LICENSE                          # MIT License
-├── README.md                        # Documentation
+├── README.md                        # Documentation & Scope Specification
 ├── index.html                       # Semantic HTML5 homepage structure with SEO metadata
-└── robots.txt                       # Search crawler index rules
+└── robots.txt                       # Search crawler rules
 ```
 
 ---
 
-## 🚀 Running Locally
+## 💻 Running the Homepage Locally
 
-No complex build step or heavy package dependencies required — the homepage is built with vanilla web technologies.
+Zero complex build pipelines or bundlers required — runs directly in modern browsers via native ES Modules.
 
-### Option 1: Python HTTP Server (Recommended)
 ```powershell
-# Open terminal inside media_chronicle_homepage directory
+# Open terminal inside the repository folder
+cd d:\lab\projects\media_chronicle_homepage
+
+# Launch local HTTP server
 python -m http.server 8080
 ```
 Open **`http://localhost:8080`** in your browser.
 
-### Option 2: Node.js `serve`
-```powershell
-npx -y serve -l 8080
-```
-
-### Option 3: VS Code / IDE Live Server
-Right-click `index.html` in VS Code and select **"Open with Live Server"**.
-
 ---
 
-## 🎨 Design System Tokens
-
-The homepage matches the design language used in the Flutter Windows desktop application:
-
-* **Background Surface**: `#06090F` (Midnight Deep) / `#0B0F19` (Twilight Surface)
-* **Glassmorphic Acrylic**: `rgba(16, 23, 38, 0.72)` with `backdrop-filter: blur(16px)` and subtle border highlights (`rgba(255, 255, 255, 0.08)`)
-* **Luminous Accents**:
-  * **Neon Cyan**: `#00F0FF` (Recognized identities, primary call-to-actions, loss curve)
-  * **Rose Pink**: `#F43F5E` (Age variants, unknown face queues, gradient accents)
-  * **Electric Violet**: `#8B5CF6` (Ambient lighting, cluster halos)
-  * **Emerald Green**: `#10B981` (PostgreSQL local sync active status)
-* **Typography**:
-  * **Display & Body**: [Outfit](https://fonts.google.com/specimen/Outfit) (Google Fonts geometric sans-serif)
-  * **Code & Telemetry**: [JetBrains Mono](https://fonts.google.com/specimen/JetBrains+Mono)
-
----
-
-## 🔗 Related Repositories & Links
+## 🔗 Links & Resources
 
 * **Product Repository (WIP)**: [akshatdhaundiyal/media_chronicle](https://github.com/akshatdhaundiyal/media_chronicle)
 * **Author**: [Akshat Dhaundiyal](https://github.com/akshatdhaundiyal)
-* **Design Docs**: See [docs/design_docs/](https://github.com/akshatdhaundiyal/media_chronicle/tree/main/docs/design_docs) in the product repository for full architectural milestone specifications.
-
----
-
-## 📄 License
-
-This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+* **License**: [MIT License](LICENSE)
