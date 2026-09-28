@@ -1,0 +1,5 @@
+# Robots.txt for Media Chronicle Homepage
+User-agent: *
+Allow: /
+
+Sitemap: https://akshatdhaundiyal.github.io/media_chronicle_homepage/sitemap.xml

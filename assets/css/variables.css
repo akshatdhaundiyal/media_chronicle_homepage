@@ -1,0 +1,47 @@
+/* ==========================================================================
+   DESIGN TOKENS & SYSTEM VARIABLES
+   ========================================================================== */
+
+:root {
+  /* Color Palette - Midnight Twilight */
+  --bg-deep: #06090F;
+  --bg-surface: #0B0F19;
+  --bg-card: rgba(16, 23, 38, 0.72);
+  --bg-card-hover: rgba(22, 32, 54, 0.85);
+  --bg-glass-nested: rgba(8, 13, 23, 0.65);
+  
+  /* Luminous Neon Accents */
+  --neon-cyan: #00F0FF;
+  --neon-cyan-glow: rgba(0, 240, 255, 0.28);
+  --neon-cyan-subtle: rgba(0, 240, 255, 0.12);
+  --neon-rose: #F43F5E;
+  --neon-rose-glow: rgba(244, 63, 94, 0.28);
+  --neon-rose-subtle: rgba(244, 63, 94, 0.12);
+  --neon-violet: #8B5CF6;
+  --neon-violet-glow: rgba(139, 92, 246, 0.28);
+  --neon-green: #10B981;
+  --neon-amber: #F59E0B;
+
+  /* Text & Typography */
+  --text-primary: #F1F5F9;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+  --text-highlight: #FFFFFF;
+
+  /* Borders & Shadows */
+  --border-subtle: rgba(255, 255, 255, 0.08);
+  --border-light: rgba(255, 255, 255, 0.14);
+  --border-highlight: rgba(0, 240, 255, 0.4);
+  --shadow-ambient: 0 20px 40px -15px rgba(0, 0, 0, 0.65);
+  --shadow-glow-cyan: 0 0 25px rgba(0, 240, 255, 0.25);
+  --shadow-glow-rose: 0 0 25px rgba(244, 63, 94, 0.25);
+
+  /* Fonts */
+  --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+
+  /* Transitions */
+  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: 0.18s ease;
+  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}

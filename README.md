@@ -48,16 +48,35 @@ The homepage is built with **HTML5, Vanilla CSS, and modern JavaScript**, adheri
 
 ```
 media_chronicle_homepage/
+├── .github/
+│   └── workflows/
+│       └── deploy.yml               # Automated GitHub Pages CI/CD deployment
 ├── assets/
+│   ├── css/
+│   │   ├── variables.css            # Design tokens, color palette, transitions
+│   │   ├── base.css                 # Reset, ambient glows, navbar, buttons
+│   │   ├── hero.css                 # Hero showcase, stats ribbon, window preview
+│   │   ├── lab.css                  # Interactive lab, terminal, age timeline, canvas
+│   │   ├── sections.css             # Features grid, story banner, architecture, milestones
+│   │   ├── responsive.css           # Breakpoints & media queries
+│   │   └── styles.css               # Master aggregator stylesheet
+│   ├── js/
+│   │   ├── modules/
+│   │   │   ├── navigation.js        # Navbar, mobile drawer, tab switching, hotspots
+│   │   │   ├── sgd-simulator.js     # SingleLayerPerceptron SGD training & loss curve
+│   │   │   ├── face-timeline.js     # YOLO face age progression & variant resolver
+│   │   │   ├── embeddings-map.js    # 2D latent vector scatter plot & clusters
+│   │   │   └── offline-simulator.js # VLM socket probe & fast-load benchmark
+│   │   └── main.js                  # Modular entry point
 │   └── images/
 │       ├── hero_showcase.jpg        # High-resolution Media Chronicle desktop UI preview
 │       ├── face_age_progression.jpg # Biometric age timeline documentary portraits
 │       └── story_memories.jpg       # Atmospheric memory story narrative collage
-├── app.js                           # Interactive lab engines (SGD, Canvas map, Age inspector)
-├── index.html                       # Semantic HTML5 homepage structure with SEO metadata
-├── styles.css                       # Twilight Ambient design system & glassmorphic styling
 ├── .gitignore                       # Git ignore rules for web, OS, Python & editor files
-└── README.md                        # Project documentation (this file)
+├── LICENSE                          # MIT License
+├── README.md                        # Documentation
+├── index.html                       # Semantic HTML5 homepage structure with SEO metadata
+└── robots.txt                       # Search crawler index rules
 ```
 
 ---
