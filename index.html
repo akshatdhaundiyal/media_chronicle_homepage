@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Media Chronicle — On-Device AI Memory & Face Recognition Dashboard</title>
+  <meta name="description" content="A premium, native Windows Desktop application for personal media management, intelligent timelines, and face recognition powered by on-device YOLO, pure Dart neural retraining, and a modular Python ML pipeline.">
+  <meta name="keywords" content="Media Chronicle, Flutter, Windows Desktop, YOLO, Face Recognition, Edge ML, Computer Vision, GenAI, Ollama, Python, uv, PostgreSQL">
+  <meta name="author" content="Akshat Dhaundiyal">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://github.com/akshatdhaundiyal/media_chronicle">
+  <meta property="og:title" content="Media Chronicle — On-Device AI Memory & Face Recognition">
+  <meta property="og:description" content="Multi-platform image management driven by GenAI and Computer Vision (Flutter Windows + Python ML pipeline).">
+  <meta property="og:image" content="assets/images/hero_showcase.jpg">
+
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image">
+  <meta property="twitter:url" content="https://github.com/akshatdhaundiyal/media_chronicle">
+  <meta property="twitter:title" content="Media Chronicle — On-Device AI Memory & Face Recognition">
+  <meta property="twitter:description" content="Multi-platform image management driven by GenAI and Computer Vision (Flutter Windows + Python ML pipeline).">
+  <meta property="twitter:image" content="assets/images/hero_showcase.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌌</text></svg>">
+
+  <!-- Google Fonts: Outfit & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="dark-theme">
+  <!-- Ambient Glow Background Canvas & Orbs -->
+  <div class="ambient-glow glow-cyan" aria-hidden="true"></div>
+  <div class="ambient-glow glow-rose" aria-hidden="true"></div>
+  <div class="ambient-glow glow-violet" aria-hidden="true"></div>
+
+  <!-- Navigation Bar -->
+  <header class="navbar" id="navbar">
+    <div class="nav-container">
+      <a href="#hero" class="brand-logo" id="brand-logo">
+        <span class="logo-icon">🌌</span>
+        <div class="logo-text">
+          <span class="brand-title">Media Chronicle</span>
+          <span class="brand-badge">WIP • Windows Native</span>
+        </div>
+      </a>
+
+      <nav class="nav-links" id="nav-links">
+        <a href="#overview" class="nav-item">Overview</a>
+        <a href="#interactive-lab" class="nav-item">Interactive Lab</a>
+        <a href="#features" class="nav-item">Features</a>
+        <a href="#architecture" class="nav-item">Architecture</a>
+        <a href="#milestones" class="nav-item">Milestones</a>
+        <a href="#quickstart" class="nav-item">Get Started</a>
+      </nav>
+
+      <div class="nav-actions">
+        <a href="https://github.com/akshatdhaundiyal/media_chronicle" target="_blank" rel="noopener noreferrer" class="btn btn-github" id="github-nav-btn">
+          <svg class="octicon" viewBox="0 0 16 16" width="18" height="18" fill="currentColor">
+            <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+          </svg>
+          <span class="btn-text">GitHub</span>
+          <span class="status-indicator-dot" title="Active Project"></span>
+        </a>
+        <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <main id="main-content">
+    <section class="hero-section" id="hero">
+      <div class="hero-container">
+        <div class="hero-badge-wrapper">
+          <div class="badge-pill">
+            <span class="pill-sparkle">✨</span>
+            <span class="pill-text">Work-in-Progress Open Source Project</span>
+            <span class="pill-divider">•</span>
+            <span class="pill-tech">Flutter 3.x + Python ML</span>
+          </div>
+        </div>
+
+        <h1 class="hero-title">
+          Intelligent Visual Memory Management,
+          <span class="gradient-text">Engineered for Privacy & Speed.</span>
+        </h1>
+
+        <p class="hero-description">
+          <strong>Media Chronicle</strong> is a native Windows Desktop application designed to archive personal memories, timelines, and multimedia streams in a modern dark glassmorphic offline-first dashboard — powered by on-device YOLO face detection, real-time pure Dart neural retraining, and a modular Python ML pipeline.
+        </p>
+
+        <div class="hero-cta-group">
+          <a href="https://github.com/akshatdhaundiyal/media_chronicle" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="cta-github-main">
+            <svg class="octicon" viewBox="0 0 16 16" width="18" height="18" fill="currentColor">
+              <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+            </svg>
+            <span>View on GitHub</span>
+            <span class="arrow-icon">→</span>
+          </a>
+
+          <a href="#interactive-lab" class="btn btn-glass" id="cta-explore-demo">
+            <span class="play-icon">⚡</span>
+            <span>Launch Interactive Lab</span>
+          </a>
+
+          <a href="#quickstart" class="btn btn-secondary" id="cta-run-local">
+            <code>flutter run -d windows</code>
+          </a>
+        </div>
+
+        <!-- Metric highlights bar -->
+        <div class="stats-ribbon">
+          <div class="stat-card">
+            <div class="stat-val font-gradient-cyan">1.2s</div>
+            <div class="stat-label">Fast-Load Offline Bypass</div>
+            <div class="stat-sub">vs 90s hung cloud timeouts</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val font-gradient-rose">Pure Dart</div>
+            <div class="stat-label">On-Device Backpropagation</div>
+            <div class="stat-sub">SingleLayerPerceptron + SGD</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val font-gradient-cyan">YOLOv8</div>
+            <div class="stat-label">Biometric Edge Detection</div>
+            <div class="stat-sub">Cyan (Enrolled) & Rose (Unknown)</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-val font-gradient-violet">100% Native</div>
+            <div class="stat-label">Zero Cloud Dependency</div>
+            <div class="stat-sub">PostgreSQL socket + Ollama VLM</div>
+          </div>
+        </div>
+
+        <!-- Hero Showcase Frame -->
+        <div class="hero-preview-wrapper">
+          <div class="window-frame">
+            <div class="window-titlebar">
+              <div class="window-controls">
+                <span class="control-dot dot-close"></span>
+                <span class="control-dot dot-minimize"></span>
+                <span class="control-dot dot-maximize"></span>
+              </div>
+              <div class="window-title">
+                <span class="window-title-icon">🌌</span>
+                Media Chronicle — Asset Intelligence • Windows Desktop Edition (Riverpod Clean Architecture)
+              </div>
+              <div class="window-status">
+                <span class="badge-status online"><span class="pulse"></span> Local PostgreSQL Sync: ACTIVE</span>
+              </div>
+            </div>
+
+            <div class="window-viewport">
+              <img src="assets/images/hero_showcase.jpg" alt="Media Chronicle desktop app preview displaying intelligent photo gallery, face detection bounding boxes, 2D vector embeddings scatter plot, and neural retraining terminal" class="window-image" id="hero-img">
+
+              <!-- Floating Hotspots for User Interaction -->
+              <div class="hotspot hotspot-yolo" data-tooltip="Real-Time YOLO Face Bounding Boxes with Confidence Scores" style="top: 28%; left: 19%;">
+                <div class="hotspot-pulse"></div>
+                <div class="hotspot-content">
+                  <span class="hotspot-tag cyan">Ben Carter (0.94)</span>
+                </div>
+              </div>
+
+              <div class="hotspot hotspot-map" data-tooltip="Interactive 2D Vector Embeddings Cluster Map" style="top: 24%; right: 18%;">
+                <div class="hotspot-pulse pulse-violet"></div>
+                <div class="hotspot-content">
+                  <span class="hotspot-tag violet">2D Embeddings Space</span>
+                </div>
+              </div>
+
+              <div class="hotspot hotspot-sgd" data-tooltip="Pure Dart SGD Neural Classifier Retraining Terminal" style="bottom: 18%; right: 22%;">
+                <div class="hotspot-pulse pulse-rose"></div>
+                <div class="hotspot-content">
+                  <span class="hotspot-tag rose">SGD Backpropagation Log</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Overview & Problem / Solution Section -->
+    <section class="section overview-section" id="overview">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <span class="section-tag">Core Value Proposition</span>
+          <h2 class="section-title">Why Media Chronicle Was Built</h2>
+          <p class="section-subtitle">
+            Most cloud photo platforms lock your personal memories behind paywalls, degrade your privacy with opaque telemetry, and freeze when offline. Media Chronicle reclaims your desktop into an autonomous, edge-intelligent media powerhouse.
+          </p>
+        </div>
+
+        <div class="comparison-grid">
+          <div class="comparison-card cloud-card">
+            <div class="card-icon-badge alert-red">⚠️</div>
+            <h3 class="comparison-card-title">Traditional Cloud Photo Apps</h3>
+            <ul class="comparison-list">
+              <li>
+                <span class="cross">✕</span>
+                <div>
+                  <strong>Mandatory Cloud Uploads</strong>
+                  <p>Private memories and biometric facial data sent across unverified third-party servers.</p>
+                </div>
+              </li>
+              <li>
+                <span class="cross">✕</span>
+                <div>
+                  <strong>Crippling Offline Lag</strong>
+                  <p>Galleries hang indefinitely or throw 90-second timeout errors when internet drops.</p>
+                </div>
+              </li>
+              <li>
+                <span class="cross">✕</span>
+                <div>
+                  <strong>Black-Box Labeling</strong>
+                  <p>Zero control over classification logic; unable to fine-tune or retrain on unique family faces.</p>
+                </div>
+              </li>
+              <li>
+                <span class="cross">✕</span>
+                <div>
+                  <strong>Recurring Subscription Lock-In</strong>
+                  <p>Storage limits force recurring monthly charges just to view high-resolution originals.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="comparison-card chronicle-card">
+            <div class="card-icon-badge success-cyan">🌌</div>
+            <h3 class="comparison-card-title">Media Chronicle Architecture</h3>
+            <ul class="comparison-list">
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  <strong>100% On-Device Sovereignty</strong>
+                  <p>All photos, SHA-256 hashes, and face embeddings stay strictly on your local PC via PostgreSQL socket sync.</p>
+                </div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  <strong>1.2s Fast-Load Offline Bypass</strong>
+                  <p>Intelligent network bypass handles absent Ollama VLM servers instantly with local fallback simulation.</p>
+                </div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  <strong>On-Device Neural Retraining</strong>
+                  <p>Pure Dart <code>SingleLayerPerceptron</code> executes true SGD backpropagation on your CPU/GPU to learn new faces instantly.</p>
+                </div>
+              </li>
+              <li>
+                <span class="check">✓</span>
+                <div>
+                  <strong>Extensible Python YOLOv8 Pipeline</strong>
+                  <p>Direct integration with Ultralytics YOLOv8 via <code>uv run</code> for custom training, evaluation, and ONNX export.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Interactive Laboratory Section -->
+    <section class="section lab-section" id="interactive-lab">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <span class="section-tag">Interactive Feature Laboratory</span>
+          <h2 class="section-title">Experience the On-Device Intelligence</h2>
+          <p class="section-subtitle">
+            Interact with live simulations of Media Chronicle's core machine learning algorithms, age progression tracking, and embeddings clustering directly in your browser.
+          </p>
+        </div>
+
+        <!-- Interactive Lab Tabs -->
+        <div class="lab-tabs" role="tablist">
+          <button class="lab-tab-btn active" data-tab="tab-neural" role="tab" id="tab-btn-neural">
+            <span class="tab-emoji">🧠</span>
+            <span class="tab-text">Pure Dart SGD Retrainer</span>
+          </button>
+          <button class="lab-tab-btn" data-tab="tab-faces" role="tab" id="tab-btn-faces">
+            <span class="tab-emoji">🎯</span>
+            <span class="tab-text">YOLO Face & Age Variant Engine</span>
+          </button>
+          <button class="lab-tab-btn" data-tab="tab-embeddings" role="tab" id="tab-btn-embeddings">
+            <span class="tab-emoji">🌐</span>
+            <span class="tab-text">2D Vector Embeddings Map</span>
+          </button>
+          <button class="lab-tab-btn" data-tab="tab-offline" role="tab" id="tab-btn-offline">
+            <span class="tab-emoji">⚡</span>
+            <span class="tab-text">Offline Bypass Simulator</span>
+          </button>
+        </div>
+
+        <!-- Tab 1: Pure Dart Neural SGD Retrainer -->
+        <div class="lab-panel active" id="tab-neural" role="tabpanel">
+          <div class="interactive-grid">
+            <div class="interactive-control-panel glass-card">
+              <div class="panel-header">
+                <h3>SingleLayerPerceptron (SGD) Simulator</h3>
+                <span class="engine-badge">lib/features/gallery/providers/yolo_face_provider.dart</span>
+              </div>
+              <p class="panel-desc">
+                Media Chronicle does not rely on cloud APIs to learn new faces. It runs a mathematically sound Multi-Class Softmax Perceptron in pure Dart with real cross-entropy loss reduction and stochastic gradient descent backpropagation.
+              </p>
+
+              <div class="param-row">
+                <label for="sgd-lr">Learning Rate (&eta;):</label>
+                <div class="range-container">
+                  <input type="range" id="sgd-lr" min="0.001" max="0.05" step="0.001" value="0.01">
+                  <span id="sgd-lr-val" class="param-display">0.010</span>
+                </div>
+              </div>
+
+              <div class="param-row">
+                <label for="sgd-epochs">Retraining Epochs:</label>
+                <div class="range-container">
+                  <input type="range" id="sgd-epochs" min="10" max="60" step="5" value="30">
+                  <span id="sgd-epochs-val" class="param-display">30 epochs</span>
+                </div>
+              </div>
+
+              <div class="param-row">
+                <label for="sgd-classes">Enrolled Face Identities:</label>
+                <div class="param-display">4 People (Maya, Ben, Anya, David)</div>
+              </div>
+
+              <div class="btn-group-lab">
+                <button class="btn btn-primary" id="btn-start-training">
+                  <span class="pulse-symbol">▶</span> Run SGD Retraining
+                </button>
+                <button class="btn btn-ghost" id="btn-reset-training">
+                  <span>Reset Model</span>
+                </button>
+              </div>
+
+              <div class="training-metrics-row">
+                <div class="metric-pill">
+                  <span class="metric-key">Cross-Entropy Loss</span>
+                  <span class="metric-val" id="metric-loss">1.4820</span>
+                </div>
+                <div class="metric-pill">
+                  <span class="metric-key">Top-1 Accuracy</span>
+                  <span class="metric-val" id="metric-acc">34.2%</span>
+                </div>
+                <div class="metric-pill">
+                  <span class="metric-key">Gradient Norm</span>
+                  <span class="metric-val" id="metric-grad">1.180</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="interactive-terminal-panel glass-card">
+              <div class="terminal-bar">
+                <div class="window-controls">
+                  <span class="control-dot dot-close"></span>
+                  <span class="control-dot dot-minimize"></span>
+                  <span class="control-dot dot-maximize"></span>
+                </div>
+                <div class="terminal-title">yolo_retraining_terminal.dart — STDOUT Stream</div>
+                <div class="terminal-status" id="terminal-badge">IDLE</div>
+              </div>
+              <div class="terminal-body" id="sgd-terminal-output" tabindex="0">
+                <div class="term-line info">[SYSTEM] Pure Dart SingleLayerPerceptron initialized. Weights ~ N(0, 0.01).</div>
+                <div class="term-line info">[SYSTEM] Vector dimensionality: 128-D L2 normalized face embeddings.</div>
+                <div class="term-line dim">> Click "Run SGD Retraining" to trigger on-device backpropagation...</div>
+              </div>
+              <!-- Live Loss Chart Canvas -->
+              <div class="canvas-mini-chart-wrapper">
+                <div class="chart-label">Live Loss Convergence Curve:</div>
+                <canvas id="lossChartCanvas" width="400" height="90"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 2: YOLO Face Recognition & Age Variant Engine -->
+        <div class="lab-panel" id="tab-faces" role="tabpanel">
+          <div class="interactive-grid">
+            <div class="interactive-control-panel glass-card">
+              <div class="panel-header">
+                <h3>Chronological Age Timeline & Variants</h3>
+                <span class="engine-badge">lib/features/gallery/models/detected_face.dart</span>
+              </div>
+              <p class="panel-desc">
+                Faces change significantly across human life stages. When an embedding distance exceeds the cosine threshold (>25.0 distance), Media Chronicle's conflict resolver intelligently links childhood and adulthood variants under one enrolled identity.
+              </p>
+
+              <div class="age-selector">
+                <span class="selector-title">Select Timeline Stage (Maya S.):</span>
+                <div class="age-pills">
+                  <button class="age-pill active" data-age="7" data-conf="96.2%" data-dist="0.0 (Anchor)" data-variant="Childhood Base">Age 7</button>
+                  <button class="age-pill" data-age="16" data-conf="91.8%" data-dist="14.2 (Match)" data-variant="Adolescence">Age 16</button>
+                  <button class="age-pill" data-age="24" data-conf="94.7%" data-dist="22.8 (Match)" data-variant="Young Adult">Age 24</button>
+                  <button class="age-pill" data-age="35" data-conf="89.4%" data-dist="27.4 (Age Variant)" data-variant="Mature Adult">Age 35</button>
+                </div>
+              </div>
+
+              <div class="face-details-card glass-card-nested">
+                <div class="detail-row">
+                  <span class="detail-label">Identity Classification:</span>
+                  <span class="detail-value highlight-cyan" id="face-id-val">Maya Sharma</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">YOLO Confidence:</span>
+                  <span class="detail-value" id="face-conf-val">96.2%</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Embedding Distance:</span>
+                  <span class="detail-value" id="face-dist-val">0.0 (Anchor)</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Chronology Stage:</span>
+                  <span class="detail-value highlight-rose" id="face-variant-val">Childhood Base</span>
+                </div>
+                <div class="detail-row">
+                  <span class="detail-label">Conflict Status:</span>
+                  <span class="badge-resolved" id="face-conflict-val">✓ Verified Match</span>
+                </div>
+              </div>
+
+              <div class="alert-box-info">
+                <strong>💡 Architectural Feature:</strong>
+                If distance > 25.0, Media Chronicle prompts: <em>"Confirm Same Person (Age Variant) or Different Person"</em> to preserve timeline accuracy across decades!
+              </div>
+            </div>
+
+            <div class="interactive-preview-panel glass-card">
+              <div class="image-interactive-wrapper" id="age-image-container">
+                <img src="assets/images/face_age_progression.jpg" alt="Timeline of same person across ages 7, 16, 24, and 35 with biometric overlays" class="timeline-image" id="timeline-img">
+
+                <!-- Interactive Bounding Box Overlays -->
+                <div class="face-bbox bbox-7 active" data-stage="7">
+                  <div class="bbox-label cyan">Maya (Age 7) • 96%</div>
+                </div>
+                <div class="face-bbox bbox-16" data-stage="16">
+                  <div class="bbox-label cyan">Maya (Age 16) • 92%</div>
+                </div>
+                <div class="face-bbox bbox-24" data-stage="24">
+                  <div class="bbox-label cyan">Maya (Age 24) • 95%</div>
+                </div>
+                <div class="face-bbox bbox-35" data-stage="35">
+                  <div class="bbox-label rose">Age Variant • 89%</div>
+                </div>
+              </div>
+              <div class="caption-bar">
+                <span>Click any stage button or hover bounding boxes to inspect biometric distance vectors.</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 3: 2D Vector Embeddings Cluster Map -->
+        <div class="lab-panel" id="tab-embeddings" role="tabpanel">
+          <div class="interactive-grid">
+            <div class="interactive-control-panel glass-card">
+              <div class="panel-header">
+                <h3>2D Embeddings Scatter Plot</h3>
+                <span class="engine-badge">yolo_embeddings_map.dart (CustomPainter)</span>
+              </div>
+              <p class="panel-desc">
+                Media Chronicle projects 128-dimensional face embedding vectors down to interactive 2D coordinates. Clustered hulls represent enrolled individuals, while dashed lines trace chronological age progression through latent space.
+              </p>
+
+              <div class="cluster-legend">
+                <div class="legend-item" data-cluster="maya">
+                  <span class="color-dot cyan"></span>
+                  <span class="legend-name">Maya Sharma (Age 7 &rarr; 35 Arc)</span>
+                </div>
+                <div class="legend-item" data-cluster="ben">
+                  <span class="color-dot rose"></span>
+                  <span class="legend-name">Ben Carter (Family Cluster)</span>
+                </div>
+                <div class="legend-item" data-cluster="david">
+                  <span class="color-dot violet"></span>
+                  <span class="legend-name">David Lee (Co-worker Cluster)</span>
+                </div>
+                <div class="legend-item" data-cluster="unidentified">
+                  <span class="color-dot gray"></span>
+                  <span class="legend-name">Unidentified Candidates</span>
+                </div>
+              </div>
+
+              <div class="interactive-tooltip-card glass-card-nested" id="embedding-info-card">
+                <div class="tooltip-title" id="emb-title">Hover over any node in the vector space</div>
+                <div class="tooltip-coords" id="emb-coords">Coordinates: (X: --, Y: --)</div>
+                <div class="tooltip-notes" id="emb-notes">Vectors with &lt;0.22 cosine distance cluster tightly together.</div>
+              </div>
+
+              <button class="btn btn-secondary w-full" id="btn-recompute-tsne">
+                <span>Re-project Vectors (t-SNE/PCA)</span>
+              </button>
+            </div>
+
+            <div class="interactive-preview-panel glass-card canvas-container">
+              <div class="canvas-header-bar">
+                <span class="canvas-title">Latent Vector Projections (D1 vs D2)</span>
+                <span class="canvas-hint">Interactive: Hover nodes to compute cosine distance</span>
+              </div>
+              <canvas id="embeddingsMapCanvas" width="600" height="420"></canvas>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tab 4: Intelligent Offline Bypass Simulator -->
+        <div class="lab-panel" id="tab-offline" role="tabpanel">
+          <div class="interactive-grid">
+            <div class="interactive-control-panel glass-card">
+              <div class="panel-header">
+                <h3>Ollama VLM Offline Bypass</h3>
+                <span class="engine-badge">Milestone 8: Fast-Load & Offline Bypass</span>
+              </div>
+              <p class="panel-desc">
+                In earlier builds, if the local Ollama VLM daemon wasn't running, media imports hung for 90 seconds before HTTP connection timeout. Milestone 8 introduced an ultra-fast socket health probe and heuristic fallback simulator.
+              </p>
+
+              <div class="toggle-control-box">
+                <span class="toggle-label">Ollama VLM Service Status:</span>
+                <label class="switch">
+                  <input type="checkbox" id="ollama-toggle">
+                  <span class="slider round"></span>
+                </label>
+                <span id="ollama-status-text" class="status-offline">OFFLINE (Simulated)</span>
+              </div>
+
+              <div class="btn-group-lab">
+                <button class="btn btn-primary" id="btn-simulate-import">
+                  <span>Simulate 24 Photo Import</span>
+                </button>
+              </div>
+
+              <div class="benchmark-results glass-card-nested">
+                <div class="bench-row">
+                  <span>Import Duration:</span>
+                  <strong id="bench-duration" class="highlight-cyan">~1.2 seconds</strong>
+                </div>
+                <div class="bench-row">
+                  <span>VLM Tagging Strategy:</span>
+                  <strong id="bench-strategy">On-Device Edge Heuristic Fallback</strong>
+                </div>
+                <div class="bench-row">
+                  <span>PostgreSQL Socket Sync:</span>
+                  <strong class="highlight-green">100% Persisted Locally</strong>
+                </div>
+              </div>
+            </div>
+
+            <div class="interactive-preview-panel glass-card">
+              <div class="terminal-bar">
+                <div class="window-controls">
+                  <span class="control-dot dot-close"></span>
+                  <span class="control-dot dot-minimize"></span>
+                  <span class="control-dot dot-maximize"></span>
+                </div>
+                <div class="terminal-title">core/utils/llm_helper.dart — Health Radar & Pipeline Log</div>
+              </div>
+              <div class="terminal-body" id="offline-terminal-output" tabindex="0">
+                <div class="term-line info">[RADAR] Ollama VLM socket probe: http://localhost:11434/api/tags</div>
+                <div class="term-line warn">[BYPASS ACTIVE] Daemon unreachable. Fast-load bypass engaged in 42ms!</div>
+                <div class="term-line success">[FALLBACK] Engaging high-fidelity on-device simulated analysis.</div>
+                <div class="term-line dim">> Click "Simulate 24 Photo Import" to test processing speed...</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- Deep-Dive Features Pillars Grid -->
+    <section class="section features-section" id="features">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <span class="section-tag">Key Capabilities</span>
+          <h2 class="section-title">Built for Performance, Designed for Memory</h2>
+          <p class="section-subtitle">
+            Every layer of Media Chronicle is architected with modern software design patterns, from Riverpod Clean Architecture to headless computer vision.
+          </p>
+        </div>
+
+        <div class="features-grid">
+          <!-- Feature 1 -->
+          <div class="feature-card glass-card">
+            <div class="feature-icon cyan-glow">🎨</div>
+            <h3 class="feature-title">Twilight Ambient Design System</h3>
+            <p class="feature-desc">
+              Frosted acrylic cards rendered via native <code>BackdropFilter</code>, neon cyan (<code>#00F0FF</code>) and rose pink (<code>#F43F5E</code>) ambient glow backdrops, and geometric <strong>Outfit</strong> typography produce an editorial high-tech aesthetic.
+            </p>
+            <div class="feature-tag-list">
+              <span class="tech-tag">BackdropFilter</span>
+              <span class="tech-tag">Glassmorphism</span>
+              <span class="tech-tag">Micro-animations</span>
+            </div>
+          </div>
+
+          <!-- Feature 2 -->
+          <div class="feature-card glass-card">
+            <div class="feature-icon rose-glow">📸</div>
+            <h3 class="feature-title">Memory Stories & Narrative Timelines</h3>
+            <p class="feature-desc">
+              Transform flat camera rolls into meaningful personal memoirs. Chronological story albums pair high-res photography with rich text narratives, ambient cover cards, and real-time global search indexing.
+            </p>
+            <div class="feature-tag-list">
+              <span class="tech-tag">Story Compiler</span>
+              <span class="tech-tag">Timeline Masonry</span>
+              <span class="tech-tag">Metadata Indexing</span>
+            </div>
+          </div>
+
+          <!-- Feature 3 -->
+          <div class="feature-card glass-card">
+            <div class="feature-icon violet-glow">🧠</div>
+            <h3 class="feature-title">YOLO Face & Active Learning Hub</h3>
+            <p class="feature-desc">
+              Glowing neon cyan overlays highlight verified faces while rose pink bounds unidentified candidates. Labeling faces triggers pure Dart stochastic gradient descent backpropagation with instant database synchronization.
+            </p>
+            <div class="feature-tag-list">
+              <span class="tech-tag">YOLO Bounding Boxes</span>
+              <span class="tech-tag">Softmax Perceptron</span>
+              <span class="tech-tag">Active Learning</span>
+            </div>
+          </div>
+
+          <!-- Feature 4 -->
+          <div class="feature-card glass-card">
+            <div class="feature-icon cyan-glow">🐍</div>
+            <h3 class="feature-title">Modular Python YOLOv8 Pipeline</h3>
+            <p class="feature-desc">
+              Complete standalone ML engineering tools driven by Astral <code>uv</code>. Includes CLI scripts for dataset scaffolding, YOLOv8 fine-tuning, Albumentations transforms, ONNX model simplification, and a 9-section Jupyter notebook.
+            </p>
+            <div class="feature-tag-list">
+              <span class="tech-tag">Ultralytics YOLOv8</span>
+              <span class="tech-tag">Astral uv</span>
+              <span class="tech-tag">ONNX Export</span>
+            </div>
+          </div>
+
+          <!-- Feature 5 -->
+          <div class="feature-card glass-card">
+            <div class="feature-icon green-glow">⚡</div>
+            <h3 class="feature-title">Fast-Load & Offline Bypass</h3>
+            <p class="feature-desc">
+              Never wait on cloud timeouts. The app detects absent Ollama VLM daemons in milliseconds, bypassing network hangs to import files in ~1.2s instead of 90s, while gracefully employing smart on-device fallbacks.
+            </p>
+            <div class="feature-tag-list">
+              <span class="tech-tag">Fast-Load Socket</span>
+              <span class="tech-tag">Smart Fallback</span>
+              <span class="tech-tag">Zero Timeout Latency</span>
+            </div>
+          </div>
+
+          <!-- Feature 6 -->
+          <div class="feature-card glass-card">
+            <div class="feature-icon violet-glow">🛡️</div>
+            <h3 class="feature-title">Direct PostgreSQL & SHA-256</h3>
+            <p class="feature-desc">
+              High-throughput direct TCP socket synchronization to local PostgreSQL with programmatic SQL migration DDLs. Strict SHA-256 cryptographic hashing guarantees zero duplicate media ingestion.
+            </p>
+            <div class="feature-tag-list">
+              <span class="tech-tag">PostgreSQL Socket</span>
+              <span class="tech-tag">SHA-256 Dedupe</span>
+              <span class="tech-tag">Auto Migrations</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Visual Story Showcase Banner -->
+        <div class="feature-showcase-banner glass-card">
+          <div class="banner-grid">
+            <div class="banner-text">
+              <span class="section-tag">Memory Timeline Engine</span>
+              <h3 class="banner-heading">Preserve Every Chapter of Your Life's Journey</h3>
+              <p class="banner-body">
+                From starlit camping trips to rainy neon nights in Shinjuku, Media Chronicle weaves individual photos into timeless chronicles. Search any photo instantly by person, place, or narrative tag.
+              </p>
+              <div class="banner-quote">
+                "Not just an image folder viewer — an intelligent biometric vault for your personal history."
+              </div>
+            </div>
+            <div class="banner-image-wrapper">
+              <img src="assets/images/story_memories.jpg" alt="Atmospheric memory collage with starlit campfire, rainy Shinjuku alley, mountain road trip, and birthday celebration" class="banner-image">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Architecture & Clean Code Stack -->
+    <section class="section arch-section" id="architecture">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <span class="section-tag">Engineering Foundation</span>
+          <h2 class="section-title">Riverpod Clean Architecture & Tech Stack</h2>
+          <p class="section-subtitle">
+            Media Chronicle was refactored across 16 major milestones into a rigorous, feature-first Clean Architecture, completely eliminating legacy ChangeNotifiers in favor of code-generated Riverpod Notifiers.
+          </p>
+        </div>
+
+        <div class="arch-diagram-wrapper glass-card">
+          <div class="arch-layer">
+            <div class="layer-header">
+              <span class="layer-num">01</span>
+              <h4>Presentation Layer (Flutter Windows Desktop)</h4>
+            </div>
+            <div class="layer-chips">
+              <span class="chip">GalleryScreen (Masonry 2-4 cols)</span>
+              <span class="chip">YoloFaceScreen (Embeddings + Retraining)</span>
+              <span class="chip">StoriesScreen (Timeline Narratives)</span>
+              <span class="chip">SettingsScreen (Ollama & DB Config)</span>
+              <span class="chip">Global Search Coordinator</span>
+            </div>
+          </div>
+
+          <div class="arch-flow-arrow">&darr; &uarr; Riverpod Notifiers & Selectors (O(1) Rebuilds)</div>
+
+          <div class="arch-layer">
+            <div class="layer-header">
+              <span class="layer-num">02</span>
+              <h4>Domain & State Layer (Riverpod Code-Gen)</h4>
+            </div>
+            <div class="layer-chips">
+              <span class="chip">AppState (Navigation & Query state)</span>
+              <span class="chip">Gallery (Media Catalog + VLM Queue)</span>
+              <span class="chip">YoloFace (SingleLayerPerceptron SGD)</span>
+              <span class="chip">Stories (Narrative CRUD)</span>
+              <span class="chip">Settings (Local Storage & Quotas)</span>
+            </div>
+          </div>
+
+          <div class="arch-flow-arrow">&darr; Native Sockets, FFI & External ML</div>
+
+          <div class="arch-layer">
+            <div class="layer-header">
+              <span class="layer-num">03</span>
+              <h4>Data & Edge ML Infrastructure</h4>
+            </div>
+            <div class="layer-chips">
+              <span class="chip">PostgresSyncService (Direct Native Socket)</span>
+              <span class="chip">Ollama VLM (Local Vision HTTP Client)</span>
+              <span class="chip">Python YOLOv8 Scripts (uv run CLI)</span>
+              <span class="chip">SHA-256 Cryptographic Deduplication</span>
+              <span class="chip">Windows Native File & Camera APIs</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Tech Matrix -->
+        <div class="tech-matrix">
+          <div class="tech-col glass-card">
+            <h4 class="tech-col-title">🖥️ Desktop Client</h4>
+            <ul>
+              <li><strong>Framework:</strong> Flutter 3.x (Windows Desktop Native)</li>
+              <li><strong>State Management:</strong> Riverpod 2.x (@riverpod code generation)</li>
+              <li><strong>UI Design:</strong> Twilight Ambient Glassmorphism</li>
+              <li><strong>Typography:</strong> Google Font Outfit & JetBrains Mono</li>
+              <li><strong>Testing:</strong> 100% Passing Unit & Widget Tests</li>
+            </ul>
+          </div>
+
+          <div class="tech-col glass-card">
+            <h4 class="tech-col-title">🐍 Python ML Pipeline</h4>
+            <ul>
+              <li><strong>Computer Vision:</strong> Ultralytics YOLOv8 (Detect & Segment)</li>
+              <li><strong>Package Manager:</strong> Astral <code>uv</code> (PEP 723 metadata)</li>
+              <li><strong>Augmentations:</strong> Albumentations (Bbox consistency)</li>
+              <li><strong>Export Formats:</strong> ONNX, TorchScript, TFLite</li>
+              <li><strong>Interactive Lab:</strong> 9-section Jupyter Notebook</li>
+            </ul>
+          </div>
+
+          <div class="tech-col glass-card">
+            <h4 class="tech-col-title">🛡️ Data & Offline Engine</h4>
+            <ul>
+              <li><strong>Database:</strong> Native Local PostgreSQL (TCP Socket)</li>
+              <li><strong>Vision Language:</strong> Ollama VLM (Llava / Llama Vision)</li>
+              <li><strong>Offline Bypass:</strong> Fast socket health check (~1.2s bypass)</li>
+              <li><strong>Deduplication:</strong> Cryptographic SHA-256 Hashing</li>
+              <li><strong>Privacy:</strong> Zero third-party cloud data transmission</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Milestone Journey & Evolution -->
+    <section class="section milestones-section" id="milestones">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <span class="section-tag">Development Evolution</span>
+          <h2 class="section-title">Milestone Roadmap & Progress</h2>
+          <p class="section-subtitle">
+            Media Chronicle is systematically engineered with comprehensive design documents and rigorous static analysis audits.
+          </p>
+        </div>
+
+        <div class="timeline-container">
+          <div class="timeline-item done">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+              <div class="milestone-badge">Milestone 1–3 • Completed</div>
+              <h4 class="milestone-title">Scaffolding, Visual Foundation & YOLO Hub</h4>
+              <p>Established twilight dark glassmorphic design system, masonry gallery grid, responsive bounding boxes, and sequential VLM queue.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item done">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+              <div class="milestone-badge">Milestone 4–7 • Completed</div>
+              <h4 class="milestone-title">On-Device ML Engine & Windows Native Migration</h4>
+              <p>Built pure Dart SingleLayerPerceptron with real SGD backpropagation. Completely eliminated Web dependencies in favor of native Windows compilation.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item done">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+              <div class="milestone-badge">Milestone 8–10 • Completed</div>
+              <h4 class="milestone-title">Fast-Load Bypass & Python YOLOv8 uv Pipeline</h4>
+              <p>Implemented 1.2s offline bypass to eliminate 90s hung VLM timeouts. Created modular CLI scripts for YOLO training and Jupyter experimentation.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item done">
+            <div class="timeline-dot"></div>
+            <div class="timeline-content glass-card">
+              <div class="milestone-badge">Milestone 11–16 • Completed</div>
+              <h4 class="milestone-title">Full Riverpod Clean Architecture Refactoring</h4>
+              <p>Migrated 100% of state management (AppState, Settings, Stories, YoloFace, Gallery, PostgresSync) to modern Riverpod Notifiers with clean audits.</p>
+            </div>
+          </div>
+
+          <div class="timeline-item wip">
+            <div class="timeline-dot dot-wip"></div>
+            <div class="timeline-content glass-card border-cyan">
+              <div class="milestone-badge wip-badge">Current WIP Phase</div>
+              <h4 class="milestone-title">Multi-Modal Semantic Search & Cloudless P2P Sync</h4>
+              <p>Expanding local CLIP embeddings for natural language photo queries ("show photos of mom smiling at sunset") and zero-trust local network device pairing.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Quickstart & Installation -->
+    <section class="section quickstart-section" id="quickstart">
+      <div class="section-container">
+        <div class="section-header text-center">
+          <span class="section-tag">Quickstart Guide</span>
+          <h2 class="section-title">Run Media Chronicle on Windows</h2>
+          <p class="section-subtitle">
+            Clone the repository and launch the native desktop client or the Python training pipeline in minutes.
+          </p>
+        </div>
+
+        <div class="quickstart-box glass-card">
+          <div class="quickstart-tabs">
+            <button class="qs-tab active" data-qs="qs-flutter">Flutter Windows App</button>
+            <button class="qs-tab" data-qs="qs-python">Python YOLO ML Pipeline</button>
+            <button class="qs-tab" data-qs="qs-postgres">PostgreSQL Setup</button>
+          </div>
+
+          <!-- Quickstart Tab 1: Flutter App -->
+          <div class="qs-content active" id="qs-flutter">
+            <div class="code-terminal">
+              <div class="code-header">
+                <span>PowerShell (Developer Mode enabled)</span>
+                <button class="btn-copy" data-copy-target="#code-flutter" title="Copy code">
+                  <span class="copy-icon">📋</span> Copy
+                </button>
+              </div>
+              <pre><code id="code-flutter"># 1. Clone the repository
+git clone https://github.com/akshatdhaundiyal/media_chronicle.git
+cd media_chronicle
+
+# 2. Fetch Flutter dependencies
+flutter pub get
+
+# 3. Launch native Windows desktop application
+flutter run -d windows</code></pre>
+            </div>
+            <div class="prereq-note">
+              <strong>Prerequisites:</strong> Flutter SDK 3.x, Visual Studio 2022 Build Tools (Desktop development with C++), Windows 10/11.
+            </div>
+          </div>
+
+          <!-- Quickstart Tab 2: Python Pipeline -->
+          <div class="qs-content" id="qs-python">
+            <div class="code-terminal">
+              <div class="code-header">
+                <span>PowerShell / Command Prompt</span>
+                <button class="btn-copy" data-copy-target="#code-python" title="Copy code">
+                  <span class="copy-icon">📋</span> Copy
+                </button>
+              </div>
+              <pre><code id="code-python"># 1. Install uv package manager (if needed)
+powershell -ExecutionPolicy ByPass -c "irm https://astral.sh/uv/install.ps1 | iex"
+
+# 2. Scaffold custom face dataset structure
+uv run scripts/yolo_data_prep.py scaffold
+
+# 3. Fine-tune YOLOv8 model on custom faces
+uv run scripts/yolo_train.py --epochs 50 --batch-size 16
+
+# 4. Export simplified ONNX model for on-device inference
+uv run scripts/yolo_export.py --format onnx --simplify</code></pre>
+            </div>
+            <div class="prereq-note">
+              <strong>Prerequisites:</strong> Python 3.10+, Astral <code>uv</code> package manager.
+            </div>
+          </div>
+
+          <!-- Quickstart Tab 3: PostgreSQL -->
+          <div class="qs-content" id="qs-postgres">
+            <div class="code-terminal">
+              <div class="code-header">
+                <span>PostgreSQL / psql</span>
+                <button class="btn-copy" data-copy-target="#code-postgres" title="Copy code">
+                  <span class="copy-icon">📋</span> Copy
+                </button>
+              </div>
+              <pre><code id="code-postgres"># Create dedicated local database
+CREATE DATABASE media_chronicle;
+
+# The app automatically executes schema migrations via postgres_sync_service.dart
+# Default connection: localhost:5432 (configurable in Settings > Database Sync)</code></pre>
+            </div>
+            <div class="prereq-note">
+              <strong>Prerequisites:</strong> PostgreSQL 14+ running locally on port 5432.
+            </div>
+          </div>
+        </div>
+
+        <!-- GitHub CTA Banner -->
+        <div class="github-cta-banner glass-card text-center">
+          <div class="cta-glow-element"></div>
+          <span class="section-tag">Open Source & Community Driven</span>
+          <h3 class="cta-title">Follow the Media Chronicle Journey</h3>
+          <p class="cta-desc">
+            Media Chronicle is actively evolving with cutting-edge Edge AI, Riverpod Clean Architecture, and privacy-first engineering. Star the repo, report issues, or contribute to upcoming milestones.
+          </p>
+          <div class="cta-actions">
+            <a href="https://github.com/akshatdhaundiyal/media_chronicle" target="_blank" rel="noopener noreferrer" class="btn btn-primary btn-large" id="footer-github-cta">
+              <svg class="octicon" viewBox="0 0 16 16" width="20" height="20" fill="currentColor">
+                <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+              </svg>
+              <span>Explore akshatdhaundiyal/media_chronicle</span>
+              <span class="arrow-icon">&rarr;</span>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <div class="footer-brand">
+        <div class="brand-logo">
+          <span class="logo-icon">🌌</span>
+          <span class="brand-title">Media Chronicle</span>
+        </div>
+        <p class="footer-summary">
+          Multi-platform image management driven by GenAI and Computer Vision (Flutter Windows Desktop + Python ML pipeline).
+        </p>
+        <div class="footer-copyright">
+          Crafted by <a href="https://github.com/akshatdhaundiyal" target="_blank" rel="noopener noreferrer">Akshat Dhaundiyal</a> • Open Source Project
+        </div>
+      </div>
+
+      <div class="footer-links-group">
+        <div class="footer-col">
+          <h5 class="col-title">Project & Source</h5>
+          <ul>
+            <li><a href="https://github.com/akshatdhaundiyal/media_chronicle" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
+            <li><a href="https://github.com/akshatdhaundiyal/media_chronicle/blob/main/README.md" target="_blank" rel="noopener noreferrer">README Documentation</a></li>
+            <li><a href="https://github.com/akshatdhaundiyal/media_chronicle/tree/main/docs/design_docs" target="_blank" rel="noopener noreferrer">Design Milestone Docs</a></li>
+            <li><a href="https://github.com/akshatdhaundiyal/media_chronicle/tree/main/docs/knowledge_base" target="_blank" rel="noopener noreferrer">Knowledge Base Lessons</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h5 class="col-title">Architecture Pillars</h5>
+          <ul>
+            <li><a href="#interactive-lab">Pure Dart SGD Perceptron</a></li>
+            <li><a href="#interactive-lab">YOLO Face & Age Variant</a></li>
+            <li><a href="#features">1.2s Fast-Load Bypass</a></li>
+            <li><a href="#architecture">Riverpod Clean Architecture</a></li>
+            <li><a href="#features">PostgreSQL Direct Socket</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
