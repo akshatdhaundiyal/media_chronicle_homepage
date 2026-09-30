@@ -3,7 +3,14 @@
  * Simulates in-place external drive scanning, zero-copy indexing, and offline fast-load bypass.
  */
 
-import { appendTermLine } from './sgd-simulator.js';
+export function appendTermLine(container, text, typeClass = '') {
+  if (!container) return;
+  const line = document.createElement('div');
+  line.className = `term-line ${typeClass}`;
+  line.textContent = text;
+  container.appendChild(line);
+  container.scrollTop = container.scrollHeight;
+}
 
 export function initOfflineSimulator() {
   const driveSelect = document.getElementById('scan-drive-select');
@@ -39,9 +46,9 @@ export function initOfflineSimulator() {
       scanProgressPercent.textContent = '0%';
     }
 
-    appendTermLine(termOutput, '==================================================', 'dim');
-    appendTermLine(termOutput, `[DRIVE MOUNTED] Detected: ${driveInfo.name} [${driveInfo.ext}]`, 'info');
-    appendTermLine(termOutput, `[IN-PLACE PIPELINE] Initiating zero-copy recursive directory traversal...`, 'info');
+    appendTermLine(termOutput, '--------------------------------------------------', 'dim');
+    appendTermLine(termOutput, `[DRIVE MOUNTED] Detected: ${driveInfo.name} [${driveInfo.ext}] (Read-Only Mode)`, 'info');
+    appendTermLine(termOutput, `[INDEXING PIPELINE] Direct filesystem read initiated — zero files copied to C:\\`, 'info');
 
     let currentProgress = 0;
     const totalSteps = 20;
@@ -59,17 +66,17 @@ export function initOfflineSimulator() {
       }
 
       if (currentProgress === 20) {
-        appendTermLine(termOutput, `[TRAVERSAL] Indexed ${scannedSoFar.toLocaleString()} files across DCIM/ and Family/ directories.`, 'info');
+        appendTermLine(termOutput, `[TRAVERSAL] Indexed ${scannedSoFar.toLocaleString()} files across DCIM/ and Archive/ directories.`, 'info');
       } else if (currentProgress === 50) {
-        appendTermLine(termOutput, `[METADATA] Extracted EXIF timestamps, GPS coordinates, and camera profiles.`, 'info');
+        appendTermLine(termOutput, `[METADATA] Extracted EXIF timestamps, camera models, and GPS tags.`, 'info');
       } else if (currentProgress === 75) {
-        appendTermLine(termOutput, `[BIOMETRICS] Running on-device YOLO face clustering across photo index...`, 'info');
+        appendTermLine(termOutput, `[THUMBNAILS] Built fast sub-millisecond LRU preview cache on drive.`, 'info');
       } else if (currentProgress >= 100) {
         clearInterval(interval);
 
-        appendTermLine(termOutput, `[DEDUPE] Strict SHA-256 hashes generated. Zero internal disk duplication.`, 'success');
-        appendTermLine(termOutput, `[AIR-GAP CHECK] Network calls: 0 bytes uploaded. 100% Offline.`, 'highlight');
-        appendTermLine(termOutput, `[SUCCESS] Complete library (${driveInfo.count.toLocaleString()} photos) indexed in ${driveInfo.duration}s!`, 'success');
+        appendTermLine(termOutput, `[SAFEGUARD] SHA-256 deduplication verified. 0 bytes copied to internal disk.`, 'success');
+        appendTermLine(termOutput, `[AIR-GAP AUDIT] 0 outbound network requests. 100% Offline & Private.`, 'highlight');
+        appendTermLine(termOutput, `[COMPLETE] Successfully indexed ${driveInfo.count.toLocaleString()} photos in ${driveInfo.duration}s!`, 'success');
 
         if (metricFiles) metricFiles.textContent = `${driveInfo.count.toLocaleString()} Photos`;
         if (metricDiskSpace) metricDiskSpace.textContent = '0 Bytes (In-Place Read)';

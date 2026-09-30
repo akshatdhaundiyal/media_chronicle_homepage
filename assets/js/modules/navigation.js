@@ -7,9 +7,8 @@ export function initNavigation() {
   initTabs();
   initQuickstartTabs();
   initCopyButtons();
-  initHotspots();
   initFaqAccordion();
-  initVipModal();
+  initLicenseModal();
 }
 
 function initNavbar() {
@@ -92,8 +91,8 @@ function initCopyButtons() {
         await navigator.clipboard.writeText(targetElem.innerText.trim());
         const originalHtml = button.innerHTML;
         button.innerHTML = '<span class="copy-icon">✓</span> Copied!';
-        button.style.borderColor = 'var(--neon-green)';
-        button.style.color = 'var(--neon-green)';
+        button.style.borderColor = 'var(--neo-mint)';
+        button.style.color = 'var(--neo-mint)';
 
         setTimeout(() => {
           button.innerHTML = originalHtml;
@@ -105,27 +104,6 @@ function initCopyButtons() {
       }
     });
   });
-}
-
-function initHotspots() {
-  const hotspotYolo = document.querySelector('.hotspot-yolo');
-  const hotspotMap = document.querySelector('.hotspot-map');
-  const hotspotSgd = document.querySelector('.hotspot-sgd');
-  const hotspotScan = document.querySelector('.hotspot-scan');
-
-  function activateTab(tabId) {
-    const tabBtn = document.querySelector(`[data-tab="${tabId}"]`);
-    if (tabBtn) tabBtn.click();
-    const labSec = document.getElementById('interactive-lab');
-    if (labSec) {
-      labSec.scrollIntoView({ behavior: 'smooth' });
-    }
-  }
-
-  if (hotspotYolo) hotspotYolo.addEventListener('click', () => activateTab('tab-faces'));
-  if (hotspotMap) hotspotMap.addEventListener('click', () => activateTab('tab-embeddings'));
-  if (hotspotSgd) hotspotSgd.addEventListener('click', () => activateTab('tab-neural'));
-  if (hotspotScan) hotspotScan.addEventListener('click', () => activateTab('tab-scanner'));
 }
 
 function initFaqAccordion() {
@@ -144,12 +122,12 @@ function initFaqAccordion() {
   });
 }
 
-function initVipModal() {
-  const modal = document.getElementById('vip-modal');
-  const openButtons = document.querySelectorAll('.trigger-vip-modal');
+function initLicenseModal() {
+  const modal = document.getElementById('license-modal') || document.getElementById('vip-modal');
+  const openButtons = document.querySelectorAll('.trigger-license-modal, .trigger-vip-modal');
   const closeBtn = document.getElementById('modal-close-btn');
-  const modalForm = document.getElementById('vip-modal-form');
-  const successMessage = document.getElementById('vip-success-message');
+  const modalForm = document.getElementById('license-modal-form') || document.getElementById('vip-modal-form');
+  const successMessage = document.getElementById('license-success-message') || document.getElementById('vip-success-message');
 
   if (!modal) return;
 
@@ -174,7 +152,7 @@ function initVipModal() {
   if (modalForm) {
     modalForm.addEventListener('submit', (e) => {
       e.preventDefault();
-      const emailInput = document.getElementById('vip-email');
+      const emailInput = document.getElementById('license-email') || document.getElementById('vip-email');
       if (emailInput && emailInput.value) {
         modalForm.style.display = 'none';
         if (successMessage) {

@@ -88,11 +88,10 @@ media_chronicle_homepage/
 │   │   └── styles.css               # Master aggregator stylesheet
 │   ├── js/
 │   │   ├── modules/
-│   │   │   ├── navigation.js        # Navbar drawer, smooth scroll, tab switcher, UI hotspots
-│   │   │   ├── sgd-simulator.js     # SingleLayerPerceptron SGD training simulation & loss canvas
-│   │   │   ├── face-timeline.js     # Chronological age progression & variant resolver demo
-│   │   │   ├── embeddings-map.js    # 2D latent embedding scatter plot & cluster halos
-│   │   │   └── offline-simulator.js # VLM socket probe & fast-load offline benchmark
+│   │   │   ├── navigation.js        # Navbar drawer, smooth scroll, tabs & license modal
+│   │   │   ├── calculator.js        # Lifetime savings vs cloud calculator
+│   │   │   ├── offline-simulator.js # In-place external drive scanner & zero-copy log
+│   │   │   └── gallery-demo.js      # Instant sub-10ms offline search & metadata filter demo
 │   │   └── main.js                  # ES Module coordinator
 │   └── images/
 │       ├── hero_showcase.jpg        # High-resolution Media Chronicle desktop UI preview

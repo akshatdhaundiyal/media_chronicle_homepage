@@ -38,40 +38,6 @@ body::before {
   z-index: 0;
 }
 
-/* Ambient Subtle Warm Blobs */
-.ambient-glow {
-  position: fixed;
-  border-radius: 50%;
-  filter: blur(100px);
-  pointer-events: none;
-  z-index: 0;
-  opacity: 0.25;
-}
-
-.glow-cyan {
-  width: 500px;
-  height: 500px;
-  background: var(--neo-yellow);
-  top: -100px;
-  left: -100px;
-}
-
-.glow-rose {
-  width: 550px;
-  height: 550px;
-  background: var(--neo-coral-light);
-  top: 35%;
-  right: -150px;
-}
-
-.glow-violet {
-  width: 600px;
-  height: 600px;
-  background: var(--neo-mint-light);
-  bottom: 5%;
-  left: 20%;
-}
-
 /* Navigation Bar */
 .navbar {
   position: sticky;
@@ -105,10 +71,21 @@ body::before {
 }
 
 .logo-icon {
-  font-size: 1.6rem;
-  filter: drop-shadow(2px 2px 0px #121212);
-  display: inline-block;
-  transform: rotate(-4deg);
+  width: 40px;
+  height: 40px;
+  border-radius: var(--radius-sm);
+  background: var(--neo-yellow);
+  border: var(--border-medium);
+  box-shadow: 2px 2px 0px var(--neo-black);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--neo-black);
+  flex-shrink: 0;
+}
+
+.logo-icon svg {
+  display: block;
 }
 
 .logo-text {
@@ -454,8 +431,9 @@ body::before {
 }
 
 /* ==========================================================================
-   NEOBRUTALIST VIP LICENSE MODAL
+   NEOBRUTALIST LICENSE MODAL
    ========================================================================== */
+.license-modal,
 .vip-modal {
   position: fixed;
   inset: 0;
@@ -468,6 +446,7 @@ body::before {
   transition: opacity var(--transition-normal);
 }
 
+.license-modal.open,
 .vip-modal.open {
   opacity: 1;
   pointer-events: auto;
@@ -494,6 +473,7 @@ body::before {
   transition: transform var(--transition-bounce);
 }
 
+.license-modal.open .modal-dialog,
 .vip-modal.open .modal-dialog {
   transform: translateY(0);
 }
@@ -539,6 +519,7 @@ body::before {
   color: var(--text-secondary);
 }
 
+.license-perks-list,
 .vip-perks-list {
   list-style: none;
   margin-bottom: 1.8rem;
@@ -548,6 +529,7 @@ body::before {
   padding: 1.1rem 1.3rem;
 }
 
+.license-perks-list li,
 .vip-perks-list li {
   display: flex;
   align-items: center;
@@ -558,10 +540,12 @@ body::before {
   font-weight: 600;
 }
 
+.license-perks-list li:last-child,
 .vip-perks-list li:last-child {
   margin-bottom: 0;
 }
 
+.license-perks-list .check,
 .vip-perks-list .check {
   color: var(--neo-black);
   background: var(--neo-mint);
@@ -606,12 +590,14 @@ body::before {
   background: var(--neo-yellow-light);
 }
 
+.license-success,
 .vip-success {
   display: none;
   text-align: center;
   padding: 1.5rem 0;
 }
 
+.license-success-icon,
 .vip-success-icon {
   font-size: 3.5rem;
   margin-bottom: 0.8rem;

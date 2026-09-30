@@ -238,35 +238,20 @@
   display: block;
 }
 
-/* Neobrutalist Hotspot Tags */
-.hotspot {
-  position: absolute;
-  cursor: pointer;
-  z-index: 5;
-  transition: transform var(--transition-fast);
+.window-caption {
+  background: var(--bg-surface);
+  border-top: 2.5px solid var(--neo-black);
+  padding: 0.85rem 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.86rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  flex-wrap: wrap;
+  gap: 0.5rem;
 }
 
-.hotspot:hover {
-  transform: scale(1.08) translate(-1px, -1px);
-}
-
-.hotspot-pulse {
-  display: none;
-}
-
-.hotspot-tag {
-  display: inline-block;
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  font-weight: 800;
-  padding: 0.3rem 0.75rem;
-  border-radius: var(--radius-sm);
-  border: 2px solid var(--neo-black);
-  box-shadow: 2.5px 2.5px 0px var(--neo-black);
+.window-caption strong {
   color: var(--neo-black);
-  white-space: nowrap;
 }
-
-.hotspot-tag.cyan { background: var(--neo-yellow); }
-.hotspot-tag.violet { background: var(--neo-lavender-light); }
-.hotspot-tag.rose { background: var(--neo-coral-light); }

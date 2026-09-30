@@ -9,6 +9,10 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .gallery-results-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   .interactive-grid,
   .calc-grid,
   .pricing-grid,
@@ -73,6 +77,7 @@
   .mvp-scope-grid,
   .comparison-grid,
   .features-grid,
+  .gallery-results-grid,
   .footer-container,
   .footer-links-group {
     grid-template-columns: 1fr;

@@ -22,8 +22,8 @@
   <meta property="twitter:description" content="Index family photo libraries from external drives—100% offline and private. No cloud uploads, no subscriptions. $79 lifetime license.">
   <meta property="twitter:image" content="assets/images/hero_showcase.jpg">
 
-  <!-- Favicon -->
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌌</text></svg>">
+  <!-- Clean Vector Favicon (Camera & Secure Vault) -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22%23121212%22><path d=%22M4 4h3l2-2h6l2 2h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm8 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z%22/></svg>">
 
   <!-- Google Fonts: Outfit & JetBrains Mono -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -33,16 +33,15 @@
   <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 <body class="neobrutalist-theme">
-  <!-- Ambient Glow Background Canvas & Orbs -->
-  <div class="ambient-glow glow-cyan" aria-hidden="true"></div>
-  <div class="ambient-glow glow-rose" aria-hidden="true"></div>
-  <div class="ambient-glow glow-violet" aria-hidden="true"></div>
-
   <!-- Navigation Bar -->
   <header class="navbar" id="navbar">
     <div class="nav-container">
-      <a href="#hero" class="brand-logo" id="brand-logo">
-        <span class="logo-icon">🌌</span>
+      <a href="#hero" class="brand-logo" id="brand-logo" aria-label="Media Chronicle Home">
+        <span class="logo-icon">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+            <path d="M4 4h3l2-2h6l2 2h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm8 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
+          </svg>
+        </span>
         <div class="logo-text">
           <span class="brand-title">Media Chronicle</span>
           <span class="brand-badge">Private Photo Indexer</span>
@@ -51,9 +50,10 @@
 
       <nav class="nav-links" id="nav-links">
         <a href="#how-it-works" class="nav-item">How It Works</a>
-        <a href="#calculator" class="nav-item">Savings ($79 vs Cloud)</a>
-        <a href="#mvp-scope" class="nav-item">8-Week MVP</a>
-        <a href="#interactive-lab" class="nav-item">Interactive Lab</a>
+        <a href="#calculator" class="nav-item">Lifetime Savings</a>
+        <a href="#core-features" class="nav-item">Core Architecture</a>
+        <a href="#roadmap" class="nav-item">Roadmap</a>
+        <a href="#interactive-lab" class="nav-item">Interactive Demo</a>
         <a href="#quickstart" class="nav-item">Download</a>
         <a href="#faq" class="nav-item">FAQ</a>
       </nav>
@@ -62,7 +62,7 @@
         <a href="#quickstart" class="btn btn-glass" id="trial-nav-btn" style="padding: 0.5rem 1rem; font-size: 0.88rem;">
           <span>Download Trial</span>
         </a>
-        <button class="btn btn-primary trigger-vip-modal" id="buy-nav-btn" style="padding: 0.5rem 1.1rem; font-size: 0.88rem;">
+        <button class="btn btn-primary trigger-license-modal trigger-vip-modal" id="buy-nav-btn" style="padding: 0.5rem 1.1rem; font-size: 0.88rem;">
           <span>Get $79 License</span>
         </button>
         <button class="mobile-toggle" id="mobile-toggle" aria-label="Toggle navigation">
@@ -78,10 +78,9 @@
       <div class="hero-container">
         <div class="hero-badge-wrapper">
           <div class="badge-pill">
-            <span class="pill-sparkle">🛡️</span>
-            <span class="pill-text">Standalone Windows Desktop App</span>
+            <span class="pill-text">Native Windows Desktop App</span>
             <span class="pill-divider">•</span>
-            <span class="pill-tech">100% Offline & Private</span>
+            <span class="pill-tech">100% Air-Gapped & Offline</span>
           </div>
         </div>
 
@@ -97,46 +96,45 @@
         </p>
 
         <div class="hero-cta-group">
-          <button class="btn btn-primary btn-large trigger-vip-modal" id="cta-pricing-hero">
+          <button class="btn btn-primary btn-large trigger-license-modal trigger-vip-modal" id="cta-pricing-hero">
             <span>Get Lifetime License ($79)</span>
             <span class="arrow-icon">→</span>
           </button>
 
           <a href="#quickstart" class="btn btn-glass btn-large" id="cta-trial-hero">
-            <span>📥 Download Free Trial</span>
+            <span>Download Free Trial</span>
           </a>
 
           <a href="#interactive-lab" class="btn btn-secondary" id="cta-lab-hero">
-            <span class="play-icon">⚡</span>
-            <span>Test Interactive Lab</span>
+            <span>Test In-Browser Demo</span>
           </a>
         </div>
 
-        <!-- Metric highlights bar -->
+        <!-- Metric Highlights Bar -->
         <div class="stats-ribbon">
           <div class="stat-card">
-            <div class="stat-val font-gradient-cyan">$79 One-Time</div>
-            <div class="stat-label">Permanent Lifetime License</div>
-            <div class="stat-sub">Save $1,000+ vs. iCloud/Google</div>
+            <div class="stat-val">$79 One-Time</div>
+            <div class="stat-label">Permanent License</div>
+            <div class="stat-sub">Save $1,000+ vs. cloud subscriptions</div>
           </div>
           <div class="stat-card">
-            <div class="stat-val font-gradient-rose">In-Place Scan</div>
+            <div class="stat-val">In-Place Scan</div>
             <div class="stat-label">Direct External Drive Read</div>
             <div class="stat-sub">Zero duplicate files copied</div>
           </div>
           <div class="stat-card">
-            <div class="stat-val font-gradient-cyan">100% Offline</div>
+            <div class="stat-val">100% Offline</div>
             <div class="stat-label">Air-Gapped Privacy</div>
             <div class="stat-sub">Zero cloud uploads or telemetry</div>
           </div>
           <div class="stat-card">
-            <div class="stat-val font-gradient-violet">Sub-50ms Search</div>
-            <div class="stat-label">Instant Metadata & Face Query</div>
-            <div class="stat-sub">Handles 100,000+ photo libraries</div>
+            <div class="stat-val">Sub-50ms Search</div>
+            <div class="stat-label">Instant Metadata Query</div>
+            <div class="stat-sub">Handles 100,000+ photo collections</div>
           </div>
         </div>
 
-        <!-- Hero Showcase Frame -->
+        <!-- Hero Desktop Window Preview Frame -->
         <div class="hero-preview-wrapper">
           <div class="window-frame">
             <div class="window-titlebar">
@@ -146,45 +144,23 @@
                 <span class="control-dot dot-maximize"></span>
               </div>
               <div class="window-title">
-                <span class="window-title-icon">🌌</span>
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path d="M4 4h3l2-2h6l2 2h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm8 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
+                </svg>
                 Media Chronicle — Windows x64 Native Desktop Edition
               </div>
               <div class="window-status">
-                <span class="badge-status online"><span class="pulse"></span> 100% Offline • In-Place Scanner Active</span>
+                <span class="badge-status online"><span class="pulse"></span> 100% Offline • Read-Only Drive Mount</span>
               </div>
             </div>
 
             <div class="window-viewport">
-              <img src="assets/images/hero_showcase.jpg" alt="Media Chronicle desktop app preview displaying intelligent photo gallery, face detection bounding boxes, 2D vector embeddings scatter plot, and neural retraining terminal" class="window-image" id="hero-img">
+              <img src="assets/images/hero_showcase.jpg" alt="Media Chronicle desktop app preview displaying photo gallery, metadata search, and private offline albums" class="window-image" id="hero-img">
+            </div>
 
-              <!-- Floating Hotspots Linking into Interactive Lab -->
-              <div class="hotspot hotspot-scan" data-tooltip="Click to Test: Direct In-Place External Drive Scanner" style="top: 15%; left: 8%;">
-                <div class="hotspot-pulse"></div>
-                <div class="hotspot-content">
-                  <span class="hotspot-tag cyan">⚡ In-Place Scanner</span>
-                </div>
-              </div>
-
-              <div class="hotspot hotspot-yolo" data-tooltip="Click to Test: On-Device YOLO Face Bounding Boxes & Multi-Age Progression" style="top: 28%; left: 24%;">
-                <div class="hotspot-pulse"></div>
-                <div class="hotspot-content">
-                  <span class="hotspot-tag cyan">Ben Carter (0.94)</span>
-                </div>
-              </div>
-
-              <div class="hotspot hotspot-map" data-tooltip="Click to Test: Interactive 2D Vector Embeddings Cluster Map" style="top: 24%; right: 18%;">
-                <div class="hotspot-pulse pulse-violet"></div>
-                <div class="hotspot-content">
-                  <span class="hotspot-tag violet">2D Embeddings Space</span>
-                </div>
-              </div>
-
-              <div class="hotspot hotspot-sgd" data-tooltip="Click to Test: Pure Dart SGD Neural Classifier Retraining Terminal" style="bottom: 18%; right: 22%;">
-                <div class="hotspot-pulse pulse-rose"></div>
-                <div class="hotspot-content">
-                  <span class="hotspot-tag rose">SGD Loss Terminal</span>
-                </div>
-              </div>
+            <div class="window-caption">
+              <span>Native Windows Desktop Experience: Fast thumbnail streaming directly from connected external storage.</span>
+              <strong>Zero Cloud Sync Required</strong>
             </div>
           </div>
         </div>
@@ -209,7 +185,7 @@
             <div class="step-num-pill">1</div>
             <h3 class="step-title">Plug in Any External Drive</h3>
             <p class="step-desc">
-              Connect external USB hard drives, high-speed SSDs, SD cards, or network NAS folders. Media Chronicle reads files directly <strong>in-place</strong> without copying or moving your original photo files.
+              Connect external USB hard drives, high-speed SSDs, SD cards, or local NAS folders. Media Chronicle reads files directly <strong>in-place</strong> without copying or moving your original photo files.
             </p>
             <div class="step-mini-tags">
               <span class="tech-tag">NTFS / exFAT / FAT32</span>
@@ -221,23 +197,23 @@
           <!-- Step 2 -->
           <div class="bento-step-card">
             <div class="step-num-pill">2</div>
-            <h3 class="step-title">Instant Biometric & Date Indexing</h3>
+            <h3 class="step-title">Instant Metadata & Family Indexing</h3>
             <p class="step-desc">
-              Our native engine indexes EXIF capture dates, camera hardware, and GPS metadata at lightning speed. Real-time on-device YOLO models group recurring family members into albums automatically.
+              Our native engine indexes EXIF capture dates, camera hardware, and GPS metadata at lightning speed. On-device facial clustering automatically groups recurring family members into albums offline.
             </p>
             <div class="step-mini-tags">
               <span class="tech-tag">Sub-50ms Search</span>
-              <span class="tech-tag">Local YOLO Clustering</span>
-              <span class="tech-tag">Masonry Streaming</span>
+              <span class="tech-tag">On-Device Grouping</span>
+              <span class="tech-tag">Fast Thumbnail Cache</span>
             </div>
           </div>
 
           <!-- Step 3 -->
           <div class="bento-step-card">
             <div class="step-num-pill">3</div>
-            <h3 class="step-title">Permanent Data Sovereignty</h3>
+            <h3 class="step-title">Permanent Ownership & Export</h3>
             <p class="step-desc">
-              You own your library completely. No proprietary databases locking you in. Export your entire media registry, EXIF tags, and face coordinates to universal JSON and CSV formats with a single click.
+              You own your library completely. No proprietary lock-in. Export your entire catalog, EXIF tags, and album categories to universal JSON and CSV formats with a single click at any time.
             </p>
             <div class="step-mini-tags">
               <span class="tech-tag">1-Click JSON/CSV Export</span>
@@ -253,10 +229,10 @@
     <section class="section calculator-section" id="calculator">
       <div class="section-container">
         <div class="section-header text-center">
-          <span class="section-tag">Real Financial Freedom</span>
-          <h2 class="section-title">Calculate Your Lifetime Savings</h2>
+          <span class="section-tag">Transparent Pricing</span>
+          <h2 class="section-title">One-Time Ownership vs. Cloud Subscriptions</h2>
           <p class="section-subtitle">
-            See how much you save by replacing compounding Google Photos or Apple iCloud subscription fees with Media Chronicle’s one-time $79 lifetime license.
+            See how much you save by replacing compounding Google Photos or Apple iCloud monthly subscription fees with Media Chronicle’s one-time $79 lifetime license.
           </p>
         </div>
 
@@ -324,96 +300,90 @@
 
         <div class="breakeven-banner">
           <div class="breakeven-text">
-            <strong>💡 Fast Break-Even:</strong> Media Chronicle pays for itself in just <strong id="calc-breakeven">8 Months</strong>. After that, your photo indexer is 100% free forever.
+            <strong>Fast Break-Even:</strong> Media Chronicle pays for itself in just <strong id="calc-breakeven">8 Months</strong>. After that, your photo indexer is 100% free forever.
           </div>
-          <button class="btn btn-primary trigger-vip-modal" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">
+          <button class="btn btn-primary trigger-license-modal trigger-vip-modal" style="padding: 0.5rem 1.2rem; font-size: 0.9rem;">
             Claim $79 Lifetime License
           </button>
         </div>
       </div>
     </section>
 
-    <!-- 8-Week MVP Scope & Credibility Section -->
-    <section class="section mvp-section" id="mvp-scope">
+    <!-- Core Desktop Capabilities Section -->
+    <section class="section mvp-section" id="core-features">
       <div class="section-container">
         <div class="section-header text-center">
-          <span class="section-tag">Focused Engineering Delivery</span>
-          <h2 class="section-title">8-Week MVP Scope & Credibility</h2>
+          <span class="section-tag">Core Architecture</span>
+          <h2 class="section-title">Built for Speed & Total Privacy</h2>
           <p class="section-subtitle">
-            Our focused engineering timeline delivers a standalone Windows executable with in-place drive scanning (no file copying), fast preview streaming, metadata search, local face detection/grouping, and JSON/CSV export. Multimodal vector search, Ollama VLM integration, and narrative timelines are deferred to v2.
+            Media Chronicle is engineered specifically for large photo collections stored on external drives. Every core feature runs locally on your PC with zero cloud dependency.
           </p>
         </div>
 
         <div class="mvp-scope-grid">
-          <!-- MVP Pillar 1 -->
+          <!-- Pillar 1 -->
           <div class="mvp-card glass-card">
             <div class="mvp-card-header">
-              <span class="mvp-icon">🖥️</span>
-              <span class="mvp-badge">v1 Core</span>
+              <span class="mvp-badge">Offline App</span>
             </div>
             <h3 class="mvp-title">Standalone Windows Executable</h3>
             <p class="mvp-desc">
-              Packaged as a lightweight, single-click Windows <code>.exe</code>. Runs out of the box with zero complex Python environments, Docker containers, or command-line dependencies for end users.
+              Packaged as a lightweight, single-click Windows application. Runs out of the box with zero Python environments, Docker containers, or command-line dependencies.
             </p>
           </div>
 
-          <!-- MVP Pillar 2 -->
+          <!-- Pillar 2 -->
           <div class="mvp-card glass-card">
             <div class="mvp-card-header">
-              <span class="mvp-icon">💾</span>
-              <span class="mvp-badge">v1 Core</span>
+              <span class="mvp-badge">In-Place</span>
             </div>
-            <h3 class="mvp-title">In-Place External Drive Scanning</h3>
+            <h3 class="mvp-title">Direct External Drive Scanning</h3>
             <p class="mvp-desc">
-              Scans family photo libraries directly on external USB hard drives, SSDs, and SD cards. Zero duplicate file copying, protecting your PC's internal drive from storage exhaustion.
+              Scans family photo libraries directly on external USB hard drives, SSDs, and SD cards. Zero duplicate file copying, protecting your PC's internal storage.
             </p>
           </div>
 
-          <!-- MVP Pillar 3 -->
+          <!-- Pillar 3 -->
           <div class="mvp-card glass-card">
             <div class="mvp-card-header">
-              <span class="mvp-icon">⚡</span>
-              <span class="mvp-badge">v1 Core</span>
+              <span class="mvp-badge">Fast Engine</span>
             </div>
-            <h3 class="mvp-title">Fast Preview Streaming</h3>
+            <h3 class="mvp-title">Sub-Millisecond Preview Streaming</h3>
             <p class="mvp-desc">
-              Smooth, stutter-free masonry thumbnail pipeline and instant lightbox viewing. High-performance caching handles massive collections of 100,000+ photos without memory leaks.
+              Smooth, stutter-free thumbnail pipeline and instant preview viewing. High-performance LRU caching handles collections of 100,000+ photos effortlessly.
             </p>
           </div>
 
-          <!-- MVP Pillar 4 -->
+          <!-- Pillar 4 -->
           <div class="mvp-card glass-card">
             <div class="mvp-card-header">
-              <span class="mvp-icon">🔍</span>
-              <span class="mvp-badge">v1 Core</span>
+              <span class="mvp-badge">Instant Query</span>
             </div>
-            <h3 class="mvp-title">Instant Metadata Search</h3>
+            <h3 class="mvp-title">Instant Metadata & Date Search</h3>
             <p class="mvp-desc">
-              Search effortlessly across EXIF capture timestamps, date ranges, camera hardware, image resolutions, location tags, and preexisting folder hierarchies in real time.
+              Search effortlessly across EXIF capture timestamps, date ranges, camera hardware, image resolutions, location tags, and preexisting folder structures in real time.
             </p>
           </div>
 
-          <!-- MVP Pillar 5 -->
+          <!-- Pillar 5 -->
           <div class="mvp-card glass-card">
             <div class="mvp-card-header">
-              <span class="mvp-icon">👥</span>
-              <span class="mvp-badge">v1 Core</span>
+              <span class="mvp-badge">On-Device</span>
             </div>
-            <h3 class="mvp-title">Local Face Detection & Grouping</h3>
+            <h3 class="mvp-title">Local Family Member Grouping</h3>
             <p class="mvp-desc">
-              On-device biometric face detection bounding boxes cluster recurring faces into organized family albums without sending a single pixel over the network.
+              On-device facial recognition clusters recurring family members into organized albums without sending a single photo or byte over the network.
             </p>
           </div>
 
-          <!-- MVP Pillar 6 -->
+          <!-- Pillar 6 -->
           <div class="mvp-card glass-card">
             <div class="mvp-card-header">
-              <span class="mvp-icon">📊</span>
-              <span class="mvp-badge">v1 Core</span>
+              <span class="mvp-badge">Open Data</span>
             </div>
             <h3 class="mvp-title">Portable JSON & CSV Export</h3>
             <p class="mvp-desc">
-              Unrestricted data sovereignty. Export your indexed catalog, EXIF metadata, face clusters, and media path registries into portable JSON or CSV formats with a single click.
+              Zero vendor lock-in. Export your indexed catalog, EXIF metadata, album tags, and media file path registries into open JSON or CSV formats with a single click.
             </p>
           </div>
         </div>
@@ -424,141 +394,131 @@
     <section class="section roadmap-section" id="roadmap">
       <div class="section-container">
         <div class="section-header text-center">
-          <span class="section-tag">Engineering Trajectory</span>
-          <h2 class="section-title">Product Roadmap: v1 MVP & v2 Vision</h2>
+          <span class="section-tag">Product Roadmap</span>
+          <h2 class="section-title">What's Available Now & Planned Ahead</h2>
           <p class="section-subtitle">
-            Multimodal vector search, Ollama VLM integration, and narrative timelines are deferred to v2 to guarantee an on-time, rock-solid 8-week MVP delivery.
+            A transparent view of current core capabilities and upcoming features planned for future releases.
           </p>
         </div>
 
         <div class="roadmap-container">
-          <!-- Col 1: v1 MVP -->
+          <!-- Col 1: Available in v1 -->
           <div class="roadmap-col">
             <div class="roadmap-col-header">
-              <h3 class="roadmap-col-title">v1: 8-Week MVP Scope</h3>
-              <span class="phase-pill active">Active Engineering</span>
+              <h3 class="roadmap-col-title">Available in v1 (Current Release)</h3>
+              <span class="phase-pill active">Available Now</span>
             </div>
 
             <div class="roadmap-card">
               <div class="roadmap-card-top">
                 <span class="roadmap-card-title">In-Place External Drive Scanning</span>
-                <span class="status-tag mvp">MVP Core</span>
+                <span class="status-tag mvp">Included</span>
               </div>
-              <p>Direct recursive scanning of NTFS/exFAT drives without file copying or disk duplication.</p>
+              <p>Direct recursive scanning of NTFS, exFAT, and FAT32 drives without file copying or disk duplication.</p>
             </div>
 
             <div class="roadmap-card">
               <div class="roadmap-card-top">
                 <span class="roadmap-card-title">Fast Preview Streaming Pipeline</span>
-                <span class="status-tag mvp">MVP Core</span>
+                <span class="status-tag mvp">Included</span>
               </div>
-              <p>Instant masonry grid rendering and high-res lightbox caching for 100,000+ photo archives.</p>
+              <p>Instant masonry grid rendering and preview caching for 100,000+ photo collections.</p>
             </div>
 
             <div class="roadmap-card">
               <div class="roadmap-card-top">
                 <span class="roadmap-card-title">EXIF Metadata & Date Search</span>
-                <span class="status-tag mvp">MVP Core</span>
+                <span class="status-tag mvp">Included</span>
               </div>
-              <p>Real-time filtering by capture timestamp, year/month, camera model, and folder structure.</p>
+              <p>Sub-50ms filtering by capture timestamp, year/month, camera model, and folder structure.</p>
             </div>
 
             <div class="roadmap-card">
               <div class="roadmap-card-top">
-                <span class="roadmap-card-title">Local Face Detection & Grouping</span>
-                <span class="status-tag mvp">MVP Core</span>
+                <span class="roadmap-card-title">Local Family Member Grouping</span>
+                <span class="status-tag mvp">Included</span>
               </div>
-              <p>On-device YOLO bounding boxes clustering matching faces into private family albums.</p>
+              <p>On-device facial clustering grouping matching family members into private local albums.</p>
             </div>
 
             <div class="roadmap-card">
               <div class="roadmap-card-top">
                 <span class="roadmap-card-title">JSON / CSV Data Export</span>
-                <span class="status-tag mvp">MVP Core</span>
+                <span class="status-tag mvp">Included</span>
               </div>
-              <p>Complete data export of catalog entries, timestamps, and face coordinates with zero lock-in.</p>
+              <p>Complete data export of catalog entries, timestamps, and album tags with zero proprietary lock-in.</p>
             </div>
           </div>
 
-          <!-- Col 2: v2 Roadmap -->
+          <!-- Col 2: Planned for v2 -->
           <div class="roadmap-col">
             <div class="roadmap-col-header">
-              <h3 class="roadmap-col-title">v2: Future Intelligence Roadmap</h3>
-              <span class="phase-pill v2">Deferred to v2</span>
+              <h3 class="roadmap-col-title">Planned for v2 (Future Updates)</h3>
+              <span class="phase-pill v2">In Development</span>
             </div>
 
             <div class="roadmap-card">
               <div class="roadmap-card-top">
-                <span class="roadmap-card-title">Multimodal Vector Search</span>
-                <span class="status-tag deferred">Deferred to v2</span>
+                <span class="roadmap-card-title">Natural Language Photo Search</span>
+                <span class="status-tag deferred">Planned for v2</span>
               </div>
-              <p>Natural language search queries powered by on-device CLIP embeddings (e.g. "kids opening gifts on Christmas").</p>
+              <p>Search your collection with everyday natural phrases like <em>"kids opening presents on Christmas"</em> or <em>"sunset at the beach"</em>.</p>
             </div>
 
             <div class="roadmap-card">
               <div class="roadmap-card-top">
-                <span class="roadmap-card-title">Local Ollama VLM Integration</span>
-                <span class="status-tag deferred">Deferred to v2</span>
+                <span class="roadmap-card-title">Automatic Scene & Context Tagging</span>
+                <span class="status-tag deferred">Planned for v2</span>
               </div>
-              <p>Automated multimodal scene captions, contextual tags, and automated narrative generation via Ollama.</p>
+              <p>Generate smart scene descriptions, object tags, and context summaries completely offline on your own machine.</p>
             </div>
 
             <div class="roadmap-card">
               <div class="roadmap-card-top">
-                <span class="roadmap-card-title">Narrative Timelines & Story Compiler</span>
-                <span class="status-tag deferred">Deferred to v2</span>
+                <span class="roadmap-card-title">Smart Photo Books & Life Chapters</span>
+                <span class="status-tag deferred">Planned for v2</span>
               </div>
-              <p>Chronological memory albums with ambient cover cards, narrative journals, and milestone books.</p>
+              <p>Automatically group milestone family chapters and vacation journeys into organized chronological story albums.</p>
             </div>
 
             <div class="roadmap-card">
               <div class="roadmap-card-top">
-                <span class="roadmap-card-title">Pure Dart SGD Retraining Terminal</span>
-                <span class="status-tag deferred">Deferred to v2</span>
+                <span class="roadmap-card-title">Adaptive Recognition Refinement</span>
+                <span class="status-tag deferred">Planned for v2</span>
               </div>
-              <p>On-device active learning Softmax perceptron to fine-tune unique family face decision boundaries.</p>
+              <p>Easily confirm and link family member identities as children grow into adulthood across decades of family archives.</p>
             </div>
 
             <div class="roadmap-card">
               <div class="roadmap-card-top">
-                <span class="roadmap-card-title">Cloudless P2P Local Network Sync</span>
-                <span class="status-tag deferred">Deferred to v2</span>
+                <span class="roadmap-card-title">Local Network Wi-Fi Sync</span>
+                <span class="status-tag deferred">Planned for v2</span>
               </div>
-              <p>Air-gapped peer-to-peer sync between Windows PCs and laptops across local home Wi-Fi.</p>
+              <p>Air-gapped sync between desktop PCs and home laptops over your local home Wi-Fi with no cloud servers involved.</p>
             </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Interactive Laboratory Section -->
+    <!-- Interactive Demo Section (Streamlined 2-Tab Practical Showcase) -->
     <section class="section lab-section" id="interactive-lab">
       <div class="section-container">
         <div class="section-header text-center">
-          <span class="section-tag">Interactive Feature Laboratory</span>
-          <h2 class="section-title">Test the MVP Engine & v2 Research Labs</h2>
+          <span class="section-tag">Interactive Feature Showcase</span>
+          <h2 class="section-title">Test the In-Place Engine & Instant Search</h2>
           <p class="section-subtitle">
-            Experience our in-place drive scanner and biometric face grouping (v1 MVP) alongside interactive previews of our v2 machine learning research pipeline (2D latent vector map and SGD neural retrainer).
+            Experience how our in-place drive scanning engine indexes massive storage volumes with zero duplicate disk usage, and test our instant offline metadata search filter.
           </p>
         </div>
 
-        <!-- Interactive Lab Tabs -->
+        <!-- Interactive Tabs -->
         <div class="lab-tabs" role="tablist">
           <button class="lab-tab-btn active" data-tab="tab-scanner" role="tab" id="tab-btn-scanner">
-            <span class="tab-emoji">⚡</span>
-            <span class="tab-text">In-Place Drive Scanner (v1 MVP)</span>
+            <span class="tab-text">In-Place Drive Scanner</span>
           </button>
-          <button class="lab-tab-btn" data-tab="tab-faces" role="tab" id="tab-btn-faces">
-            <span class="tab-emoji">🎯</span>
-            <span class="tab-text">Biometric Face Grouping (v1 MVP)</span>
-          </button>
-          <button class="lab-tab-btn" data-tab="tab-embeddings" role="tab" id="tab-btn-embeddings">
-            <span class="tab-emoji">🌐</span>
-            <span class="tab-text">2D Latent Vector Space (v2 Preview)</span>
-          </button>
-          <button class="lab-tab-btn" data-tab="tab-neural" role="tab" id="tab-btn-neural">
-            <span class="tab-emoji">🧠</span>
-            <span class="tab-text">Pure Dart SGD Retrainer (v2 Preview)</span>
+          <button class="lab-tab-btn" data-tab="tab-gallery" role="tab" id="tab-btn-gallery">
+            <span class="tab-text">Instant Search & Offline Filter</span>
           </button>
         </div>
 
@@ -568,10 +528,10 @@
             <div class="interactive-control-panel glass-card">
               <div class="panel-header">
                 <h3>Direct Drive Ingestion Simulator</h3>
-                <span class="engine-badge">lib/features/scanner/drive_traversal_engine.dart</span>
+                <span class="engine-badge">Safe Read-Only Mount</span>
               </div>
               <p class="panel-desc">
-                Media Chronicle never copies photos to your primary drive. It creates a lightweight index directly from external storage media using sub-millisecond thumbnail caching and strict SHA-256 deduplication.
+                Media Chronicle never copies photos to your internal C:\ drive. It creates a lightweight catalog directly from connected external storage with fast thumbnail caching and strict deduplication.
               </p>
 
               <div class="drive-selector-block">
@@ -626,7 +586,7 @@
                   <span class="control-dot dot-minimize"></span>
                   <span class="control-dot dot-maximize"></span>
                 </div>
-                <div class="terminal-title">drive_scanner_stdout.dart — Ingestion Stream</div>
+                <div class="terminal-title">drive_scanner.log — Ingestion Stream</div>
                 <div class="terminal-status" id="scan-terminal-badge">IDLE</div>
               </div>
               <div class="terminal-body" id="offline-terminal-output" tabindex="0">
@@ -638,211 +598,62 @@
           </div>
         </div>
 
-        <!-- Tab 2: YOLO Face Recognition & Age Variant Engine -->
-        <div class="lab-panel" id="tab-faces" role="tabpanel">
+        <!-- Tab 2: Instant Search & Offline Filter -->
+        <div class="lab-panel" id="tab-gallery" role="tabpanel">
           <div class="interactive-grid">
             <div class="interactive-control-panel glass-card">
               <div class="panel-header">
-                <h3>Chronological Age Timeline & Variants</h3>
-                <span class="engine-badge">lib/features/gallery/models/detected_face.dart</span>
+                <h3>Instant Search & Filter Demo</h3>
+                <span class="engine-badge">Sub-10ms Local Index</span>
               </div>
               <p class="panel-desc">
-                Faces change significantly across human life stages. When an embedding distance exceeds the cosine threshold (>25.0 distance), Media Chronicle's conflict resolver intelligently links childhood and adulthood variants under one enrolled identity.
+                Test how fast Media Chronicle searches your catalog offline. Filter in real-time by capture year, camera model, or album category with instant response.
               </p>
 
-              <div class="age-selector">
-                <span class="selector-title">Select Timeline Stage (Maya S.):</span>
-                <div class="age-pills">
-                  <button class="age-pill active" data-age="7" data-conf="96.2%" data-dist="0.0 (Anchor)" data-variant="Childhood Base">Age 7</button>
-                  <button class="age-pill" data-age="16" data-conf="91.8%" data-dist="14.2 (Match)" data-variant="Adolescence">Age 16</button>
-                  <button class="age-pill" data-age="24" data-conf="94.7%" data-dist="22.8 (Match)" data-variant="Young Adult">Age 24</button>
-                  <button class="age-pill" data-age="35" data-conf="89.4%" data-dist="27.4 (Age Variant)" data-variant="Mature Adult">Age 35</button>
+              <div class="gallery-search-box">
+                <input type="text" id="gallery-search-input" class="gallery-search-input" placeholder="Search by title, location, camera, or file extension...">
+              </div>
+
+              <div class="gallery-filter-group">
+                <span class="gallery-filter-label">Filter by Year:</span>
+                <div class="gallery-filter-pills">
+                  <button class="gallery-filter-pill active" data-filter-group="year" data-value="all">All Years</button>
+                  <button class="gallery-filter-pill" data-filter-group="year" data-value="2024">2024</button>
+                  <button class="gallery-filter-pill" data-filter-group="year" data-value="2023">2023</button>
+                  <button class="gallery-filter-pill" data-filter-group="year" data-value="2022">2022</button>
+                  <button class="gallery-filter-pill" data-filter-group="year" data-value="2021">2021</button>
                 </div>
               </div>
 
-              <div class="face-details-card glass-card-nested">
-                <div class="detail-row">
-                  <span class="detail-label">Identity Classification:</span>
-                  <span class="detail-value highlight-cyan" id="face-id-val">Maya Sharma</span>
-                </div>
-                <div class="detail-row">
-                  <span class="detail-label">YOLO Confidence:</span>
-                  <span class="detail-value" id="face-conf-val">96.2%</span>
-                </div>
-                <div class="detail-row">
-                  <span class="detail-label">Embedding Distance:</span>
-                  <span class="detail-value" id="face-dist-val">0.0 (Anchor)</span>
-                </div>
-                <div class="detail-row">
-                  <span class="detail-label">Chronology Stage:</span>
-                  <span class="detail-value highlight-rose" id="face-variant-val">Childhood Base</span>
-                </div>
-                <div class="detail-row">
-                  <span class="detail-label">Conflict Status:</span>
-                  <span class="badge-resolved" id="face-conflict-val">✓ Verified Match</span>
+              <div class="gallery-filter-group">
+                <span class="gallery-filter-label">Filter by Album / Tag:</span>
+                <div class="gallery-filter-pills">
+                  <button class="gallery-filter-pill active" data-filter-group="cat" data-value="all">All Albums</button>
+                  <button class="gallery-filter-pill" data-filter-group="cat" data-value="Vacations">Vacations</button>
+                  <button class="gallery-filter-pill" data-filter-group="cat" data-value="Family">Family</button>
+                  <button class="gallery-filter-pill" data-filter-group="cat" data-value="Birthdays">Birthdays</button>
+                  <button class="gallery-filter-pill" data-filter-group="cat" data-value="Pets">Pets</button>
                 </div>
               </div>
 
-              <div class="alert-box-info">
-                <strong>💡 Architectural Feature:</strong>
-                If distance > 25.0, Media Chronicle prompts: <em>"Confirm Same Person (Age Variant) or Different Person"</em> to preserve timeline accuracy across decades!
+              <div class="gallery-filter-group">
+                <span class="gallery-filter-label">Filter by Camera Hardware:</span>
+                <div class="gallery-filter-pills">
+                  <button class="gallery-filter-pill active" data-filter-group="camera" data-value="all">All Cameras</button>
+                  <button class="gallery-filter-pill" data-filter-group="camera" data-value="Sony A7IV">Sony A7IV</button>
+                  <button class="gallery-filter-pill" data-filter-group="camera" data-value="iPhone 15 Pro">iPhone 15 Pro</button>
+                  <button class="gallery-filter-pill" data-filter-group="camera" data-value="Canon EOS R6">Canon EOS R6</button>
+                </div>
               </div>
             </div>
 
             <div class="interactive-preview-panel glass-card">
-              <div class="image-interactive-wrapper" id="age-image-container">
-                <img src="assets/images/face_age_progression.jpg" alt="Timeline of same person across ages 7, 16, 24, and 35 with biometric overlays" class="timeline-image" id="timeline-img">
-
-                <!-- Interactive Bounding Box Overlays -->
-                <div class="face-bbox bbox-7 active" data-stage="7">
-                  <div class="bbox-label cyan">Maya (Age 7) • 96%</div>
-                </div>
-                <div class="face-bbox bbox-16" data-stage="16">
-                  <div class="bbox-label cyan">Maya (Age 16) • 92%</div>
-                </div>
-                <div class="face-bbox bbox-24" data-stage="24">
-                  <div class="bbox-label cyan">Maya (Age 24) • 95%</div>
-                </div>
-                <div class="face-bbox bbox-35" data-stage="35">
-                  <div class="bbox-label rose">Age Variant • 89%</div>
-                </div>
+              <div class="gallery-status-bar">
+                <span class="gallery-result-count" id="gallery-result-count">Showing 6 of 6 items</span>
+                <span class="gallery-filter-speed" id="gallery-filter-speed">⚡ Sub-10ms Local Index • 0 bytes uploaded</span>
               </div>
-              <div class="caption-bar">
-                <span>Click any stage button or hover bounding boxes to inspect biometric distance vectors.</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tab 3: 2D Vector Embeddings Cluster Map -->
-        <div class="lab-panel" id="tab-embeddings" role="tabpanel">
-          <div class="interactive-grid">
-            <div class="interactive-control-panel glass-card">
-              <div class="panel-header">
-                <h3>2D Embeddings Scatter Plot</h3>
-                <span class="engine-badge">yolo_embeddings_map.dart (CustomPainter)</span>
-              </div>
-              <p class="panel-desc">
-                Media Chronicle projects 128-dimensional face embedding vectors down to interactive 2D coordinates. Clustered hulls represent enrolled individuals, while dashed lines trace chronological age progression through latent space.
-              </p>
-
-              <div class="cluster-legend">
-                <div class="legend-item" data-cluster="maya">
-                  <span class="color-dot cyan"></span>
-                  <span class="legend-name">Maya Sharma (Age 7 &rarr; 35 Arc)</span>
-                </div>
-                <div class="legend-item" data-cluster="ben">
-                  <span class="color-dot rose"></span>
-                  <span class="legend-name">Ben Carter (Family Cluster)</span>
-                </div>
-                <div class="legend-item" data-cluster="david">
-                  <span class="color-dot violet"></span>
-                  <span class="legend-name">David Lee (Co-worker Cluster)</span>
-                </div>
-                <div class="legend-item" data-cluster="unidentified">
-                  <span class="color-dot gray"></span>
-                  <span class="legend-name">Unidentified Candidates</span>
-                </div>
-              </div>
-
-              <div class="interactive-tooltip-card glass-card-nested" id="embedding-info-card">
-                <div class="tooltip-title" id="emb-title">Hover over any node in the vector space</div>
-                <div class="tooltip-coords" id="emb-coords">Coordinates: (X: --, Y: --)</div>
-                <div class="tooltip-notes" id="emb-notes">Vectors with &lt;0.22 cosine distance cluster tightly together.</div>
-              </div>
-
-              <button class="btn btn-secondary w-full" id="btn-recompute-tsne">
-                <span>Re-project Vectors (t-SNE/PCA)</span>
-              </button>
-            </div>
-
-            <div class="interactive-preview-panel glass-card canvas-container">
-              <div class="canvas-header-bar">
-                <span class="canvas-title">Latent Vector Projections (D1 vs D2)</span>
-                <span class="canvas-hint">Interactive: Hover nodes to compute cosine distance</span>
-              </div>
-              <canvas id="embeddingsMapCanvas" width="600" height="420"></canvas>
-            </div>
-          </div>
-        </div>
-
-        <!-- Tab 4: Pure Dart Neural SGD Retrainer -->
-        <div class="lab-panel" id="tab-neural" role="tabpanel">
-          <div class="interactive-grid">
-            <div class="interactive-control-panel glass-card">
-              <div class="panel-header">
-                <h3>SingleLayerPerceptron (SGD) Simulator</h3>
-                <span class="engine-badge">lib/features/gallery/providers/yolo_face_provider.dart</span>
-              </div>
-              <p class="panel-desc">
-                Media Chronicle does not rely on cloud APIs to learn new faces. It runs a mathematically sound Multi-Class Softmax Perceptron in pure Dart with real cross-entropy loss reduction and stochastic gradient descent backpropagation.
-              </p>
-
-              <div class="param-row">
-                <label for="sgd-lr">Learning Rate (&eta;):</label>
-                <div class="range-container">
-                  <input type="range" id="sgd-lr" min="0.001" max="0.05" step="0.001" value="0.01">
-                  <span id="sgd-lr-val" class="param-display">0.010</span>
-                </div>
-              </div>
-
-              <div class="param-row">
-                <label for="sgd-epochs">Retraining Epochs:</label>
-                <div class="range-container">
-                  <input type="range" id="sgd-epochs" min="10" max="60" step="5" value="30">
-                  <span id="sgd-epochs-val" class="param-display">30 epochs</span>
-                </div>
-              </div>
-
-              <div class="param-row">
-                <label for="sgd-classes">Enrolled Face Identities:</label>
-                <div class="param-display">4 People (Maya, Ben, Anya, David)</div>
-              </div>
-
-              <div class="btn-group-lab">
-                <button class="btn btn-primary" id="btn-start-training">
-                  <span class="pulse-symbol">▶</span> Run SGD Retraining
-                </button>
-                <button class="btn btn-ghost" id="btn-reset-training">
-                  <span>Reset Model</span>
-                </button>
-              </div>
-
-              <div class="training-metrics-row">
-                <div class="metric-pill">
-                  <span class="metric-key">Cross-Entropy Loss</span>
-                  <span class="metric-val" id="metric-loss">1.4820</span>
-                </div>
-                <div class="metric-pill">
-                  <span class="metric-key">Top-1 Accuracy</span>
-                  <span class="metric-val" id="metric-acc">34.2%</span>
-                </div>
-                <div class="metric-pill">
-                  <span class="metric-key">Gradient Norm</span>
-                  <span class="metric-val" id="metric-grad">1.180</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="interactive-terminal-panel glass-card">
-              <div class="terminal-bar">
-                <div class="window-controls">
-                  <span class="control-dot dot-close"></span>
-                  <span class="control-dot dot-minimize"></span>
-                  <span class="control-dot dot-maximize"></span>
-                </div>
-                <div class="terminal-title">yolo_retraining_terminal.dart — STDOUT Stream</div>
-                <div class="terminal-status" id="terminal-badge">IDLE</div>
-              </div>
-              <div class="terminal-body" id="sgd-terminal-output" tabindex="0">
-                <div class="term-line info">[SYSTEM] Pure Dart SingleLayerPerceptron initialized. Weights ~ N(0, 0.01).</div>
-                <div class="term-line info">[SYSTEM] Vector dimensionality: 128-D L2 normalized face embeddings.</div>
-                <div class="term-line dim">> Click "Run SGD Retraining" to trigger on-device backpropagation...</div>
-              </div>
-              <!-- Live Loss Chart Canvas -->
-              <div class="canvas-mini-chart-wrapper">
-                <div class="chart-label">Live Loss Convergence Curve:</div>
-                <canvas id="lossChartCanvas" width="400" height="90"></canvas>
+              <div class="gallery-results-grid" id="gallery-results-grid">
+                <!-- Dynamically populated by gallery-demo.js -->
               </div>
             </div>
           </div>
@@ -850,8 +661,6 @@
 
       </div>
     </section>
-
-
 
     <!-- Download & Easy Installation Section -->
     <section class="section quickstart-section" id="quickstart">
@@ -866,15 +675,14 @@
 
         <div class="quickstart-box glass-card">
           <div class="quickstart-tabs">
-            <button class="qs-tab active" data-qs="qs-download">📥 Windows Installer (.exe)</button>
-            <button class="qs-tab" data-qs="qs-trial">⚡ Free Trial vs. License</button>
-            <button class="qs-tab" data-qs="qs-drive">💾 Drive Plug-in Guide</button>
+            <button class="qs-tab active" data-qs="qs-download">Windows Installer (.exe)</button>
+            <button class="qs-tab" data-qs="qs-trial">Free Trial vs. License</button>
+            <button class="qs-tab" data-qs="qs-drive">External Drive Setup</button>
           </div>
 
           <!-- Quickstart Tab 1: Direct Download -->
           <div class="qs-content active" id="qs-download">
             <div style="text-align: center; padding: 2rem 1rem;">
-              <div style="font-size: 3.5rem; margin-bottom: 1rem;">🖥️</div>
               <h3 style="font-size: 1.6rem; font-weight: 900; margin-bottom: 0.6rem; color: var(--neo-black);">
                 Media Chronicle for Windows (x64)
               </h3>
@@ -882,10 +690,10 @@
                 Self-contained installer and portable release. Zero Python, zero Docker, and zero external runtimes. Installs and runs 100% offline.
               </p>
               <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; margin-bottom: 1.8rem;">
-                <button class="btn btn-primary btn-large trigger-vip-modal" id="btn-download-exe">
-                  <span>📥 Download Free Trial (Windows x64)</span>
+                <button class="btn btn-primary btn-large trigger-license-modal trigger-vip-modal" id="btn-download-exe">
+                  <span>Download Free Trial (Windows x64)</span>
                 </button>
-                <button class="btn btn-glass btn-large trigger-vip-modal">
+                <button class="btn btn-glass btn-large trigger-license-modal trigger-vip-modal">
                   <span>Get $79 License Key</span>
                 </button>
               </div>
@@ -904,7 +712,7 @@
                 <ul style="list-style: none; display: flex; flex-direction: column; gap: 0.6rem; font-size: 0.92rem; color: var(--text-secondary); font-weight: 600;">
                   <li>✓ Index up to 500 family photos for free</li>
                   <li>✓ Test lightning-fast preview streaming on your external drives</li>
-                  <li>✓ Verify biometric face clustering completely offline</li>
+                  <li>✓ Verify offline family grouping completely private</li>
                   <li>✓ Zero expiration timer or mandatory signup</li>
                 </ul>
               </div>
@@ -926,23 +734,23 @@
           <div class="qs-content" id="qs-drive">
             <div style="display: flex; flex-direction: column; gap: 1.2rem; padding: 1rem 0;">
               <div class="glass-card-nested" style="display: flex; align-items: center; gap: 1.2rem;">
-                <div style="font-size: 2rem;">🔌</div>
+                <div style="font-size: 1.6rem; font-weight: 900; font-family: var(--font-mono); width: 40px; height: 40px; border-radius: 8px; background: var(--neo-yellow); border: 2px solid var(--neo-black); display: flex; align-items: center; justify-content: center;">1</div>
                 <div>
-                  <strong style="color: var(--neo-black); font-size: 1.05rem;">1. Connect your external drive</strong>
+                  <strong style="color: var(--neo-black); font-size: 1.05rem;">Connect your external drive</strong>
                   <p style="font-size: 0.92rem; color: var(--text-secondary); margin: 0; font-weight: 500;">Plug in any external USB HDD, SSD, or camera SD card. Media Chronicle immediately detects the drive volume.</p>
                 </div>
               </div>
               <div class="glass-card-nested" style="display: flex; align-items: center; gap: 1.2rem;">
-                <div style="font-size: 2rem;">⚡</div>
+                <div style="font-size: 1.6rem; font-weight: 900; font-family: var(--font-mono); width: 40px; height: 40px; border-radius: 8px; background: var(--neo-coral-light); border: 2px solid var(--neo-black); display: flex; align-items: center; justify-content: center;">2</div>
                 <div>
-                  <strong style="color: var(--neo-black); font-size: 1.05rem;">2. Click "Scan Drive In-Place"</strong>
+                  <strong style="color: var(--neo-black); font-size: 1.05rem;">Click "Scan Drive In-Place"</strong>
                   <p style="font-size: 0.92rem; color: var(--text-secondary); margin: 0; font-weight: 500;">The app scans the drive file tree directly in read-only mode without copying any original photos to your computer.</p>
                 </div>
               </div>
               <div class="glass-card-nested" style="display: flex; align-items: center; gap: 1.2rem;">
-                <div style="font-size: 2rem;">👥</div>
+                <div style="font-size: 1.6rem; font-weight: 900; font-family: var(--font-mono); width: 40px; height: 40px; border-radius: 8px; background: var(--neo-mint-light); border: 2px solid var(--neo-black); display: flex; align-items: center; justify-content: center;">3</div>
                 <div>
-                  <strong style="color: var(--neo-black); font-size: 1.05rem;">3. Enjoy instant private albums</strong>
+                  <strong style="color: var(--neo-black); font-size: 1.05rem;">Enjoy instant private albums</strong>
                   <p style="font-size: 0.92rem; color: var(--text-secondary); margin: 0; font-weight: 500;">Browse 100,000+ photos with instant search by date, person, or camera model, completely offline.</p>
                 </div>
               </div>
@@ -982,7 +790,7 @@
               <span class="faq-toggle-icon">+</span>
             </div>
             <div class="faq-answer">
-              <strong>No.</strong> Media Chronicle is 100% offline and air-gapped. You can disconnect your PC from Wi-Fi completely, and all thumbnail generation, metadata searching, and local face clustering will work at full speed.
+              <strong>No.</strong> Media Chronicle is 100% offline and air-gapped. You can disconnect your PC from Wi-Fi completely, and all thumbnail generation, metadata searching, and local family grouping will work at full speed.
             </div>
           </div>
 
@@ -1015,14 +823,13 @@
     <section class="section cta-section">
       <div class="section-container">
         <div class="github-cta-banner glass-card text-center">
-          <div class="cta-glow-element"></div>
           <span class="section-tag">Permanent Ownership • Zero Cloud Subscriptions</span>
           <h2 class="cta-title">Take Back Control of Your Family's Memories</h2>
           <p class="cta-desc">
             Stop paying monthly rent for your own photos. Get Media Chronicle for a one-time $79 and enjoy direct in-place external drive scanning with airtight offline privacy.
           </p>
           <div class="cta-actions" style="display: flex; gap: 1.2rem; justify-content: center; flex-wrap: wrap;">
-            <button class="btn btn-primary btn-large trigger-vip-modal" id="footer-pricing-cta">
+            <button class="btn btn-primary btn-large trigger-license-modal trigger-vip-modal" id="footer-pricing-cta">
               <span>Get Lifetime License ($79)</span>
               <span class="arrow-icon">&rarr;</span>
             </button>
@@ -1038,42 +845,46 @@
     </section>
   </main>
 
-  <!-- VIP Pre-Order / License Modal -->
-  <div class="vip-modal" id="vip-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+  <!-- Lifetime License Inquiry Modal -->
+  <div class="license-modal vip-modal" id="license-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
     <div class="modal-backdrop"></div>
     <div class="modal-dialog">
       <button class="modal-close-btn" id="modal-close-btn" aria-label="Close modal">&times;</button>
       
       <div class="modal-header">
         <span class="section-tag">Lifetime Ownership</span>
-        <h3 class="modal-title" id="modal-title">Media Chronicle VIP License</h3>
-        <p class="modal-subtitle">Lock in your $79 Lifetime License with priority early-access downloads.</p>
+        <h3 class="modal-title" id="modal-title">Media Chronicle License</h3>
+        <p class="modal-subtitle">One-time $79 purchase with permanent ownership and direct download access.</p>
       </div>
 
-      <ul class="vip-perks-list">
+      <ul class="license-perks-list vip-perks-list">
         <li><span class="check">✓</span> <strong>Permanent Windows License</strong> — Zero recurring subscriptions</li>
         <li><span class="check">✓</span> <strong>In-Place External Drive Scanning</strong> — Zero duplicate disk copies</li>
-        <li><span class="check">✓</span> <strong>On-Device Face Grouping & EXIF Search</strong> — 100% Offline</li>
-        <li><span class="check">✓</span> <strong>Use on up to 3 PCs</strong> in your household</li>
+        <li><span class="check">✓</span> <strong>On-Device Family Grouping & EXIF Search</strong> — 100% Offline</li>
+        <li><span class="check">✓</span> <strong>Install on up to 3 PCs</strong> in your household</li>
       </ul>
 
-      <form id="vip-modal-form">
+      <form id="license-modal-form">
         <div class="modal-input-group">
-          <label for="vip-email">Enter your email for license key delivery:</label>
-          <input type="email" id="vip-email" placeholder="name@example.com" required>
+          <label for="license-email">Enter your email for license key & download delivery:</label>
+          <input type="email" id="license-email" placeholder="name@example.com" required>
         </div>
 
         <button type="submit" class="btn btn-primary" style="width: 100%; justify-content: center; padding: 0.9rem;">
-          <span>Reserve My $79 Lifetime License</span>
+          <span>Get My $79 Lifetime License</span>
           <span class="arrow-icon">&rarr;</span>
         </button>
       </form>
 
-      <div class="vip-success" id="vip-success-message">
-        <div class="vip-success-icon">🎉</div>
-        <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: #FFFFFF;">You're on the VIP Priority List!</h4>
+      <div class="license-success vip-success" id="license-success-message">
+        <div class="license-success-icon vip-success-icon">
+          <svg viewBox="0 0 24 24" width="48" height="48" fill="var(--neo-mint)" style="margin: 0 auto;">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+          </svg>
+        </div>
+        <h4 style="font-size: 1.3rem; margin-bottom: 0.5rem; color: var(--neo-black);">License Details Sent!</h4>
         <p style="font-size: 0.92rem; color: var(--text-secondary); line-height: 1.6;">
-          We've reserved your <strong>$79 Lifetime License</strong>. You'll receive early executable builds and license activation details directly in your inbox.
+          We've registered your request for the <strong>$79 Lifetime License</strong>. Check your inbox for executable download instructions and license activation keys.
         </p>
       </div>
     </div>
@@ -1084,11 +895,15 @@
     <div class="footer-container">
       <div class="footer-brand">
         <div class="brand-logo">
-          <span class="logo-icon">🌌</span>
+          <span class="logo-icon">
+            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor">
+              <path d="M4 4h3l2-2h6l2 2h3a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2zm8 3a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 2a3 3 0 1 1 0 6 3 3 0 0 1 0-6z"/>
+            </svg>
+          </span>
           <span class="brand-title">Media Chronicle</span>
         </div>
         <p class="footer-summary">
-          Media Chronicle is a native Windows app that indexes family photo libraries from external drives—100% offline and private. No cloud uploads, no subscriptions.
+          Media Chronicle is a native Windows app that indexes family photo libraries directly from external drives—100% offline and private. No cloud uploads, no subscriptions.
         </p>
         <div class="footer-copyright">
           Crafted by <a href="https://github.com/akshatdhaundiyal" target="_blank" rel="noopener noreferrer">Akshat Dhaundiyal</a> • Open Source & Independent
@@ -1097,24 +912,24 @@
 
       <div class="footer-links-group">
         <div class="footer-col">
-          <h5 class="col-title">Project & Scope</h5>
+          <h5 class="col-title">Product & Features</h5>
           <ul>
             <li><a href="#how-it-works">How It Works</a></li>
-            <li><a href="#calculator">Lifetime Savings Calculator</a></li>
-            <li><a href="#mvp-scope">8-Week MVP Scope</a></li>
-            <li><a href="#roadmap">v2 Intelligence Roadmap</a></li>
-            <li><a href="#quickstart">Download Windows Release</a></li>
+            <li><a href="#calculator">Lifetime Savings</a></li>
+            <li><a href="#core-features">Core Architecture</a></li>
+            <li><a href="#roadmap">Product Roadmap</a></li>
+            <li><a href="#quickstart">Download Windows App</a></li>
           </ul>
         </div>
 
         <div class="footer-col">
-          <h5 class="col-title">Core Engineering</h5>
+          <h5 class="col-title">Showcase & Trust</h5>
           <ul>
-            <li><a href="#interactive-lab">Drive Scanner Simulator</a></li>
-            <li><a href="#interactive-lab">Biometric Face Grouping</a></li>
-            <li><a href="#interactive-lab">2D Vector Latent Space</a></li>
-            <li><a href="#interactive-lab">SGD Neural Retrainer</a></li>
+            <li><a href="#interactive-lab">Drive Scanner Demo</a></li>
+            <li><a href="#interactive-lab">Instant Offline Search</a></li>
+            <li><a href="#quickstart">Free Trial Mode</a></li>
             <li><a href="#faq">Frequently Asked Questions</a></li>
+            <li><a href="https://github.com/akshatdhaundiyal/media_chronicle" target="_blank" rel="noopener noreferrer">GitHub Repository</a></li>
           </ul>
         </div>
       </div>

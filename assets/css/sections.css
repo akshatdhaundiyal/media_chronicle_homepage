@@ -142,6 +142,7 @@
   background: #E5E5E5;
   border: 2px solid var(--neo-black);
   outline: none;
+  appearance: none;
   -webkit-appearance: none;
   cursor: pointer;
 }
