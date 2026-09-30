@@ -69,26 +69,26 @@ export function initEmbeddingsCanvas() {
 function generateEmbeddingsDataset(jitter = false) {
   embeddingsPoints = [
     // Maya Sharma Chronological Cluster
-    { x: 120, y: 160, name: 'Maya Sharma (Age 7)', cluster: 'maya', color: '#00F0FF', notes: 'Childhood anchor point (128-D vector).' },
-    { x: 175, y: 195, name: 'Maya Sharma (Age 16)', cluster: 'maya', color: '#00F0FF', notes: 'Adolescent progression node (d=14.2).' },
-    { x: 235, y: 220, name: 'Maya Sharma (Age 24)', cluster: 'maya', color: '#00F0FF', notes: 'Young adult profile match (d=22.8).' },
-    { x: 300, y: 245, name: 'Maya Sharma (Age 35)', cluster: 'maya', color: '#00F0FF', notes: 'Mature adult age-variant node (d=27.4, linked).' },
+    { x: 120, y: 160, name: 'Maya Sharma (Age 7)', cluster: 'maya', color: '#FFD166', notes: 'Childhood anchor point (128-D vector).' },
+    { x: 175, y: 195, name: 'Maya Sharma (Age 16)', cluster: 'maya', color: '#FFD166', notes: 'Adolescent progression node (d=14.2).' },
+    { x: 235, y: 220, name: 'Maya Sharma (Age 24)', cluster: 'maya', color: '#FFD166', notes: 'Young adult profile match (d=22.8).' },
+    { x: 300, y: 245, name: 'Maya Sharma (Age 35)', cluster: 'maya', color: '#FFD166', notes: 'Mature adult age-variant node (d=27.4, linked).' },
 
     // Ben Carter Family Cluster
-    { x: 420, y: 110, name: 'Ben Carter (Portrait)', cluster: 'ben', color: '#F43F5E', notes: 'Enrolled face cluster centroid.' },
-    { x: 440, y: 135, name: 'Ben Carter (Outdoor)', cluster: 'ben', color: '#F43F5E', notes: 'High confidence cosine similarity 0.95.' },
-    { x: 405, y: 145, name: 'Ben Carter (Smile)', cluster: 'ben', color: '#F43F5E', notes: 'Confidence score: 0.94.' },
-    { x: 455, y: 105, name: 'Ben Carter (Low Light)', cluster: 'ben', color: '#F43F5E', notes: 'Confidence score: 0.91.' },
+    { x: 420, y: 110, name: 'Ben Carter (Portrait)', cluster: 'ben', color: '#FF6B6B', notes: 'Enrolled face cluster centroid.' },
+    { x: 440, y: 135, name: 'Ben Carter (Outdoor)', cluster: 'ben', color: '#FF6B6B', notes: 'High confidence cosine similarity 0.95.' },
+    { x: 405, y: 145, name: 'Ben Carter (Smile)', cluster: 'ben', color: '#FF6B6B', notes: 'Confidence score: 0.94.' },
+    { x: 455, y: 105, name: 'Ben Carter (Low Light)', cluster: 'ben', color: '#FF6B6B', notes: 'Confidence score: 0.91.' },
 
     // David Lee Co-worker Cluster
-    { x: 480, y: 310, name: 'David Lee (Studio)', cluster: 'david', color: '#8B5CF6', notes: 'Office team album centroid.' },
-    { x: 510, y: 290, name: 'David Lee (Conference)', cluster: 'david', color: '#8B5CF6', notes: 'Top-1 Softmax probability 97.4%.' },
-    { x: 470, y: 340, name: 'David Lee (Casual)', cluster: 'david', color: '#8B5CF6', notes: 'Embedding similarity 0.92.' },
+    { x: 480, y: 310, name: 'David Lee (Studio)', cluster: 'david', color: '#4CC9F0', notes: 'Office team album centroid.' },
+    { x: 510, y: 290, name: 'David Lee (Conference)', cluster: 'david', color: '#4CC9F0', notes: 'Top-1 Softmax probability 97.4%.' },
+    { x: 470, y: 340, name: 'David Lee (Casual)', cluster: 'david', color: '#4CC9F0', notes: 'Embedding similarity 0.92.' },
 
     // Unidentified Face Candidates
-    { x: 210, y: 340, name: 'Candidate Face #104', cluster: 'unidentified', color: '#64748B', notes: 'Pending manual label assignment in UnidentifiedQueue.' },
-    { x: 280, y: 120, name: 'Candidate Face #105', cluster: 'unidentified', color: '#64748B', notes: 'Low confidence (0.42) - awaiting retraining.' },
-    { x: 370, y: 320, name: 'Candidate Face #106', cluster: 'unidentified', color: '#64748B', notes: 'Cluster gap: Candidate for new identity.' }
+    { x: 210, y: 340, name: 'Candidate Face #104', cluster: 'unidentified', color: '#94A3B8', notes: 'Pending manual label assignment in UnidentifiedQueue.' },
+    { x: 280, y: 120, name: 'Candidate Face #105', cluster: 'unidentified', color: '#94A3B8', notes: 'Low confidence (0.42) - awaiting retraining.' },
+    { x: 370, y: 320, name: 'Candidate Face #106', cluster: 'unidentified', color: '#94A3B8', notes: 'Cluster gap: Candidate for new identity.' }
   ];
 
   if (jitter) {

@@ -11,7 +11,7 @@ $RECYCLE.BIN/
 .LSOverride
 ._*
 
-# Editor & IDE Directories
+# Editor, IDE & AI Workspace Artifacts
 .vscode/*
 !.vscode/settings.json
 !.vscode/tasks.json
@@ -23,14 +23,36 @@ $RECYCLE.BIN/
 *.swp
 *.swo
 *~
+.agents/
+.gemini/
+.claude/
+.system_generated/
 
-# Node & Package Managers
+# Node, Bundlers & Web Caches
 node_modules/
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 .pnpm-store/
+.cache/
+.parcel-cache/
+.vite/
+dist/
+out/
+build/
+
+# Application Installers, Binaries & Archives
+# (Keeps large Windows desktop release binaries out of the static web repo)
+*.exe
+*.msi
+*.dll
+*.iso
+*.zip
+*.tar.gz
+*.7z
+*.dmg
+*.pkg
 
 # Python Cache & Virtual Environments
 __pycache__/
@@ -42,9 +64,7 @@ env/
 venv/
 .venv/
 ENV/
-build/
 develop-eggs/
-dist/
 downloads/
 eggs/
 .eggs/
@@ -62,13 +82,16 @@ wheels/
 *.log
 *.tmp
 *.bak
-*.swp
+*.crash
 .temp/
 temp/
 scratch/
 screenshot*.png
 
-# Local Environment Overrides
+# Local Environment Overrides & Credentials
 .env
 .env.local
 .env.*.local
+*.pem
+*.key
+

@@ -1,0 +1,18 @@
+{
+  "name": "media-chronicle-homepage",
+  "version": "1.0.0",
+  "description": "Official Neobrutalist homepage and interactive showcase for Media Chronicle",
+  "main": "index.html",
+  "scripts": {
+    "start": "npx serve . -l 8080",
+    "dev": "npx serve . -l 8080"
+  },
+  "keywords": [
+    "media-chronicle",
+    "photo-indexer",
+    "neobrutalism",
+    "windows-desktop"
+  ],
+  "author": "Akshat Dhaundiyal",
+  "license": "MIT"
+}

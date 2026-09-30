@@ -1,14 +1,18 @@
 /* ==========================================================================
-   RESPONSIVE DESIGN BREAKPOINTS
+   NEOBRUTALIST RESPONSIVE DESIGN BREAKPOINTS — MOBILE, TABLET & DESKTOP
    ========================================================================== */
 
 @media (max-width: 1080px) {
   .features-grid,
-  .tech-matrix {
+  .mvp-scope-grid,
+  .how-it-works-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  .interactive-grid {
+  .interactive-grid,
+  .calc-grid,
+  .pricing-grid,
+  .roadmap-container {
     grid-template-columns: 1fr;
   }
 
@@ -36,11 +40,12 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: #080C14;
-    border-bottom: 1px solid var(--border-subtle);
+    background: var(--bg-surface);
+    border-bottom: var(--border-thick);
     flex-direction: column;
     padding: 1.5rem;
-    gap: 1.2rem;
+    gap: 1rem;
+    box-shadow: 0 6px 0px rgba(18, 18, 18, 0.2);
   }
 
   .nav-links.mobile-open {
@@ -52,12 +57,22 @@
   }
 
   .hero-section {
-    padding: 3.5rem 1.5rem;
+    padding: 3.5rem 1.2rem;
   }
 
+  .calculator-box {
+    padding: 1.8rem 1.2rem;
+  }
+
+  .calc-storage-pills {
+    grid-template-columns: 1fr;
+  }
+
+  .faq-grid,
+  .how-it-works-grid,
+  .mvp-scope-grid,
   .comparison-grid,
   .features-grid,
-  .tech-matrix,
   .footer-container,
   .footer-links-group {
     grid-template-columns: 1fr;
@@ -73,5 +88,22 @@
 
   .timeline-dot {
     left: -2rem;
+  }
+
+  .modal-dialog {
+    padding: 1.8rem 1.4rem;
+  }
+
+  .btn-large {
+    width: 100%;
+  }
+
+  .hero-cta-group {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .hero-cta-group .btn {
+    width: 100%;
   }
 }

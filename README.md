@@ -109,14 +109,19 @@ media_chronicle_homepage/
 
 ## 💻 Running the Homepage Locally
 
-Zero complex build pipelines or bundlers required — runs directly in modern browsers via native ES Modules.
+Zero complex build pipelines or Python required — runs directly in modern browsers via native ES Modules.
 
+### Option A: Using NPM (Recommended)
 ```powershell
-# Open terminal inside the repository folder
-cd d:\lab\projects\media_chronicle_homepage
+npm start
+```
 
-# Launch local HTTP server
-python -m http.server 8080
+### Option B: Double-Click Helper (Windows)
+Double-click [`start.bat`](start.bat) in the root folder to launch the server and open your browser automatically.
+
+### Option C: Using NPX Serve
+```powershell
+npx serve . -l 8080
 ```
 Open **`http://localhost:8080`** in your browser.
 

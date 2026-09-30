@@ -1,84 +1,84 @@
 /**
- * Ollama VLM Fast-Load Bypass & Benchmark Simulator Module
+ * Media Chronicle — Drive Scanner & Offline Ingestion Simulator Module
+ * Simulates in-place external drive scanning, zero-copy indexing, and offline fast-load bypass.
  */
 
 import { appendTermLine } from './sgd-simulator.js';
 
 export function initOfflineSimulator() {
-  const toggle = document.getElementById('ollama-toggle');
-  const statusText = document.getElementById('ollama-status-text');
-  const btnSimulate = document.getElementById('btn-simulate-import');
+  const driveSelect = document.getElementById('scan-drive-select');
+  const btnScan = document.getElementById('btn-simulate-scan');
   const termOutput = document.getElementById('offline-terminal-output');
-  const benchDuration = document.getElementById('bench-duration');
-  const benchStrategy = document.getElementById('bench-strategy');
+  const scanProgressBar = document.getElementById('scan-progress-bar');
+  const scanProgressPercent = document.getElementById('scan-progress-percent');
+  
+  const metricFiles = document.getElementById('scan-metric-files');
+  const metricDiskSpace = document.getElementById('scan-metric-disk');
+  const metricDuration = document.getElementById('scan-metric-time');
+  const metricNetwork = document.getElementById('scan-metric-network');
 
-  if (!toggle) return;
+  const driveConfigs = {
+    'seagate': { name: 'Seagate Backup Plus 4TB (E:)', count: 38420, ext: 'NTFS', duration: 1.48 },
+    'sandisk': { name: 'SanDisk Extreme 2TB SSD (F:)', count: 18240, ext: 'exFAT', duration: 0.84 },
+    'kingston': { name: 'Kingston Canvas 256GB SD (G:)', count: 4210, ext: 'FAT32', duration: 0.38 }
+  };
 
-  toggle.addEventListener('change', () => {
-    const isOnline = toggle.checked;
-    if (isOnline) {
-      if (statusText) {
-        statusText.textContent = 'ONLINE (Daemon at localhost:11434)';
-        statusText.className = 'status-online';
-      }
-      appendTermLine(termOutput, '[STATUS CHANGE] Local Ollama VLM daemon is ONLINE (models: llava:13b).', 'success');
-      if (benchDuration) {
-        benchDuration.textContent = '~8.4 seconds';
-        benchDuration.className = 'highlight-cyan';
-      }
-      if (benchStrategy) {
-        benchStrategy.textContent = 'Sequential Ollama Multimodal Vision Queue';
-      }
-    } else {
-      if (statusText) {
-        statusText.textContent = 'OFFLINE (Simulated)';
-        statusText.className = 'status-offline';
-      }
-      appendTermLine(termOutput, '[STATUS CHANGE] Local Ollama VLM daemon is OFFLINE. Fast-load bypass armed.', 'warn');
-      if (benchDuration) {
-        benchDuration.textContent = '~1.2 seconds';
-        benchDuration.className = 'highlight-green';
-      }
-      if (benchStrategy) {
-        benchStrategy.textContent = 'On-Device Edge Heuristic Fallback';
-      }
+  if (!btnScan || !termOutput) return;
+
+  btnScan.addEventListener('click', () => {
+    btnScan.disabled = true;
+    btnScan.style.opacity = '0.6';
+
+    const selectedDriveKey = driveSelect ? driveSelect.value : 'seagate';
+    const driveInfo = driveConfigs[selectedDriveKey] || driveConfigs['seagate'];
+
+    if (scanProgressBar) {
+      scanProgressBar.style.width = '0%';
     }
-  });
+    if (scanProgressPercent) {
+      scanProgressPercent.textContent = '0%';
+    }
 
-  if (btnSimulate) {
-    btnSimulate.addEventListener('click', () => {
-      btnSimulate.disabled = true;
-      btnSimulate.style.opacity = '0.6';
-      const isOnline = toggle.checked;
+    appendTermLine(termOutput, '==================================================', 'dim');
+    appendTermLine(termOutput, `[DRIVE MOUNTED] Detected: ${driveInfo.name} [${driveInfo.ext}]`, 'info');
+    appendTermLine(termOutput, `[IN-PLACE PIPELINE] Initiating zero-copy recursive directory traversal...`, 'info');
 
-      appendTermLine(termOutput, '----------------------------------------', 'dim');
-      appendTermLine(termOutput, `[IMPORT] Batch of 24 raw JPEG/PNG images selected from local disk.`, 'info');
-      appendTermLine(termOutput, `[DEDUPE] Running SHA-256 cryptographic hash checks against PostgreSQL...`, 'info');
-      appendTermLine(termOutput, `[DEDUPE] 24 unique items verified, 0 duplicates.`, 'success');
+    let currentProgress = 0;
+    const totalSteps = 20;
+    const intervalTime = (driveInfo.duration * 1000) / totalSteps;
 
-      if (isOnline) {
-        appendTermLine(termOutput, `[VLM] Dispatched 24 images to Ollama vision worker...`, 'info');
-        let processed = 0;
-        const interval = setInterval(() => {
-          processed += 4;
-          appendTermLine(termOutput, `[VLM] Inferred tags for batch slice ${processed}/24: ("mountain", "portrait", "golden_hour")`, 'info');
-          if (processed >= 24) {
-            clearInterval(interval);
-            appendTermLine(termOutput, `[COMPLETED] 24 images imported in 8.42s with multimodal descriptions.`, 'success');
-            btnSimulate.disabled = false;
-            btnSimulate.style.opacity = '1';
-          }
-        }, 350);
-      } else {
-        setTimeout(() => {
-          appendTermLine(termOutput, `[PROBE] Connection to http://localhost:11434 refused in 38ms.`, 'warn');
-          appendTermLine(termOutput, `[BYPASS] Fast-load bypass active: skipping 90s network wait!`, 'highlight');
-          appendTermLine(termOutput, `[FALLBACK] Generated on-device heuristic visual tags & YOLO face boxes.`, 'info');
-          appendTermLine(termOutput, `[COMPLETED] 24 images imported in 1.18s (zero lag).`, 'success');
-          btnSimulate.disabled = false;
-          btnSimulate.style.opacity = '1';
-        }, 600);
+    const interval = setInterval(() => {
+      currentProgress += 5;
+      const scannedSoFar = Math.round((currentProgress / 100) * driveInfo.count);
+
+      if (scanProgressBar) {
+        scanProgressBar.style.width = `${currentProgress}%`;
       }
-    });
-  }
+      if (scanProgressPercent) {
+        scanProgressPercent.textContent = `${currentProgress}%`;
+      }
+
+      if (currentProgress === 20) {
+        appendTermLine(termOutput, `[TRAVERSAL] Indexed ${scannedSoFar.toLocaleString()} files across DCIM/ and Family/ directories.`, 'info');
+      } else if (currentProgress === 50) {
+        appendTermLine(termOutput, `[METADATA] Extracted EXIF timestamps, GPS coordinates, and camera profiles.`, 'info');
+      } else if (currentProgress === 75) {
+        appendTermLine(termOutput, `[BIOMETRICS] Running on-device YOLO face clustering across photo index...`, 'info');
+      } else if (currentProgress >= 100) {
+        clearInterval(interval);
+
+        appendTermLine(termOutput, `[DEDUPE] Strict SHA-256 hashes generated. Zero internal disk duplication.`, 'success');
+        appendTermLine(termOutput, `[AIR-GAP CHECK] Network calls: 0 bytes uploaded. 100% Offline.`, 'highlight');
+        appendTermLine(termOutput, `[SUCCESS] Complete library (${driveInfo.count.toLocaleString()} photos) indexed in ${driveInfo.duration}s!`, 'success');
+
+        if (metricFiles) metricFiles.textContent = `${driveInfo.count.toLocaleString()} Photos`;
+        if (metricDiskSpace) metricDiskSpace.textContent = '0 Bytes (In-Place Read)';
+        if (metricDuration) metricDuration.textContent = `${driveInfo.duration}s`;
+        if (metricNetwork) metricNetwork.textContent = '0 B (100% Offline)';
+
+        btnScan.disabled = false;
+        btnScan.style.opacity = '1';
+      }
+    }, intervalTime);
+  });
 }

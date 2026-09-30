@@ -1,47 +1,65 @@
 /* ==========================================================================
-   DESIGN TOKENS & SYSTEM VARIABLES
+   NEOBRUTALIST DESIGN TOKENS — SERENMIND INSPIRED PALETTE
+   High-contrast 2.5px solid black borders, 4px-5px hard offset drop shadows,
+   warm cream canvas, and vibrant pastel color blocks.
    ========================================================================== */
 
 :root {
-  /* Color Palette - Midnight Twilight */
-  --bg-deep: #06090F;
-  --bg-surface: #0B0F19;
-  --bg-card: rgba(16, 23, 38, 0.72);
-  --bg-card-hover: rgba(22, 32, 54, 0.85);
-  --bg-glass-nested: rgba(8, 13, 23, 0.65);
+  /* Canvas & Base Surfaces */
+  --bg-deep: #FAF6ED;           /* Warm Ivory Cream canvas */
+  --bg-surface: #FFFDF9;        /* Pure Warm White */
+  --bg-card: #FFFFFF;           /* Card White */
+  --bg-card-hover: #FFFDF5;
+  --bg-glass-nested: #F5EFE0;   /* Muted Cream inset */
+  --bg-glass-input: #FFFFFF;
+  --bg-dark-gadget: #0D1117;    /* Retro CRT screen insert */
+
+  /* Neobrutalist Core Accent Palette (SerenMind Palette) */
+  --neo-black: #121212;         /* Crisp Ink Black for all borders & shadows */
+  --neo-yellow: #FFD166;        /* Sunshine Yellow */
+  --neo-yellow-light: #FFF0C2;  /* Soft Buttercream */
+  --neo-coral: #FF6B6B;         /* Electric Coral Pink */
+  --neo-coral-light: #FFCCD5;   /* Pastel Coral */
+  --neo-mint: #06D6A0;          /* Fresh Mint Green */
+  --neo-mint-light: #D8F3DC;    /* Pastel Mint */
+  --neo-sky: #4CC9F0;           /* Radiant Sky Blue */
+  --neo-sky-light: #D0F4DE;
+  --neo-lavender: #B5838D;      /* Soft Mauve Lavender */
+  --neo-lavender-light: #E8D7FF;/* Pastel Lavender */
+  --neo-orange: #F77F00;        /* Retro Tangerine */
+
+  /* Text & Typography Hierarchy */
+  --text-primary: #121212;      /* Deep Ink Black for readability */
+  --text-secondary: #3D3D3D;    /* Dark Charcoal */
+  --text-muted: #666666;        /* Neutral Slate */
+  --text-highlight: #000000;    /* Solid Pitch Black */
+  --text-on-dark: #F8FAFC;      /* Light text inside CRT gadgets */
+
+  /* Borders & Neobrutalist Hard Shadows */
+  --border-thick: 2.5px solid #121212;
+  --border-medium: 2px solid #121212;
+  --border-subtle: 1.5px solid #121212;
   
-  /* Luminous Neon Accents */
-  --neon-cyan: #00F0FF;
-  --neon-cyan-glow: rgba(0, 240, 255, 0.28);
-  --neon-cyan-subtle: rgba(0, 240, 255, 0.12);
-  --neon-rose: #F43F5E;
-  --neon-rose-glow: rgba(244, 63, 94, 0.28);
-  --neon-rose-subtle: rgba(244, 63, 94, 0.12);
-  --neon-violet: #8B5CF6;
-  --neon-violet-glow: rgba(139, 92, 246, 0.28);
-  --neon-green: #10B981;
-  --neon-amber: #F59E0B;
+  /* Hard Offset Drop Shadows (Zero blur) */
+  --shadow-neo: 4px 4px 0px #121212;
+  --shadow-neo-sm: 2.5px 2.5px 0px #121212;
+  --shadow-neo-lg: 6px 6px 0px #121212;
+  --shadow-neo-hover: 2px 2px 0px #121212;
+  --shadow-neo-pressed: 0px 0px 0px #121212;
 
-  /* Text & Typography */
-  --text-primary: #F1F5F9;
-  --text-secondary: #94A3B8;
-  --text-muted: #64748B;
-  --text-highlight: #FFFFFF;
-
-  /* Borders & Shadows */
-  --border-subtle: rgba(255, 255, 255, 0.08);
-  --border-light: rgba(255, 255, 255, 0.14);
-  --border-highlight: rgba(0, 240, 255, 0.4);
-  --shadow-ambient: 0 20px 40px -15px rgba(0, 0, 0, 0.65);
-  --shadow-glow-cyan: 0 0 25px rgba(0, 240, 255, 0.25);
-  --shadow-glow-rose: 0 0 25px rgba(244, 63, 94, 0.25);
-
-  /* Fonts */
+  /* Typography Stacks */
   --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
+  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
 
-  /* Transitions */
-  --ease-spring: cubic-bezier(0.16, 1, 0.3, 1);
-  --transition-fast: 0.18s ease;
-  --transition-normal: 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Sizing & Friendly Rounded Corners */
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 26px;
+  --radius-full: 9999px;
+
+  /* Tactile Press Transitions */
+  --transition-fast: 0.12s cubic-bezier(0, 0, 0.2, 1);
+  --transition-normal: 0.2s cubic-bezier(0, 0, 0.2, 1);
+  --transition-bounce: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
 }

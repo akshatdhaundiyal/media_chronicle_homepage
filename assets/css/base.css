@@ -1,5 +1,6 @@
 /* ==========================================================================
-   BASE RESET, TYPOGRAPHY, AMBIENT GLOWS, NAVBAR & BUTTONS
+   NEOBRUTALIST BASE RESET, TYPOGRAPHY, NAVBAR, BUTTONS & MODALS
+   SerenMind Aesthetic: Warm Cream, Bold 2.5px Black Borders, Tactile Shadows
    ========================================================================== */
 
 *, *::before, *::after {
@@ -25,47 +26,50 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-/* Ambient Background Glows */
+/* Subtle Retro Paper Texture / Ambient Accent Dots */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(#121212 0.75px, transparent 0.75px);
+  background-size: 28px 28px;
+  opacity: 0.04;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Ambient Subtle Warm Blobs */
 .ambient-glow {
   position: fixed;
   border-radius: 50%;
-  filter: blur(120px);
+  filter: blur(100px);
   pointer-events: none;
   z-index: 0;
-  opacity: 0.45;
-  animation: floatSlow 18s ease-in-out infinite alternate;
+  opacity: 0.25;
 }
 
 .glow-cyan {
-  width: 550px;
-  height: 550px;
-  background: radial-gradient(circle, var(--neon-cyan) 0%, rgba(0, 240, 255, 0) 70%);
-  top: -120px;
+  width: 500px;
+  height: 500px;
+  background: var(--neo-yellow);
+  top: -100px;
   left: -100px;
 }
 
 .glow-rose {
-  width: 600px;
-  height: 600px;
-  background: radial-gradient(circle, var(--neon-rose) 0%, rgba(244, 63, 94, 0) 70%);
+  width: 550px;
+  height: 550px;
+  background: var(--neo-coral-light);
   top: 35%;
   right: -150px;
-  animation-delay: -6s;
 }
 
 .glow-violet {
-  width: 700px;
-  height: 700px;
-  background: radial-gradient(circle, var(--neon-violet) 0%, rgba(139, 92, 246, 0) 70%);
+  width: 600px;
+  height: 600px;
+  background: var(--neo-mint-light);
   bottom: 5%;
   left: 20%;
-  animation-delay: -12s;
-}
-
-@keyframes floatSlow {
-  0% { transform: translateY(0) scale(1); }
-  50% { transform: translateY(50px) scale(1.08); }
-  100% { transform: translateY(-30px) scale(0.95); }
 }
 
 /* Navigation Bar */
@@ -73,17 +77,14 @@ body {
   position: sticky;
   top: 0;
   z-index: 100;
-  background: rgba(6, 9, 15, 0.78);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border-bottom: 1px solid var(--border-subtle);
+  background: var(--bg-surface);
+  border-bottom: var(--border-thick);
   transition: all var(--transition-normal);
 }
 
 .navbar.scrolled {
-  background: rgba(6, 9, 15, 0.92);
-  border-bottom-color: rgba(0, 240, 255, 0.18);
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  background: #FFFFFF;
+  box-shadow: 0 4px 0px rgba(18, 18, 18, 0.15);
 }
 
 .nav-container {
@@ -105,7 +106,9 @@ body {
 
 .logo-icon {
   font-size: 1.6rem;
-  filter: drop-shadow(0 0 10px rgba(0, 240, 255, 0.5));
+  filter: drop-shadow(2px 2px 0px #121212);
+  display: inline-block;
+  transform: rotate(-4deg);
 }
 
 .logo-text {
@@ -114,184 +117,179 @@ body {
 }
 
 .brand-title {
-  font-size: 1.25rem;
-  font-weight: 700;
+  font-size: 1.3rem;
+  font-weight: 800;
   letter-spacing: -0.02em;
-  background: linear-gradient(135deg, #FFFFFF 30%, #94A3B8 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
+  color: var(--neo-black);
 }
 
 .brand-badge {
   font-size: 0.7rem;
-  font-weight: 600;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.08em;
-  color: var(--neon-cyan);
+  color: var(--neo-black);
+  background: var(--neo-yellow);
+  padding: 0.1rem 0.45rem;
+  border-radius: 4px;
+  border: 1.5px solid var(--neo-black);
+  width: fit-content;
 }
 
 .nav-links {
   display: flex;
   align-items: center;
-  gap: 1.8rem;
+  gap: 1.6rem;
 }
 
 .nav-item {
-  color: var(--text-secondary);
+  color: var(--text-primary);
   text-decoration: none;
-  font-size: 0.95rem;
-  font-weight: 500;
-  transition: color var(--transition-fast);
+  font-size: 0.94rem;
+  font-weight: 700;
+  transition: all var(--transition-fast);
   position: relative;
-  padding: 0.3rem 0;
+  padding: 0.35rem 0.6rem;
+  border-radius: var(--radius-sm);
 }
 
 .nav-item:hover {
-  color: var(--neon-cyan);
-}
-
-.nav-item::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0%;
-  height: 2px;
-  background: var(--neon-cyan);
-  transition: width var(--transition-fast);
-  border-radius: 2px;
-  box-shadow: 0 0 8px var(--neon-cyan);
-}
-
-.nav-item:hover::after {
-  width: 100%;
+  background: var(--neo-yellow-light);
+  color: var(--neo-black);
 }
 
 .nav-actions {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.9rem;
 }
 
 .mobile-toggle {
   display: none;
   background: none;
-  border: none;
+  border: var(--border-medium);
+  border-radius: var(--radius-sm);
   cursor: pointer;
   flex-direction: column;
   gap: 5px;
   padding: 6px;
+  box-shadow: var(--shadow-neo-sm);
 }
 
 .mobile-toggle span {
   display: block;
   width: 22px;
-  height: 2px;
-  background-color: var(--text-primary);
+  height: 2.5px;
+  background-color: var(--neo-black);
   border-radius: 2px;
-  transition: all var(--transition-fast);
 }
 
-/* Button System */
+/* ==========================================================================
+   NEOBRUTALIST TACTILE BUTTON SYSTEM
+   ========================================================================== */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.6rem;
-  padding: 0.68rem 1.4rem;
+  padding: 0.72rem 1.45rem;
   font-size: 0.95rem;
-  font-weight: 600;
-  border-radius: 10px;
+  font-weight: 800;
+  border-radius: var(--radius-md);
   text-decoration: none;
-  transition: all var(--transition-normal);
   cursor: pointer;
-  border: 1px solid transparent;
+  border: var(--border-thick);
+  box-shadow: var(--shadow-neo);
   font-family: var(--font-main);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  user-select: none;
+}
+
+.btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-neo-hover);
+}
+
+.btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: var(--shadow-neo-pressed);
 }
 
 .btn-primary {
-  background: linear-gradient(135deg, #00E5FF 0%, #0284C7 100%);
-  color: #04101E;
-  box-shadow: 0 4px 20px rgba(0, 240, 255, 0.35);
-  border-color: rgba(255, 255, 255, 0.2);
+  background: var(--neo-yellow);
+  color: var(--neo-black);
 }
 
 .btn-primary:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 6px 28px rgba(0, 240, 255, 0.55);
-  background: linear-gradient(135deg, #38BDF8 0%, #0284C7 100%);
+  background: #FFDC7A;
 }
 
 .btn-glass {
-  background: rgba(255, 255, 255, 0.06);
-  color: var(--text-primary);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid var(--border-light);
+  background: #FFFFFF;
+  color: var(--neo-black);
 }
 
 .btn-glass:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: var(--neon-cyan);
-  color: var(--neon-cyan);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 20px rgba(0, 240, 255, 0.2);
+  background: var(--neo-mint-light);
 }
 
 .btn-secondary {
-  background: rgba(15, 23, 42, 0.85);
-  color: var(--text-secondary);
-  border: 1px solid var(--border-subtle);
+  background: var(--neo-lavender-light);
+  color: var(--neo-black);
   font-family: var(--font-mono);
   font-size: 0.88rem;
 }
 
 .btn-secondary:hover {
-  border-color: var(--border-light);
-  color: var(--text-primary);
+  background: #DDD0F7;
 }
 
 .btn-github {
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text-primary);
-  border: 1px solid var(--border-light);
-  padding: 0.55rem 1.1rem;
+  background: #FFFFFF;
+  color: var(--neo-black);
+  padding: 0.55rem 1.15rem;
   font-size: 0.9rem;
 }
 
 .btn-github:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-1px);
+  background: var(--neo-sky-light);
 }
 
 .btn-ghost {
   background: transparent;
-  color: var(--text-secondary);
-  border: 1px solid var(--border-subtle);
+  color: var(--neo-black);
+  border: var(--border-thick);
 }
 
 .btn-ghost:hover {
-  background: rgba(255, 255, 255, 0.05);
-  color: var(--text-primary);
+  background: var(--bg-glass-nested);
 }
 
 .btn-large {
-  padding: 0.9rem 2.2rem;
+  padding: 0.95rem 2.4rem;
   font-size: 1.1rem;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-neo-lg);
+}
+
+.btn-large:hover {
+  transform: translate(3px, 3px);
+  box-shadow: var(--shadow-neo-hover);
 }
 
 .status-indicator-dot {
-  width: 8px;
-  height: 8px;
+  width: 9px;
+  height: 9px;
   border-radius: 50%;
-  background-color: var(--neon-green);
-  box-shadow: 0 0 8px var(--neon-green);
+  background-color: var(--neo-mint);
+  border: 1.5px solid var(--neo-black);
 }
 
-/* Generic Section Styles */
+/* ==========================================================================
+   GENERIC SECTION & STICKER STYLES
+   ========================================================================== */
 .section {
-  padding: 6rem 2rem;
+  padding: 6.5rem 2rem;
   position: relative;
   z-index: 10;
 }
@@ -309,50 +307,312 @@ body {
   text-align: center;
 }
 
+/* Neobrutalist Sticker Badge */
 .section-tag {
   display: inline-block;
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: 0.82rem;
+  font-weight: 800;
   text-transform: uppercase;
-  letter-spacing: 0.12em;
-  color: var(--neon-cyan);
-  margin-bottom: 0.8rem;
+  letter-spacing: 0.08em;
+  color: var(--neo-black);
+  margin-bottom: 0.9rem;
+  background: var(--neo-coral-light);
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  border: var(--border-thick);
+  box-shadow: var(--shadow-neo-sm);
+  transform: rotate(-1deg);
 }
 
 .section-title {
-  font-size: clamp(2rem, 3.8vw, 3rem);
-  font-weight: 800;
-  letter-spacing: -0.02em;
+  font-size: clamp(2.2rem, 4vw, 3.4rem);
+  font-weight: 900;
+  letter-spacing: -0.03em;
   margin-bottom: 1rem;
+  color: var(--neo-black);
 }
 
 .section-subtitle {
-  font-size: 1.1rem;
+  font-size: 1.15rem;
   color: var(--text-secondary);
-  max-width: 720px;
+  max-width: 740px;
   margin: 0 auto;
   line-height: 1.7;
+  font-weight: 500;
 }
 
-/* Glass Card Baseline */
+/* Color Accent Utilities */
+.highlight-cyan { color: #0284C7; font-weight: 800; }
+.highlight-rose { color: #E11D48; font-weight: 800; }
+.highlight-green { color: #059669; font-weight: 800; }
+.highlight-violet { color: #7C3AED; font-weight: 800; }
+.highlight-amber { color: #D97706; font-weight: 800; }
+
+.font-gradient-cyan { color: var(--neo-black); }
+.font-gradient-rose { color: var(--neo-black); }
+.font-gradient-violet { color: var(--neo-black); }
+
+/* Neobrutalist Card Baseline */
 .glass-card {
   background: var(--bg-card);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--border-subtle);
-  border-radius: 18px;
-  padding: 2rem;
-  transition: all var(--transition-normal);
+  border: var(--border-thick);
+  border-radius: var(--radius-xl);
+  padding: 2.2rem;
+  box-shadow: var(--shadow-neo);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  position: relative;
 }
 
 .glass-card:hover {
-  border-color: var(--border-light);
-  box-shadow: var(--shadow-ambient);
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-neo-lg);
 }
 
 .glass-card-nested {
   background: var(--bg-glass-nested);
-  border: 1px solid var(--border-subtle);
-  border-radius: 12px;
-  padding: 1.2rem;
+  border: var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+/* ==========================================================================
+   NEOBRUTALIST FAQ ACCORDION
+   ========================================================================== */
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.6rem;
+  margin-top: 2rem;
+}
+
+.faq-item {
+  background: #FFFFFF;
+  border: var(--border-thick);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-neo);
+  overflow: hidden;
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+
+.faq-item:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: var(--shadow-neo-lg);
+}
+
+.faq-item.active {
+  background: var(--neo-yellow-light);
+  border-color: var(--neo-black);
+}
+
+.faq-question {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4rem 1.6rem;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 1.05rem;
+  color: var(--neo-black);
+  user-select: none;
+}
+
+.faq-toggle-icon {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: var(--neo-black);
+  transition: transform var(--transition-normal);
+  display: inline-block;
+  width: 32px;
+  height: 32px;
+  line-height: 30px;
+  text-align: center;
+  border: var(--border-medium);
+  border-radius: 50%;
+  background: #FFFFFF;
+}
+
+.faq-item.active .faq-toggle-icon {
+  transform: rotate(45deg);
+  background: var(--neo-coral);
+  color: #FFFFFF;
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.35s ease-out, padding 0.35s ease-out;
+  padding: 0 1.6rem;
+  color: var(--text-secondary);
+  font-size: 0.96rem;
+  line-height: 1.65;
+  font-weight: 500;
+}
+
+.faq-item.active .faq-answer {
+  max-height: 300px;
+  padding-bottom: 1.4rem;
+}
+
+/* ==========================================================================
+   NEOBRUTALIST VIP LICENSE MODAL
+   ========================================================================== */
+.vip-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity var(--transition-normal);
+}
+
+.vip-modal.open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.modal-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 18, 18, 0.65);
+  backdrop-filter: blur(4px);
+}
+
+.modal-dialog {
+  position: relative;
+  z-index: 1001;
+  width: 90%;
+  max-width: 520px;
+  background: #FFFFFF;
+  border: 3px solid var(--neo-black);
+  box-shadow: 8px 8px 0px var(--neo-black);
+  border-radius: var(--radius-xl);
+  padding: 2.5rem;
+  transform: translateY(20px);
+  transition: transform var(--transition-bounce);
+}
+
+.vip-modal.open .modal-dialog {
+  transform: translateY(0);
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 1.2rem;
+  right: 1.2rem;
+  background: var(--neo-coral);
+  color: #FFFFFF;
+  border: var(--border-medium);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 900;
+  cursor: pointer;
+  box-shadow: 2px 2px 0px var(--neo-black);
+  transition: transform var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  transform: scale(1.1);
+}
+
+.modal-header {
+  margin-bottom: 1.8rem;
+  text-align: center;
+}
+
+.modal-title {
+  font-size: 1.7rem;
+  font-weight: 900;
+  color: var(--neo-black);
+  margin-bottom: 0.5rem;
+}
+
+.modal-subtitle {
+  font-size: 0.98rem;
+  color: var(--text-secondary);
+}
+
+.vip-perks-list {
+  list-style: none;
+  margin-bottom: 1.8rem;
+  background: var(--bg-glass-nested);
+  border: var(--border-medium);
+  border-radius: var(--radius-md);
+  padding: 1.1rem 1.3rem;
+}
+
+.vip-perks-list li {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-size: 0.92rem;
+  color: var(--text-primary);
+  margin-bottom: 0.55rem;
+  font-weight: 600;
+}
+
+.vip-perks-list li:last-child {
+  margin-bottom: 0;
+}
+
+.vip-perks-list .check {
+  color: var(--neo-black);
+  background: var(--neo-mint);
+  border: 1.5px solid var(--neo-black);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 900;
+}
+
+.modal-input-group {
+  margin-bottom: 1.4rem;
+}
+
+.modal-input-group label {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.modal-input-group input {
+  width: 100%;
+  padding: 0.9rem 1.1rem;
+  background: #FFFFFF;
+  border: var(--border-thick);
+  border-radius: var(--radius-md);
+  color: var(--text-primary);
+  font-family: var(--font-main);
+  font-size: 1rem;
+  font-weight: 600;
+  box-shadow: 3px 3px 0px var(--neo-black);
+}
+
+.modal-input-group input:focus {
+  outline: none;
+  background: var(--neo-yellow-light);
+}
+
+.vip-success {
+  display: none;
+  text-align: center;
+  padding: 1.5rem 0;
+}
+
+.vip-success-icon {
+  font-size: 3.5rem;
+  margin-bottom: 0.8rem;
 }

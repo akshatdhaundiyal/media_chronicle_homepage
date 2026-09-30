@@ -1,5 +1,5 @@
 /**
- * Navigation, Tab Switching, Clipboard & Hotspot Module
+ * Navigation, Tab Switching, Clipboard, Modal & Interactive Accordion Module
  */
 
 export function initNavigation() {
@@ -8,6 +8,8 @@ export function initNavigation() {
   initQuickstartTabs();
   initCopyButtons();
   initHotspots();
+  initFaqAccordion();
+  initVipModal();
 }
 
 function initNavbar() {
@@ -51,8 +53,6 @@ function initTabs() {
       const targetPanel = document.getElementById(targetId);
       if (targetPanel) {
         targetPanel.classList.add('active');
-
-        // Custom event for tab activation (e.g. embeddings canvas resize/redraw)
         window.dispatchEvent(new CustomEvent('lab-tab-changed', { detail: { tabId: targetId } }));
       }
     });
@@ -111,6 +111,7 @@ function initHotspots() {
   const hotspotYolo = document.querySelector('.hotspot-yolo');
   const hotspotMap = document.querySelector('.hotspot-map');
   const hotspotSgd = document.querySelector('.hotspot-sgd');
+  const hotspotScan = document.querySelector('.hotspot-scan');
 
   function activateTab(tabId) {
     const tabBtn = document.querySelector(`[data-tab="${tabId}"]`);
@@ -124,4 +125,62 @@ function initHotspots() {
   if (hotspotYolo) hotspotYolo.addEventListener('click', () => activateTab('tab-faces'));
   if (hotspotMap) hotspotMap.addEventListener('click', () => activateTab('tab-embeddings'));
   if (hotspotSgd) hotspotSgd.addEventListener('click', () => activateTab('tab-neural'));
+  if (hotspotScan) hotspotScan.addEventListener('click', () => activateTab('tab-scanner'));
+}
+
+function initFaqAccordion() {
+  const faqItems = document.querySelectorAll('.faq-item');
+  faqItems.forEach(item => {
+    const header = item.querySelector('.faq-question');
+    if (header) {
+      header.addEventListener('click', () => {
+        const isOpen = item.classList.contains('active');
+        faqItems.forEach(i => i.classList.remove('active'));
+        if (!isOpen) {
+          item.classList.add('active');
+        }
+      });
+    }
+  });
+}
+
+function initVipModal() {
+  const modal = document.getElementById('vip-modal');
+  const openButtons = document.querySelectorAll('.trigger-vip-modal');
+  const closeBtn = document.getElementById('modal-close-btn');
+  const modalForm = document.getElementById('vip-modal-form');
+  const successMessage = document.getElementById('vip-success-message');
+
+  if (!modal) return;
+
+  openButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+  });
+
+  const closeModal = () => {
+    modal.classList.remove('open');
+    document.body.style.overflow = '';
+  };
+
+  if (closeBtn) closeBtn.addEventListener('click', closeModal);
+  modal.addEventListener('click', (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  if (modalForm) {
+    modalForm.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const emailInput = document.getElementById('vip-email');
+      if (emailInput && emailInput.value) {
+        modalForm.style.display = 'none';
+        if (successMessage) {
+          successMessage.style.display = 'block';
+        }
+      }
+    });
+  }
 }
