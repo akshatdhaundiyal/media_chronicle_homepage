@@ -78,6 +78,7 @@
   .comparison-grid,
   .features-grid,
   .gallery-results-grid,
+  .install-guide-grid,
   .footer-container,
   .footer-links-group {
     grid-template-columns: 1fr;

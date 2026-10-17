@@ -606,6 +606,109 @@
   box-shadow: 2.5px 2.5px 0px var(--neo-black);
 }
 
+/* GitHub Releases & Download Options */
+.release-meta-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  justify-content: center;
+  margin-bottom: 1.6rem;
+}
+
+.release-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.35rem 0.8rem;
+  font-size: 0.82rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid var(--neo-black);
+  background: var(--bg-surface);
+  color: var(--neo-black);
+  box-shadow: 1.5px 1.5px 0px var(--neo-black);
+}
+
+.release-pill.highlight {
+  background: var(--neo-mint-light);
+  color: var(--neo-black);
+}
+
+.download-cta-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.btn-download-main {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+
+.btn-download-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  text-decoration: none;
+}
+
+.install-guide-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin: 2rem auto 1.5rem;
+  max-width: 820px;
+  text-align: left;
+}
+
+.install-step-card {
+  background: var(--bg-surface);
+  border: 2px solid var(--neo-black);
+  border-radius: var(--radius-md);
+  padding: 1.1rem;
+  box-shadow: 3px 3px 0px var(--neo-black);
+  transition: transform var(--transition-fast);
+}
+
+.install-step-card:hover {
+  transform: translateY(-2px);
+}
+
+.install-step-badge {
+  font-family: var(--font-mono);
+  font-weight: 900;
+  font-size: 0.85rem;
+  color: var(--neo-black);
+  display: inline-block;
+  margin-bottom: 0.5rem;
+  background: var(--neo-yellow);
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  border: 1.5px solid var(--neo-black);
+}
+
+.install-step-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--neo-black);
+  margin-bottom: 0.35rem;
+}
+
+.install-step-desc {
+  font-size: 0.83rem;
+  color: var(--text-secondary);
+  line-height: 1.45;
+  margin: 0;
+  font-weight: 500;
+}
+
+
 /* ==========================================================================
    FINAL CALL TO ACTION BANNER (Vibrant Sunshine Yellow)
    ========================================================================== */
