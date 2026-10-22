@@ -27,6 +27,7 @@ $RECYCLE.BIN/
 .gemini/
 .claude/
 .system_generated/
+skills-lock.json
 
 # Node, Bundlers & Web Caches
 node_modules/
@@ -95,3 +96,5 @@ screenshot*.png
 *.pem
 *.key
 
+# Cloudflare Wrangler
+.wrangler/
