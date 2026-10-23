@@ -24,22 +24,57 @@ export function initScrollytelling() {
 
   let hasVideo = false;
   let videoDuration = 8;
+  let targetVideoTime = 0;
+  let isSeeking = false;
+
+  // Non-blocking seek throttler to prevent CDN request cancellation storms
+  function seekVideoFrame() {
+    if (!video || !hasVideo) return;
+    const dur = (video.duration && !isNaN(video.duration) && video.duration > 0) ? video.duration : videoDuration;
+    const clampedTarget = Math.max(0, Math.min(dur, targetVideoTime));
+
+    if (!video.seeking && Math.abs(video.currentTime - clampedTarget) > 0.02) {
+      isSeeking = true;
+      try {
+        if (typeof video.fastSeek === 'function') {
+          video.fastSeek(clampedTarget);
+        } else {
+          video.currentTime = clampedTarget;
+        }
+      } catch (err) {
+        video.currentTime = clampedTarget;
+      }
+    }
+  }
 
   // 1. Video Scrub Binding
   if (video) {
+    video.muted = true;
+    video.defaultMuted = true;
+
     const onVideoReady = () => {
       hasVideo = true;
-      videoDuration = video.duration || 8;
+      if (video.duration && !isNaN(video.duration) && video.duration > 0) {
+        videoDuration = video.duration;
+      }
       if (canvas) canvas.style.display = 'none';
       video.style.display = 'block';
+      seekVideoFrame();
     };
 
     if (video.readyState >= 1) {
       onVideoReady();
-    } else {
-      video.addEventListener('loadedmetadata', onVideoReady);
-      video.addEventListener('canplay', onVideoReady);
     }
+    video.addEventListener('loadedmetadata', onVideoReady);
+    video.addEventListener('loadeddata', onVideoReady);
+    video.addEventListener('canplay', onVideoReady);
+    video.addEventListener('canplaythrough', onVideoReady);
+
+    // As soon as Cloudflare finishes returning the previous byte range, seek to next target
+    video.addEventListener('seeked', () => {
+      isSeeking = false;
+      seekVideoFrame();
+    });
 
     video.addEventListener('error', () => {
       hasVideo = false;
@@ -48,7 +83,30 @@ export function initScrollytelling() {
       setupCanvasFallback();
     });
 
-    video.load();
+    // Warm up the hardware decoder on first user gesture/touch/scroll
+    const unlockDecoder = () => {
+      if (video.paused) {
+        const p = video.play();
+        if (p !== undefined) {
+          p.then(() => {
+            video.pause();
+            seekVideoFrame();
+          }).catch(() => {});
+        }
+      }
+    };
+    window.addEventListener('touchstart', unlockDecoder, { once: true, passive: true });
+    window.addEventListener('scroll', unlockDecoder, { once: true, passive: true });
+    window.addEventListener('click', unlockDecoder, { once: true, passive: true });
+    window.addEventListener('wheel', unlockDecoder, { once: true, passive: true });
+
+    // Smooth rAF render loop
+    let rafScrubId = null;
+    function scrubRenderLoop() {
+      seekVideoFrame();
+      rafScrubId = requestAnimationFrame(scrubRenderLoop);
+    }
+    requestAnimationFrame(scrubRenderLoop);
   }
 
   // 2. High-Definition Fallback Canvas Simulation
@@ -400,9 +458,11 @@ export function initScrollytelling() {
       scrub: 0.35,
       onUpdate: (self) => {
         const p = self.progress;
-        if (hasVideo && video && video.duration) {
-          video.currentTime = calculateVideoTime(p, video.duration);
-        } else {
+        const dur = (video && video.duration && !isNaN(video.duration) && video.duration > 0) ? video.duration : videoDuration;
+        targetVideoTime = calculateVideoTime(p, dur);
+        seekVideoFrame();
+
+        if (!hasVideo) {
           renderFrame(p);
         }
         updateStoryBeat(p);
@@ -416,9 +476,11 @@ export function initScrollytelling() {
       const scrolled = -rect.top;
       const p = Math.max(0, Math.min(1, scrolled / total));
 
-      if (hasVideo && video && video.duration) {
-        video.currentTime = calculateVideoTime(p, video.duration);
-      } else {
+      const dur = (video && video.duration && !isNaN(video.duration) && video.duration > 0) ? video.duration : videoDuration;
+      targetVideoTime = calculateVideoTime(p, dur);
+      seekVideoFrame();
+
+      if (!hasVideo) {
         renderFrame(p);
       }
       updateStoryBeat(p);
