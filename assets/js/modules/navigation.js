@@ -26,14 +26,24 @@ function initNavbar() {
   });
 
   if (mobileToggle && navLinks) {
-    mobileToggle.addEventListener('click', () => {
-      navLinks.classList.toggle('mobile-open');
+    mobileToggle.addEventListener('click', (e) => {
+      e.stopPropagation();
+      const isOpen = navLinks.classList.toggle('mobile-open');
+      mobileToggle.classList.toggle('active', isOpen);
     });
 
     navLinks.querySelectorAll('.nav-item').forEach(link => {
       link.addEventListener('click', () => {
         navLinks.classList.remove('mobile-open');
+        mobileToggle.classList.remove('active');
       });
+    });
+
+    document.addEventListener('click', (e) => {
+      if (!navLinks.contains(e.target) && !mobileToggle.contains(e.target)) {
+        navLinks.classList.remove('mobile-open');
+        mobileToggle.classList.remove('active');
+      }
     });
   }
 }
