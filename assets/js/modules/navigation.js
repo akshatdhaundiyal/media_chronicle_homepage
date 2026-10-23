@@ -17,7 +17,8 @@ function initNavbar() {
   const navLinks = document.getElementById('nav-links');
 
   window.addEventListener('scroll', () => {
-    if (window.scrollY > 40) {
+    // Reveal nav CTA buttons only after scrolling past the opening pure-art screen
+    if (window.scrollY > 250) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
@@ -125,40 +126,45 @@ function initFaqAccordion() {
 function initLicenseModal() {
   const modal = document.getElementById('license-modal') || document.getElementById('vip-modal');
   const openButtons = document.querySelectorAll('.trigger-license-modal, .trigger-vip-modal');
-  const closeBtn = document.getElementById('modal-close-btn');
-  const modalForm = document.getElementById('license-modal-form') || document.getElementById('vip-modal-form');
-  const successMessage = document.getElementById('license-success-message') || document.getElementById('vip-success-message');
+  const closeButtons = document.querySelectorAll('#modal-close, #modal-close-btn, .modal-close');
 
   if (!modal) return;
+
+  const openModal = () => {
+    modal.classList.add('active', 'open');
+    document.body.style.overflow = 'hidden';
+    const emailInput = document.getElementById('license-email');
+    if (emailInput) {
+      setTimeout(() => emailInput.focus(), 150);
+    }
+  };
+
+  const closeModal = () => {
+    modal.classList.remove('active', 'open');
+    document.body.style.overflow = '';
+  };
 
   openButtons.forEach(btn => {
     btn.addEventListener('click', (e) => {
       e.preventDefault();
-      modal.classList.add('open');
-      document.body.style.overflow = 'hidden';
+      openModal();
     });
   });
 
-  const closeModal = () => {
-    modal.classList.remove('open');
-    document.body.style.overflow = '';
-  };
+  closeButtons.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+      e.preventDefault();
+      closeModal();
+    });
+  });
 
-  if (closeBtn) closeBtn.addEventListener('click', closeModal);
   modal.addEventListener('click', (e) => {
     if (e.target === modal) closeModal();
   });
 
-  if (modalForm) {
-    modalForm.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const emailInput = document.getElementById('license-email') || document.getElementById('vip-email');
-      if (emailInput && emailInput.value) {
-        modalForm.style.display = 'none';
-        if (successMessage) {
-          successMessage.style.display = 'block';
-        }
-      }
-    });
-  }
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && (modal.classList.contains('active') || modal.classList.contains('open'))) {
+      closeModal();
+    }
+  });
 }

@@ -1,0 +1,301 @@
+/* ==========================================================================
+   LEGAL, COMPLIANCE & RECEIPT PAGES STYLESHEET
+   Matches Gallery-Grade Editorial Minimalist Design Tokens (DESIGN.md)
+   ========================================================================== */
+
+.legal-viewport {
+  padding: 8rem 2rem 5rem;
+  max-width: 920px;
+  margin: 0 auto;
+}
+
+.legal-header {
+  margin-bottom: 3.5rem;
+  padding-bottom: 2rem;
+  border-bottom: var(--border-hairline);
+}
+
+.legal-back-nav {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-decoration: none;
+  margin-bottom: 1.5rem;
+  padding: 0.4rem 0.85rem;
+  background: var(--bg-surface);
+  border: var(--border-hairline);
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-fast);
+}
+
+.legal-back-nav:hover {
+  background: var(--obsidian);
+  color: #FFFFFF;
+  border-color: var(--obsidian);
+}
+
+.legal-title {
+  font-family: var(--font-editorial);
+  font-size: clamp(2.2rem, 4vw, 3.2rem);
+  font-weight: 400;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 0.8rem;
+}
+
+.legal-subtitle {
+  font-size: 1.05rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  max-width: 720px;
+}
+
+.legal-meta-bar {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 1.5rem;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+}
+
+.legal-meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.legal-content {
+  color: var(--text-primary);
+  font-size: 0.98rem;
+  line-height: 1.75;
+}
+
+.legal-content h2 {
+  font-family: var(--font-editorial);
+  font-size: 1.65rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-top: 2.8rem;
+  margin-bottom: 1rem;
+  padding-top: 1.5rem;
+  border-top: var(--border-hairline);
+  letter-spacing: -0.01em;
+}
+
+.legal-content h3 {
+  font-family: var(--font-sans);
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-top: 1.6rem;
+  margin-bottom: 0.6rem;
+}
+
+.legal-content p {
+  margin-bottom: 1.2rem;
+  color: var(--text-secondary);
+}
+
+.legal-content ul, .legal-content ol {
+  margin-bottom: 1.4rem;
+  padding-left: 1.6rem;
+  color: var(--text-secondary);
+}
+
+.legal-content li {
+  margin-bottom: 0.5rem;
+}
+
+.legal-content a {
+  color: var(--obsidian);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color var(--transition-fast);
+}
+
+.legal-content a:hover {
+  color: var(--emerald);
+}
+
+.policy-callout {
+  background: var(--bg-surface);
+  border: var(--border-hairline);
+  border-left: 3px solid var(--emerald);
+  border-radius: var(--radius-md);
+  padding: 1.4rem 1.6rem;
+  margin: 2rem 0;
+  box-shadow: var(--shadow-xs);
+}
+
+.policy-callout.mor-callout {
+  border-left-color: var(--obsidian);
+  background: #FAFAFA;
+}
+
+.policy-callout-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-bottom: 0.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-primary);
+}
+
+.policy-callout-body {
+  font-size: 0.92rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin-bottom: 0;
+}
+
+/* Success & Receipt Page Components */
+.success-card {
+  background: var(--bg-surface);
+  border: var(--border-hairline);
+  border-radius: var(--radius-2xl);
+  padding: 3.5rem 2.8rem;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.success-icon-wrap {
+  width: 64px;
+  height: 64px;
+  border-radius: var(--radius-pill);
+  background: var(--emerald-subtle);
+  border: 1px solid var(--emerald-border);
+  color: var(--emerald);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.5rem;
+}
+
+.order-details-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.2rem;
+  background: #FFFFFF;
+  border: var(--border-hairline);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.order-meta-label {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.05em;
+  margin-bottom: 0.3rem;
+}
+
+.order-meta-value {
+  font-family: var(--font-sans);
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.success-steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin: 2.5rem 0;
+  text-align: left;
+}
+
+.success-step-item {
+  background: #FFFFFF;
+  border: var(--border-hairline);
+  border-radius: var(--radius-lg);
+  padding: 1.6rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.success-step-number {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
+  color: var(--emerald);
+  background: var(--emerald-subtle);
+  border-radius: var(--radius-pill);
+  padding: 0.2rem 0.6rem;
+  align-self: flex-start;
+  margin-bottom: 0.8rem;
+}
+
+/* Modal Checkout Trust Enhancements */
+.checkout-trust-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.6rem;
+  margin: 1.2rem 0 1.4rem;
+  padding: 0.9rem;
+  background: var(--bg-surface);
+  border: var(--border-hairline);
+  border-radius: var(--radius-md);
+  font-size: 0.78rem;
+  color: var(--text-secondary);
+}
+
+.checkout-trust-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+}
+
+.checkout-trust-item svg {
+  flex-shrink: 0;
+  color: var(--emerald);
+}
+
+.checkout-legal-notice {
+  font-size: 0.76rem;
+  color: var(--text-muted);
+  line-height: 1.5;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+.checkout-legal-notice a {
+  color: var(--text-secondary);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
+.checkout-legal-notice a:hover {
+  color: var(--obsidian);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (max-width: 768px) {
+  .legal-viewport {
+    padding: 6.5rem 1.2rem 4rem;
+  }
+  .order-details-grid,
+  .success-steps {
+    grid-template-columns: 1fr;
+  }
+  .checkout-trust-grid {
+    grid-template-columns: 1fr;
+  }
+}

@@ -1,23 +1,24 @@
 /**
  * Media Chronicle — Modular JavaScript Entry Point
- * Coordinates ES modules for navigation, ROI calculator, drive scanner, and instant offline gallery search.
+ * Coordinates ES modules for navigation, hero animation, ROI calculator, and offline gallery search.
  */
 
 import { initNavigation } from './modules/navigation.js';
+import { initScrollytelling } from './modules/scrollytelling.js';
 import { initCalculator } from './modules/calculator.js';
-import { initOfflineSimulator } from './modules/offline-simulator.js';
-import { initGalleryDemo } from './modules/gallery-demo.js';
+import { initDodoPayments } from './modules/dodo-payments.js';
 
 document.addEventListener('DOMContentLoaded', () => {
-  // 1. Core Navigation, Modal & Accordion Interactions
+  // 1. Core Navigation, Mobile Menu, Modals & FAQ Accordions
   initNavigation();
 
-  // 2. Interactive Lifetime Savings & ROI Calculator
+  // 2. Cinematic Scroll-Scrubbed Video / Canvas Showcase
+  initScrollytelling();
+
+  // 3. Interactive Lifetime Savings & ROI Calculator
   initCalculator();
 
-  // 3. Drive Scanner & In-Place Ingestion Simulator
-  initOfflineSimulator();
-
-  // 4. Instant Search & Offline Gallery Demo
-  initGalleryDemo();
+  // 4. Dodo Payments Checkout Integration (Modal Email Capture & Secure Redirect)
+  initDodoPayments();
 });
+

@@ -1,825 +1,618 @@
 /* ==========================================================================
-   NEOBRUTALIST SECTIONS — BENTO GRID, CALCULATOR, MVP & ROADMAP
-   SerenMind Aesthetic: Pastel Color Blocks, 2.5px Black Borders, Hard Shadows
+   GALLERY-GRADE EDITORIAL SECTIONS
+   How It Works, Calculator, Architecture, Roadmap, FAQ & Footer
    ========================================================================== */
 
 /* ==========================================================================
-   3-STEP IN-PLACE ENGINE (HOW IT WORKS BENTO GRID)
+   1. HOW IT WORKS (3-STEP IN-PLACE ENGINE)
    ========================================================================== */
 .how-it-works-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 2rem;
-  margin-bottom: 3.5rem;
-}
-
-.bento-step-card {
-  border: var(--border-thick);
-  border-radius: var(--radius-xl);
-  padding: 2.5rem 2rem;
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  box-shadow: var(--shadow-neo);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.bento-step-card:hover {
-  transform: translate(-3px, -3px);
-  box-shadow: var(--shadow-neo-lg);
-}
-
-/* Distinct SerenMind Color Backgrounds for Steps */
-.bento-step-card:nth-child(1) { background: #FFFDF0; }
-.bento-step-card:nth-child(2) { background: #FFF3F5; }
-.bento-step-card:nth-child(3) { background: #F0FDF4; }
-
-.step-num-pill {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-md);
-  background: var(--neo-yellow);
-  border: var(--border-thick);
-  color: var(--neo-black);
-  font-family: var(--font-mono);
-  font-weight: 900;
-  font-size: 1.3rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 1.5rem;
-  box-shadow: 2.5px 2.5px 0px var(--neo-black);
-}
-
-.bento-step-card:nth-child(2) .step-num-pill { background: var(--neo-coral); color: #FFFFFF; }
-.bento-step-card:nth-child(3) .step-num-pill { background: var(--neo-mint); }
-
-.step-title {
-  font-size: 1.45rem;
-  font-weight: 800;
-  margin-bottom: 0.8rem;
-  color: var(--neo-black);
-}
-
-.step-desc {
-  font-size: 1rem;
-  color: var(--text-secondary);
-  line-height: 1.65;
-  margin-bottom: 1.5rem;
-  font-weight: 500;
-}
-
-.step-mini-tags {
-  display: flex;
-  gap: 0.5rem;
-  flex-wrap: wrap;
-  margin-top: auto;
-}
-
-.tech-tag {
-  font-size: 0.78rem;
-  font-family: var(--font-mono);
-  font-weight: 700;
-  background: #FFFFFF;
-  border: 1.5px solid var(--neo-black);
-  padding: 0.25rem 0.65rem;
-  border-radius: var(--radius-sm);
-  color: var(--neo-black);
-  box-shadow: 1.5px 1.5px 0px var(--neo-black);
-}
-
-/* ==========================================================================
-   INTERACTIVE SAVINGS & ROI CALCULATOR
-   ========================================================================== */
-.calculator-box {
-  background: #FFFFFF;
-  border: 3px solid var(--neo-black);
-  border-radius: var(--radius-xl);
-  padding: 3rem;
-  margin-bottom: 3.5rem;
-  box-shadow: 8px 8px 0px var(--neo-black);
-}
-
-.calc-grid {
-  display: grid;
-  grid-template-columns: 1.15fr 1fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-.calc-controls-col {
-  display: flex;
-  flex-direction: column;
-  gap: 2rem;
-}
-
-.calc-slider-block label {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.1rem;
-  font-weight: 800;
-  margin-bottom: 0.8rem;
-  color: var(--neo-black);
-}
-
-.calc-val-display {
-  font-family: var(--font-mono);
-  background: var(--neo-yellow);
-  color: var(--neo-black);
-  border: 2px solid var(--neo-black);
-  padding: 0.2rem 0.7rem;
-  border-radius: var(--radius-full);
-  font-size: 1rem;
-  font-weight: 900;
-  box-shadow: 2px 2px 0px var(--neo-black);
-}
-
-.calc-slider {
-  width: 100%;
-  height: 12px;
-  border-radius: 9999px;
-  background: #E5E5E5;
-  border: 2px solid var(--neo-black);
-  outline: none;
-  appearance: none;
-  -webkit-appearance: none;
-  cursor: pointer;
-}
-
-.calc-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  width: 28px;
-  height: 28px;
-  border-radius: 50%;
-  background: var(--neo-yellow);
-  border: 2.5px solid var(--neo-black);
-  box-shadow: 2.5px 2.5px 0px var(--neo-black);
-  cursor: pointer;
-  transition: transform var(--transition-fast);
-}
-
-.calc-slider::-webkit-slider-thumb:hover {
-  transform: scale(1.15);
-}
-
-.calc-pills-label {
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: var(--neo-black);
-  margin-bottom: 0.8rem;
-}
-
-.calc-storage-pills {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 0.85rem;
-}
-
-.calc-storage-pill {
-  background: var(--bg-surface);
-  border: 2px solid var(--neo-black);
-  border-radius: var(--radius-md);
-  padding: 0.85rem 1rem;
-  color: var(--neo-black);
-  font-size: 0.92rem;
-  font-weight: 800;
-  cursor: pointer;
-  text-align: left;
-  box-shadow: 2.5px 2.5px 0px var(--neo-black);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
-}
-
-.calc-storage-pill small {
-  display: block;
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--text-secondary);
-  margin-top: 0.15rem;
-}
-
-.calc-storage-pill:hover {
-  transform: translate(1px, 1px);
-  box-shadow: 1.5px 1.5px 0px var(--neo-black);
-}
-
-.calc-storage-pill.active {
-  background: var(--neo-yellow);
-  transform: translate(2px, 2px);
-  box-shadow: 0px 0px 0px var(--neo-black);
-}
-
-.calc-results-card {
-  background: var(--neo-mint-light);
-  border: 3px solid var(--neo-black);
-  border-radius: var(--radius-xl);
-  padding: 2.4rem;
-  box-shadow: 5px 5px 0px var(--neo-black);
-}
-
-.calc-results-header {
-  font-size: 0.88rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  letter-spacing: 0.08em;
-  color: var(--neo-black);
-  margin-bottom: 1.5rem;
-  border-bottom: 2px solid var(--neo-black);
-  padding-bottom: 0.6rem;
-}
-
-.calc-metrics-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.5rem;
-  margin-bottom: 1.8rem;
-}
-
-.calc-metric-box {
-  display: flex;
-  flex-direction: column;
-}
-
-.calc-metric-label {
-  font-size: 0.82rem;
-  color: var(--neo-black);
-  font-weight: 700;
-  text-transform: uppercase;
-  margin-bottom: 0.3rem;
-}
-
-.calc-metric-val {
-  font-size: 2.1rem;
-  font-weight: 900;
-  font-family: var(--font-mono);
-  color: var(--neo-black);
-}
-
-.calc-metric-val.cloud-strike {
-  color: #DC2626;
-  text-decoration: line-through;
-}
-
-.calc-metric-val.chronicle-fix {
-  color: #047857;
-}
-
-.calc-savings-box {
-  background: #FFFFFF;
-  border: 2.5px solid var(--neo-black);
-  border-radius: var(--radius-md);
-  padding: 1.2rem 1.4rem;
-  margin-bottom: 1.5rem;
-  text-align: center;
-  box-shadow: 3px 3px 0px var(--neo-black);
-}
-
-.calc-savings-title {
-  font-size: 0.88rem;
-  color: var(--neo-black);
-  text-transform: uppercase;
-  font-weight: 800;
-  margin-bottom: 0.2rem;
-}
-
-.calc-savings-num {
-  font-size: 3.2rem;
-  font-weight: 900;
-  font-family: var(--font-mono);
-  color: #059669;
-}
-
-.calc-comparison-detail {
-  font-size: 0.95rem;
-  color: var(--neo-black);
-  line-height: 1.6;
-  font-weight: 600;
-}
-
-.breakeven-banner {
-  background: var(--neo-yellow-light);
-  border: var(--border-thick);
-  border-radius: var(--radius-lg);
-  padding: 1.4rem 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-  box-shadow: var(--shadow-neo);
-}
-
-.breakeven-text {
-  font-size: 1.05rem;
-  color: var(--neo-black);
-  font-weight: 600;
-}
-
-.breakeven-text strong {
-  font-weight: 800;
-}
-
-/* ==========================================================================
-   8-WEEK MVP SCOPE & ROADMAP STYLES
-   ========================================================================== */
-.mvp-scope-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.8rem;
   margin-bottom: 3.5rem;
 }
 
-.mvp-card {
-  background: #FFFFFF;
-  border: var(--border-thick);
-  border-radius: var(--radius-lg);
-  padding: 2.2rem;
-  display: flex;
-  flex-direction: column;
+.bento-step-card {
+  background: var(--bg-surface);
+  border: var(--border-hairline);
+  border-radius: var(--radius-xl);
+  padding: 2.2rem 1.8rem;
   position: relative;
-  box-shadow: var(--shadow-neo);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.mvp-card:hover {
-  transform: translate(-3px, -3px);
-  box-shadow: var(--shadow-neo-lg);
-}
-
-.mvp-card-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 1.2rem;
-}
-
-.mvp-icon {
-  font-size: 2rem;
-}
-
-.mvp-badge {
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 800;
-  text-transform: uppercase;
-  background: var(--neo-mint-light);
-  color: var(--neo-black);
-  border: 1.5px solid var(--neo-black);
-  padding: 0.2rem 0.65rem;
-  border-radius: var(--radius-sm);
-  box-shadow: 1.5px 1.5px 0px var(--neo-black);
-}
-
-.mvp-title {
-  font-size: 1.3rem;
-  font-weight: 800;
-  margin-bottom: 0.6rem;
-  color: var(--neo-black);
-}
-
-.mvp-desc {
-  font-size: 0.95rem;
-  color: var(--text-secondary);
-  line-height: 1.6;
-  font-weight: 500;
-}
-
-/* Roadmap Grid */
-.roadmap-container {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.5rem;
-}
-
-.roadmap-col {
   display: flex;
   flex-direction: column;
-  gap: 1.5rem;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-xs);
 }
 
-.roadmap-col-header {
+.bento-step-card:hover {
+  background: var(--bg-surface-elevated);
+  border-color: var(--border-subtle);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.step-num-pill {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background: var(--obsidian);
+  color: #FFFFFF;
+  font-family: var(--font-mono);
+  font-weight: 600;
+  font-size: 0.95rem;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  border-bottom: var(--border-thick);
-  padding-bottom: 1rem;
+  justify-content: center;
+  margin-bottom: 1.4rem;
+  box-shadow: var(--shadow-xs);
 }
 
-.roadmap-col-title {
-  font-size: 1.4rem;
-  font-weight: 900;
-  color: var(--neo-black);
+.step-title {
+  font-family: var(--font-editorial);
+  font-size: 1.55rem;
+  font-weight: 400;
+  margin-bottom: 0.6rem;
+  color: var(--text-primary);
+  line-height: 1.2;
 }
 
-.phase-pill {
-  font-family: var(--font-mono);
-  font-size: 0.78rem;
-  font-weight: 800;
-  padding: 0.3rem 0.8rem;
-  border-radius: var(--radius-full);
-  border: var(--border-thick);
-  box-shadow: 2px 2px 0px var(--neo-black);
-}
-
-.phase-pill.active {
-  background: var(--neo-yellow);
-  color: var(--neo-black);
-}
-
-.phase-pill.v2 {
-  background: var(--neo-coral-light);
-  color: var(--neo-black);
-}
-
-.roadmap-card {
-  padding: 1.5rem 1.8rem;
-  border-radius: var(--radius-md);
-  background: #FFFFFF;
-  border: var(--border-thick);
-  box-shadow: var(--shadow-neo);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
-}
-
-.roadmap-card:hover {
-  transform: translate(2px, 2px);
-  box-shadow: 2px 2px 0px var(--neo-black);
-}
-
-.roadmap-card-top {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 0.5rem;
-}
-
-.roadmap-card-title {
-  font-size: 1.1rem;
-  font-weight: 800;
-  color: var(--neo-black);
-}
-
-.status-tag {
-  font-family: var(--font-mono);
-  font-size: 0.72rem;
-  font-weight: 800;
-  padding: 0.2rem 0.55rem;
-  border-radius: 4px;
-  border: 1.5px solid var(--neo-black);
-}
-
-.status-tag.mvp {
-  background: var(--neo-mint-light);
-  color: var(--neo-black);
-}
-
-.status-tag.deferred {
-  background: var(--neo-lavender-light);
-  color: var(--neo-black);
-}
-
-.roadmap-card p {
+.step-desc {
   font-size: 0.92rem;
   color: var(--text-secondary);
-  line-height: 1.55;
+  line-height: 1.6;
+  margin-bottom: 1.4rem;
+}
+
+.step-mini-tags {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+  margin-top: auto;
+}
+
+.tech-tag {
+  font-size: 10px;
+  font-family: var(--font-mono);
   font-weight: 500;
+  background: var(--bg-surface-elevated);
+  border: var(--border-hairline);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  color: var(--text-secondary);
+  letter-spacing: 0.04em;
 }
 
-
-
-/* Quickstart Gadget Terminal */
-.quickstart-box {
-  max-width: 900px;
-  margin: 0 auto 3.5rem;
-  padding: 0;
-  overflow: hidden;
-  border: 3px solid var(--neo-black);
-  box-shadow: 6px 6px 0px var(--neo-black);
-  border-radius: var(--radius-xl);
-  background: #FFFFFF;
-}
-
-.quickstart-tabs {
-  display: flex;
+/* ==========================================================================
+   2. INTERACTIVE SAVINGS & LIFETIME ROI CALCULATOR
+   ========================================================================== */
+.calculator-box {
   background: var(--bg-surface);
-  border-bottom: 2.5px solid var(--neo-black);
+  border: var(--border-hairline);
+  border-radius: var(--radius-2xl);
+  padding: 3rem 2.5rem;
+  margin-bottom: 3.5rem;
+  box-shadow: var(--shadow-sm);
 }
 
-.qs-tab {
-  flex: 1;
-  background: transparent;
-  border: none;
-  border-right: 2px solid var(--neo-black);
-  color: var(--neo-black);
-  padding: 1.1rem 1.2rem;
-  font-family: var(--font-main);
-  font-size: 0.98rem;
-  font-weight: 800;
-  cursor: pointer;
-  transition: all var(--transition-fast);
+.calc-controls {
+  margin-bottom: 2.5rem;
 }
 
-.qs-tab:last-child {
-  border-right: none;
-}
-
-.qs-tab:hover {
-  background: var(--neo-yellow-light);
-}
-
-.qs-tab.active {
-  background: var(--neo-yellow);
-}
-
-.qs-content {
-  display: none;
-  padding: 2rem;
-}
-
-.qs-content.active {
-  display: block;
-}
-
-.code-terminal {
-  background: var(--bg-dark-gadget);
-  border: 2.5px solid var(--neo-black);
-  border-radius: var(--radius-md);
-  overflow: hidden;
-  margin-bottom: 1.2rem;
-  box-shadow: 4px 4px 0px var(--neo-black);
-}
-
-.code-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0.7rem 1.2rem;
-  background: #161B22;
-  border-bottom: 1.5px solid #30363D;
-  font-size: 0.82rem;
-  font-family: var(--font-mono);
-  font-weight: 700;
-  color: #8B949E;
-}
-
-.btn-copy {
-  background: #21262D;
-  border: 1.5px solid #8B949E;
-  color: #F0F6FC;
-  font-family: var(--font-main);
-  font-size: 0.8rem;
-  font-weight: 700;
-  padding: 0.3rem 0.75rem;
-  border-radius: 6px;
-  cursor: pointer;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  transition: all var(--transition-fast);
-}
-
-.btn-copy:hover {
-  background: #30363D;
-  border-color: #F0F6FC;
-}
-
-.code-terminal pre {
-  padding: 1.4rem;
-  margin: 0;
-  overflow-x: auto;
-}
-
-.code-terminal code {
-  font-family: var(--font-mono);
-  font-size: 0.9rem;
-  line-height: 1.7;
-  color: #7EE787;
-}
-
-.prereq-note {
-  font-size: 0.88rem;
-  color: var(--neo-black);
-  background: var(--neo-yellow-light);
-  padding: 0.9rem 1.3rem;
-  border-radius: var(--radius-md);
-  border: 2px solid var(--neo-black);
-  font-weight: 600;
-  box-shadow: 2.5px 2.5px 0px var(--neo-black);
-}
-
-/* GitHub Releases & Download Options */
-.release-meta-strip {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.6rem;
-  justify-content: center;
-  margin-bottom: 1.6rem;
-}
-
-.release-pill {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  padding: 0.35rem 0.8rem;
-  font-size: 0.82rem;
-  font-family: var(--font-mono);
-  font-weight: 700;
-  border-radius: var(--radius-sm);
-  border: 1.5px solid var(--neo-black);
-  background: var(--bg-surface);
-  color: var(--neo-black);
-  box-shadow: 1.5px 1.5px 0px var(--neo-black);
-}
-
-.release-pill.highlight {
-  background: var(--neo-mint-light);
-  color: var(--neo-black);
-}
-
-.download-cta-actions {
-  display: flex;
-  gap: 1rem;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+.calc-slider-wrapper {
   margin-bottom: 2rem;
 }
 
-.btn-download-main {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.75rem;
-  text-decoration: none;
-}
-
-.btn-download-secondary {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.6rem;
-  text-decoration: none;
-}
-
-.install-guide-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin: 2rem auto 1.5rem;
-  max-width: 820px;
-  text-align: left;
-}
-
-.install-step-card {
-  background: var(--bg-surface);
-  border: 2px solid var(--neo-black);
-  border-radius: var(--radius-md);
-  padding: 1.1rem;
-  box-shadow: 3px 3px 0px var(--neo-black);
-  transition: transform var(--transition-fast);
-}
-
-.install-step-card:hover {
-  transform: translateY(-2px);
-}
-
-.install-step-badge {
-  font-family: var(--font-mono);
-  font-weight: 900;
-  font-size: 0.85rem;
-  color: var(--neo-black);
-  display: inline-block;
-  margin-bottom: 0.5rem;
-  background: var(--neo-yellow);
-  padding: 0.2rem 0.6rem;
-  border-radius: 4px;
-  border: 1.5px solid var(--neo-black);
-}
-
-.install-step-title {
-  font-size: 0.95rem;
-  font-weight: 800;
-  color: var(--neo-black);
-  margin-bottom: 0.35rem;
-}
-
-.install-step-desc {
-  font-size: 0.83rem;
-  color: var(--text-secondary);
-  line-height: 1.45;
-  margin: 0;
-  font-weight: 500;
-}
-
-
-/* ==========================================================================
-   FINAL CALL TO ACTION BANNER (Vibrant Sunshine Yellow)
-   ========================================================================== */
-.github-cta-banner {
-  max-width: 950px;
-  margin: 0 auto;
-  padding: 4.5rem 3rem;
-  position: relative;
-  overflow: hidden;
-  background: var(--neo-yellow);
-  border: 3.5px solid var(--neo-black);
-  box-shadow: 10px 10px 0px var(--neo-black);
-  border-radius: var(--radius-xl);
-}
-
-.cta-glow-element {
-  display: none;
-}
-
-.cta-title {
-  font-size: clamp(2.2rem, 3.8vw, 3.2rem);
-  font-weight: 900;
-  color: var(--neo-black);
+.slider-label-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
   margin-bottom: 1rem;
 }
 
-.cta-desc {
-  font-size: 1.15rem;
-  color: var(--neo-black);
-  max-width: 680px;
-  margin: 0 auto 2.2rem;
-  line-height: 1.7;
+.slider-label-row label {
+  font-size: 1rem;
   font-weight: 600;
+  color: var(--text-primary);
+}
+
+.slider-val-badge {
+  font-family: var(--font-mono);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  background: var(--bg-surface-elevated);
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-pill);
+  border: var(--border-hairline);
+  box-shadow: var(--shadow-xs);
+}
+
+/* Minimalist Range Slider */
+.calc-range {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 6px;
+  border-radius: var(--radius-pill);
+  background: var(--bg-pill);
+  outline: none;
+  transition: background 0.2s;
+}
+
+.calc-range::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: var(--emerald);
+  cursor: pointer;
+  box-shadow: 0 0 12px var(--emerald);
+  transition: transform var(--transition-fast);
+}
+
+.calc-range::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+/* Comparison Metrics */
+.calc-results-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.result-card {
+  background: var(--bg-surface-elevated);
+  border: var(--border-hairline);
+  border-radius: var(--radius-xl);
+  padding: 1.8rem;
+  box-shadow: var(--shadow-xs);
+}
+
+.result-card.highlight {
+  background: linear-gradient(135deg, rgba(16, 185, 129, 0.14), rgba(16, 185, 129, 0.04));
+  border: 1px solid var(--emerald-border);
+  box-shadow: var(--shadow-glow-emerald);
+}
+
+.result-card.highlight .result-label,
+.result-card.highlight .result-sub {
+  color: var(--text-secondary);
+}
+
+.result-card.highlight .result-val {
+  color: var(--emerald);
+}
+
+.result-label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  color: var(--text-muted);
+  margin-bottom: 0.4rem;
+}
+
+.result-val {
+  font-family: var(--font-editorial);
+  font-size: 2.4rem;
+  font-weight: 400;
+  line-height: 1.1;
+  color: var(--text-primary);
+  margin-bottom: 0.35rem;
+}
+
+.result-sub {
+  font-size: 0.82rem;
+  color: var(--text-secondary);
+}
+
+/* Savings Banner */
+.savings-callout {
+  background: var(--bg-surface-elevated);
+  border: 1px solid var(--emerald-border);
+  border-radius: var(--radius-lg);
+  padding: 1.2rem 1.6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.savings-text {
+  font-size: 0.95rem;
+  color: var(--text-primary);
+}
+
+.savings-badge {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--emerald);
+  background: var(--emerald-subtle);
+  padding: 0.4rem 0.9rem;
+  border-radius: var(--radius-pill);
 }
 
 /* ==========================================================================
-   FOOTER
+   3. ARCHITECTURE & CORE VAULT ATTRIBUTES
    ========================================================================== */
-.footer {
-  border-top: var(--border-thick);
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.8rem;
+  margin-bottom: 3.5rem;
+}
+
+.feature-card {
   background: var(--bg-surface);
-  padding: 5rem 2rem 3rem;
+  border: var(--border-hairline);
+  border-radius: var(--radius-xl);
+  padding: 2.2rem 1.8rem;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-xs);
+}
+
+.feature-card:hover {
+  background: var(--bg-surface-elevated);
+  border-color: var(--border-subtle);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.feature-icon-box {
+  width: 44px;
+  height: 44px;
+  border-radius: var(--radius-md);
+  background: var(--bg-surface-elevated);
+  border: var(--border-hairline);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--emerald);
+  margin-bottom: 1.4rem;
+  box-shadow: var(--shadow-xs);
+}
+
+.feature-title {
+  font-family: var(--font-editorial);
+  font-size: 1.45rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 0.6rem;
+  line-height: 1.2;
+}
+
+.feature-desc {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+}
+
+/* ==========================================================================
+   4. 8-WEEK MVP ROADMAP (EDITORIAL TIMELINE)
+   ========================================================================== */
+.roadmap-timeline {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3.5rem;
+}
+
+.roadmap-phase-card {
+  background: var(--bg-surface);
+  border: var(--border-hairline);
+  border-radius: var(--radius-xl);
+  padding: 1.8rem;
+  transition: all var(--transition-normal);
+  box-shadow: var(--shadow-xs);
+}
+
+.roadmap-phase-card:hover {
+  background: var(--bg-surface-elevated);
+  border-color: var(--border-subtle);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.phase-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.phase-tag {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: 600;
+  color: var(--text-secondary);
+  background: var(--bg-surface-elevated);
+  border: var(--border-hairline);
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-pill);
+}
+
+.phase-weeks {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  color: var(--text-muted);
+}
+
+.phase-title {
+  font-family: var(--font-editorial);
+  font-size: 1.25rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  margin-bottom: 0.75rem;
+}
+
+.phase-items {
+  list-style: none;
+  font-size: 0.85rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+.phase-items li {
   position: relative;
-  z-index: 10;
+  padding-left: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.phase-items li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   5. PRICING & DOWNLOAD BANNER ($79 LIFETIME)
+   ========================================================================== */
+.pricing-banner {
+  background: var(--obsidian);
+  color: #FFFFFF;
+  border-radius: var(--radius-2xl);
+  padding: 3.5rem 3rem;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  align-items: center;
+  gap: 3rem;
+  margin-bottom: 4rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.pricing-title {
+  font-family: var(--font-editorial);
+  font-size: 2.6rem;
+  font-weight: 400;
+  color: #FFFFFF;
+  margin-bottom: 1rem;
+  line-height: 1.15;
+}
+
+.pricing-desc {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.75);
+  line-height: 1.6;
+  margin-bottom: 1.8rem;
+}
+
+.pricing-card-box {
+  background: var(--bg-surface);
+  color: var(--text-primary);
+  border: var(--border-hairline);
+  border-radius: var(--radius-xl);
+  padding: 2.2rem;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.price-display {
+  font-family: var(--font-editorial);
+  font-size: 3.4rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
+.price-sub {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  margin-bottom: 1.5rem;
+}
+
+.price-perks {
+  list-style: none;
+  text-align: left;
+  font-size: 0.88rem;
+  color: var(--text-secondary);
+  margin-bottom: 1.8rem;
+}
+
+.price-perks li {
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.price-perks li svg {
+  color: var(--emerald);
+  flex-shrink: 0;
+}
+
+/* ==========================================================================
+   6. FAQ ACCORDION (HAIRLINE DIVIDERS)
+   ========================================================================== */
+.faq-list {
+  max-width: 820px;
+  margin: 0 auto 4rem;
+}
+
+.faq-item {
+  border-bottom: var(--border-hairline);
+  transition: all var(--transition-fast);
+}
+
+.faq-question {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 1.6rem 0;
+  font-family: var(--font-editorial);
+  font-size: 1.35rem;
+  font-weight: 400;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.faq-chevron {
+  transition: transform var(--transition-normal);
+  color: var(--text-muted);
+}
+
+.faq-item.active .faq-chevron {
+  transform: rotate(180deg);
+  color: var(--text-primary);
+}
+
+.faq-answer {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--transition-normal);
+}
+
+.faq-answer-inner {
+  padding-bottom: 1.6rem;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* ==========================================================================
+   7. MINIMALIST EDITORIAL FOOTER
+   Inspired by dropshipping-marketplace.vercel.app
+   ========================================================================== */
+.editorial-footer {
+  background: var(--bg-surface-subtle);
+  border-top: var(--border-hairline);
+  color: var(--text-secondary);
+  padding: 4.5rem 2rem 2.5rem;
+  margin-top: 4rem;
 }
 
 .footer-container {
-  max-width: 1280px;
+  max-width: 1400px;
   margin: 0 auto;
+}
+
+.footer-grid {
   display: grid;
-  grid-template-columns: 1.4fr 1.6fr;
-  gap: 4rem;
+  grid-template-columns: 1.4fr 1fr 1fr 1fr 1fr;
+  gap: 2.2rem;
+  margin-bottom: 3.5rem;
 }
 
-.footer-brand {
-  display: flex;
-  flex-direction: column;
-  gap: 1.2rem;
-}
-
-.footer-summary {
-  font-size: 0.98rem;
-  color: var(--text-secondary);
-  line-height: 1.65;
-  max-width: 440px;
-  font-weight: 500;
-}
-
-.footer-copyright {
-  font-size: 0.88rem;
-  color: var(--text-muted);
+.footer-brand-title {
+  font-size: 0.95rem;
   font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: -0.01em;
+  margin-bottom: 0.8rem;
 }
 
-.footer-copyright a {
-  color: var(--neo-black);
-  text-decoration: underline;
-  font-weight: 800;
+.footer-brand-desc {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+  max-width: 320px;
 }
 
-.footer-links-group {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
-}
-
-.col-title {
-  font-size: 0.98rem;
-  font-weight: 900;
+.footer-col-title {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 600;
   text-transform: uppercase;
+  color: var(--text-primary);
   letter-spacing: 0.08em;
-  color: var(--neo-black);
-  margin-bottom: 1.2rem;
+  margin-bottom: 1rem;
 }
 
-.footer-col ul {
+.footer-links {
   list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 0.8rem;
+  font-size: 0.85rem;
 }
 
-.footer-col a {
-  font-size: 0.94rem;
+.footer-links li {
+  margin-bottom: 0.6rem;
+}
+
+.footer-links a {
   color: var(--text-secondary);
-  text-decoration: none;
-  font-weight: 700;
   transition: color var(--transition-fast);
 }
 
-.footer-col a:hover {
-  color: #047857;
-  text-decoration: underline;
+.footer-links a:hover {
+  color: var(--text-primary);
+}
+
+.footer-bottom {
+  border-top: var(--border-hairline);
+  padding-top: 2rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-family: var(--font-mono);
+  font-size: 11px;
+  color: var(--text-muted);
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+/* Responsive Rules */
+@media (max-width: 1024px) {
+  .how-it-works-grid,
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .roadmap-timeline {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .pricing-banner {
+    grid-template-columns: 1fr;
+    padding: 2.5rem 2rem;
+  }
+  
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .how-it-works-grid,
+  .features-grid,
+  .roadmap-timeline,
+  .calc-results-grid,
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .calculator-box {
+    padding: 2rem 1.4rem;
+  }
 }

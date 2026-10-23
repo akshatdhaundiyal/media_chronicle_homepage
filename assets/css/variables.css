@@ -1,65 +1,71 @@
 /* ==========================================================================
-   NEOBRUTALIST DESIGN TOKENS — SERENMIND INSPIRED PALETTE
-   High-contrast 2.5px solid black borders, 4px-5px hard offset drop shadows,
-   warm cream canvas, and vibrant pastel color blocks.
+   MEDIA CHRONICLE — DUAL THEME TOKENS
+   Default: Dark Obsidian (Seamless cinematic continuity from video)
+   Optional: Archival Ivory (Warm museum photo paper / linen)
    ========================================================================== */
 
 :root {
-  /* Canvas & Base Surfaces */
-  --bg-deep: #FAF6ED;           /* Warm Ivory Cream canvas */
-  --bg-surface: #FFFDF9;        /* Pure Warm White */
-  --bg-card: #FFFFFF;           /* Card White */
-  --bg-card-hover: #FFFDF5;
-  --bg-glass-nested: #F5EFE0;   /* Muted Cream inset */
-  --bg-glass-input: #FFFFFF;
-  --bg-dark-gadget: #0D1117;    /* Retro CRT screen insert */
+  /* ==========================================================================
+     THEME 1: DARK OBSIDIAN (Default)
+     Deep filmic blacks, midnight cards, glowing emerald & amber accents
+     ========================================================================== */
+  --bg-canvas: #0A0B0E;
+  --bg-surface: #12141A;
+  --bg-surface-elevated: #181B23;
+  --bg-surface-subtle: #0E1015;
+  --bg-surface-dark: #07080A;
+  --bg-pill: rgba(255, 255, 255, 0.08);
+  --bg-pill-hover: rgba(255, 255, 255, 0.14);
+  --bg-glass: rgba(10, 11, 14, 0.88);
 
-  /* Neobrutalist Core Accent Palette (SerenMind Palette) */
-  --neo-black: #121212;         /* Crisp Ink Black for all borders & shadows */
-  --neo-yellow: #FFD166;        /* Sunshine Yellow */
-  --neo-yellow-light: #FFF0C2;  /* Soft Buttercream */
-  --neo-coral: #FF6B6B;         /* Electric Coral Pink */
-  --neo-coral-light: #FFCCD5;   /* Pastel Coral */
-  --neo-mint: #06D6A0;          /* Fresh Mint Green */
-  --neo-mint-light: #D8F3DC;    /* Pastel Mint */
-  --neo-sky: #4CC9F0;           /* Radiant Sky Blue */
-  --neo-sky-light: #D0F4DE;
-  --neo-lavender: #B5838D;      /* Soft Mauve Lavender */
-  --neo-lavender-light: #E8D7FF;/* Pastel Lavender */
-  --neo-orange: #F77F00;        /* Retro Tangerine */
+  /* Deep Ink & Typography Hierarchy */
+  --text-primary: #F3F4F6;
+  --text-secondary: #9CA3AF;
+  --text-muted: #6B7280;
+  --text-faint: #4B5563;
+  --text-on-dark: #FFFFFF;
+  --text-on-dark-muted: rgba(255, 255, 255, 0.7);
 
-  /* Text & Typography Hierarchy */
-  --text-primary: #121212;      /* Deep Ink Black for readability */
-  --text-secondary: #3D3D3D;    /* Dark Charcoal */
-  --text-muted: #666666;        /* Neutral Slate */
-  --text-highlight: #000000;    /* Solid Pitch Black */
-  --text-on-dark: #F8FAFC;      /* Light text inside CRT gadgets */
+  /* Monochromatic & Accent Palette */
+  --obsidian: #0A0B0E;
+  --obsidian-hover: #171A21;
+  --emerald: #10B981;
+  --emerald-subtle: rgba(16, 185, 129, 0.16);
+  --emerald-border: rgba(16, 185, 129, 0.35);
+  --amber: #F59E0B;
+  --amber-subtle: rgba(245, 158, 11, 0.16);
+  --ow-accent: #E08E45;
 
-  /* Borders & Neobrutalist Hard Shadows */
-  --border-thick: 2.5px solid #121212;
-  --border-medium: 2px solid #121212;
-  --border-subtle: 1.5px solid #121212;
-  
-  /* Hard Offset Drop Shadows (Zero blur) */
-  --shadow-neo: 4px 4px 0px #121212;
-  --shadow-neo-sm: 2.5px 2.5px 0px #121212;
-  --shadow-neo-lg: 6px 6px 0px #121212;
-  --shadow-neo-hover: 2px 2px 0px #121212;
-  --shadow-neo-pressed: 0px 0px 0px #121212;
+  /* Hairline Borders */
+  --border-hairline: 1px solid rgba(255, 255, 255, 0.09);
+  --border-subtle: 1px solid rgba(255, 255, 255, 0.14);
+  --border-medium: 1px solid rgba(255, 255, 255, 0.22);
+  --border-focus: 1px solid #FFFFFF;
+  --border-dark: 1px solid rgba(255, 255, 255, 0.14);
+
+  /* Feathered Ambient Shadows */
+  --shadow-xs: 0 1px 3px rgba(0, 0, 0, 0.45);
+  --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.55);
+  --shadow-md: 0 6px 20px rgba(0, 0, 0, 0.65);
+  --shadow-lg: 0 16px 36px rgba(0, 0, 0, 0.8);
+  --shadow-glow-emerald: 0 0 24px rgba(16, 185, 129, 0.25);
 
   /* Typography Stacks */
-  --font-main: 'Outfit', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', 'Fira Code', monospace;
+  --font-editorial: 'Playfair Display', Georgia, serif;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'SF Mono', monospace;
 
-  /* Sizing & Friendly Rounded Corners */
-  --radius-sm: 8px;
+  /* Sizing & Fluid Capsule Radii */
+  --radius-xs: 6px;
+  --radius-sm: 10px;
   --radius-md: 14px;
-  --radius-lg: 20px;
-  --radius-xl: 26px;
-  --radius-full: 9999px;
+  --radius-lg: 18px;
+  --radius-xl: 24px;
+  --radius-2xl: 32px;
+  --radius-pill: 9999px;
 
-  /* Tactile Press Transitions */
-  --transition-fast: 0.12s cubic-bezier(0, 0, 0.2, 1);
-  --transition-normal: 0.2s cubic-bezier(0, 0, 0.2, 1);
-  --transition-bounce: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  /* Smooth GPU Transitions */
+  --transition-fast: 0.15s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-normal: 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-smooth: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
